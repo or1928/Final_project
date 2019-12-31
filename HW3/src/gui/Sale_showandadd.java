@@ -22,16 +22,9 @@ import javax.swing.JComboBox;
 public class Sale_showandadd extends JFrame {
 	
 	private JPanel contentPane;
-	private int anaBobi;
-
 	private JTable table;
 	private JTextField textField;
-	private int anaaBobi;
 	
-	
-	
-	
-
 	/**
 	 * Launch the application.
 	 */

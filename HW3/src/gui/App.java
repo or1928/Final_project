@@ -62,6 +62,10 @@ public class App {
 		Image img1 =new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64,Image.SCALE_DEFAULT);
 		
+		Image img2 =new ImageIcon(this.getClass().getResource("/applogo.png")).getImage();
+		Image newImage2 = img2.getScaledInstance(91, 64,Image.SCALE_DEFAULT);
+		
+		
 		textField_Username = new JTextField();
 		textField_Username.setBounds(187, 81, 96, 19);
 		frame.getContentPane().add(textField_Username);
@@ -81,7 +85,7 @@ public class App {
 						lblBestbuy = new JLabel("BestBuy");
 						lblBestbuy.setForeground(Color.BLUE);
 						lblBestbuy.setFont(new Font("Vladimir Script", Font.BOLD, 64));
-						lblBestbuy.setBounds(153, 0, 231, 90);
+						lblBestbuy.setBounds(161, 0, 231, 90);
 						frame.getContentPane().add(lblBestbuy);
 						
 						JLabel Label_logo_yvc = new JLabel("");
@@ -112,6 +116,13 @@ public class App {
 								}
 							}
 						});
+						
+						JLabel logo_secHandCell = new JLabel("");
+						logo_secHandCell.setHorizontalAlignment(SwingConstants.CENTER);
+						logo_secHandCell.setFont(new Font("Tahoma", Font.PLAIN, 15));
+						logo_secHandCell.setIcon(new ImageIcon(newImage2));
+						logo_secHandCell.setBounds(0, 0, 96, 35);
+						frame.getContentPane().add(logo_secHandCell);
 						
 						Button_login.setBounds(187, 141, 96, 21);
 						frame.getContentPane().add(Button_login);
