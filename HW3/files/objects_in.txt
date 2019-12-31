@@ -1,0 +1,23 @@
+Customer 109138534 David deGea 0504462353 07-11-1990 deGea@ManUtd.com
+Customer 374298537 Victor Lindelof 0546546247 17-07-1994 Lindelof@ManUtd.com
+Customer 202678343 Eric Bailly 0524454763 12-04-1994 Bailly@ManUtd.com
+Customer 144308524 Phil Jones 0504162398 21-02-1992 Jones@ManUtd.com
+Customer 217438501 Harry Maguire 0504262353 05-03-1993 Maguire@ManUtd.com
+
+Employee 234947569 Paul Pogba 0542782927 15-03-1993
+Employee 274841631 Juan Mata 0541872936 28-04-1988
+Employee 124167233 Anthony Martial 0548152415 05-12-1995
+Employee 202647939 Ashley Young 0542192123 09-07-1985
+Employee 248647596 Marcus Rashford 0545442781 31-10-1997
+
+Provider 208903612 Diogo Dalot 0582347121 18-03-1999
+Provider 231936363 Luke Shaw 0562561971 12-07-1995
+Provider 202851724 Mason Greenwood 0542285562 01-10-2001
+Provider 239744549 Angel Gomes 0542929682 31-08-2000
+Provider 209381428 Nemanja Matic 0542116215 01-08-1988
+
+UsedPhone IPhone_s7 2015 Used 1000 Apple
+UsedPhone IPhone_X 2019 New 2440 Apple
+UsedPhone galaxy_s8 2019 New 1350 Samsung
+UsedPhone LG_g5 2017 asNew 1140 LG
+UsedPhone xiaomi_mi_mix 2018 Used 1500 Xiaomi
