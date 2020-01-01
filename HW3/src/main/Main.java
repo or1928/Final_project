@@ -20,6 +20,8 @@ import exceptions.ItemNotFoundException;
 import exceptions.ObjectNotFound;
 import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
+import gui.App;
+import gui.Manager_window;
 
 public class Main {
 	private static Scanner scanner = new Scanner(System.in);
@@ -44,9 +46,12 @@ public class Main {
 		// create new items for testing
 		createLists();
 		// show first menu for choosing the shop to work with
-		chooseShop();
+	//	chooseShop();
 		// show second menu for coosing actions in selected shop
-		chooseAction();
+	//	chooseAction();
+		myShop = shop;
+		 App app_win = new App();
+		 app_win.main(null);
 
 	}
 

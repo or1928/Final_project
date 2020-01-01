@@ -17,6 +17,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import main.Main;
+
 import javax.swing.JTable;
 
 public class Employee_showandadd extends JFrame {
@@ -251,6 +254,7 @@ public static void Visible_dell_f() {
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
 		
+				
 		textField_phone = new JTextField();
 		textField_phone.setVisible(false);
 		textField_phone.setBounds(31, 151, 96, 19);
