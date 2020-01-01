@@ -75,16 +75,7 @@ public class Usedphone_showandadd extends JFrame {
 		 btnNewButton_111.setBounds(209, 170, 85, 21);
 		 contentPane.add(btnNewButton_111);
 		 
-		 JButton btnNewButton11 = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8");
-		 btnNewButton11.addActionListener(new ActionListener() {
-		 	public void actionPerformed(ActionEvent e) {
-		 		lblNewLabel_11.setVisible(true);
-				 comboBox1.setVisible(true);
-				 btnNewButton_111.setVisible(true);
-		 	}
-		 });
-		 btnNewButton11.setBounds(186, 68, 108, 21);
-		 contentPane.add(btnNewButton11);
+		
 		
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
 		Button_return.addActionListener(new ActionListener() {
@@ -183,8 +174,11 @@ public class Usedphone_showandadd extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				btnNewButton_1.setVisible(true);
+				lblNewLabel_11.setVisible(false);
+				 comboBox1.setVisible(false);
+				 btnNewButton_111.setVisible(false);
 				
+				btnNewButton_1.setVisible(true);	
 				comboBox_1.setVisible(true);
 				comboBox_2.setVisible(true);
 				textField_1.setVisible(true);
@@ -200,11 +194,33 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("SansSerif", Font.BOLD, 15));
-		btnNewButton.setBounds(165, 44, 155, 21);
+		btnNewButton.setBounds(153, 25, 155, 21);
 		contentPane.add(btnNewButton);
 		
 		
-		
+		 JButton btnNewButton11 = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8");
+		 btnNewButton11.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 		lblNewLabel_11.setVisible(true);
+				 comboBox1.setVisible(true);
+				 btnNewButton_111.setVisible(true);
+				 
+				 btnNewButton_1.setVisible(false);	
+					comboBox_1.setVisible(false);
+					comboBox_2.setVisible(false);
+					textField_1.setVisible(false);
+					textField.setVisible(false);
+					textField_2.setVisible(false);
+					lblNewLabel_2.setVisible(false);
+					lblNewLabel_3.setVisible(false);
+					lblNewLabel_4.setVisible(false);
+					lblNewLabel_5.setVisible(false);
+					lblNewLabel_6.setVisible(false);
+					lblNewLabel_4.setVisible(false);
+		 	}
+		 });
+		 btnNewButton11.setBounds(186, 52, 108, 21);
+		 contentPane.add(btnNewButton11);
 		
 		
 		

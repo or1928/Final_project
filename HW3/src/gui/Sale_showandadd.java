@@ -74,17 +74,7 @@ public class Sale_showandadd extends JFrame {
 		 btnNewButton_11.setBounds(220, 232, 85, 21);
 		 contentPane.add(btnNewButton_11);
 		 
-		 JButton btnNewButton11 = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4");
-		 btnNewButton11.addActionListener(new ActionListener() {
-		 	public void actionPerformed(ActionEvent e) {
-		 		lblNewLabel_11.setVisible(true);
-				 comboBox1.setVisible(true);
-				 btnNewButton_11.setVisible(true);
-		 	}
-		 });
-		 
-		 btnNewButton11.setBounds(200, 73, 108, 21);
-		 contentPane.add(btnNewButton11);
+		
 		
 		
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
@@ -173,12 +163,38 @@ public class Sale_showandadd extends JFrame {
 		
 		
 		
-		
+		 JButton btnNewButton11 = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4");
+		 btnNewButton11.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 		lblNewLabel_11.setVisible(true);
+				 comboBox1.setVisible(true);
+				 btnNewButton_11.setVisible(true);
+				 btnNewButton_1.setVisible(false);
+					comboBox.setVisible(false);
+					comboBox_1.setVisible(false);
+					comboBox_2.setVisible(false);
+					comboBox_3.setVisible(false);
+					textField.setVisible(false);
+					lblNewLabel_2.setVisible(false);
+					lblNewLabel_3.setVisible(false);
+					lblNewLabel_4.setVisible(false);
+					lblNewLabel_5.setVisible(false);
+					lblNewLabel_6.setVisible(false);
+				 
+		 	}
+		 });
+		 
+		 btnNewButton11.setBounds(200, 44, 108, 21);
+		 contentPane.add(btnNewButton11);
+		 
 		
 		JButton btnNewButton = new JButton("\u05D4\u05D5\u05E1\u05E4\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4 \u05D7\u05D3\u05E9\u05D4");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				lblNewLabel_11.setVisible(false);
+				 comboBox1.setVisible(false);
+				 btnNewButton_11.setVisible(false);
 				
 				btnNewButton_1.setVisible(true);
 				comboBox.setVisible(true);
@@ -196,7 +212,7 @@ public class Sale_showandadd extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("SansSerif", Font.BOLD, 15));
-		btnNewButton.setBounds(167, 43, 155, 21);
+		btnNewButton.setBounds(166, 23, 155, 21);
 		contentPane.add(btnNewButton);
 		
 		

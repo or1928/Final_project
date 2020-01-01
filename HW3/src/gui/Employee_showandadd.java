@@ -42,6 +42,9 @@ public class Employee_showandadd extends JFrame {
 	private static JLabel Label_show_lname;
 	private static JButton Button_add_new_cusromer;
 	private JTable table;
+	private static JLabel lblNewLabel_1;
+	private static JComboBox comboBox;
+	private static JButton btnNewButton_1;
 	
 	
 	public static void Visible_co_t() {
@@ -93,7 +96,20 @@ public class Employee_showandadd extends JFrame {
 		textField_birthday.setVisible(false);
 		
 	}
-	
+	public static void Visible_dell_t() {
+		
+		
+		lblNewLabel_1.setVisible(true);
+		comboBox.setVisible(true);
+		btnNewButton_1.setVisible(true);
+		}
+public static void Visible_dell_f() {
+		
+		
+		lblNewLabel_1.setVisible(false);
+		comboBox.setVisible(false);
+		btnNewButton_1.setVisible(false);
+		}
 
 	/**
 	 * Launch the application.
@@ -128,17 +144,17 @@ public class Employee_showandadd extends JFrame {
 		Image newImage1 = img1.getScaledInstance(91, 64,Image.SCALE_DEFAULT);
 		
 		
-		 JLabel lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3");
+		  lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3");
 		 lblNewLabel_1.setVisible(false);
 		 lblNewLabel_1.setBounds(261, 154, 70, 13);
 		 contentPane.add(lblNewLabel_1);
 		 
-		 JComboBox comboBox = new JComboBox();
+		  comboBox = new JComboBox();
 		 comboBox.setVisible(false);
 		 comboBox.setBounds(165, 150, 86, 21);
 		 contentPane.add(comboBox);
 		 
-		 JButton btnNewButton_1 = new JButton("\u05DE\u05D7\u05E7");
+		  btnNewButton_1 = new JButton("\u05DE\u05D7\u05E7");
 		 btnNewButton_1.setVisible(false);
 		 btnNewButton_1.setBounds(166, 232, 85, 21);
 		 contentPane.add(btnNewButton_1);
@@ -146,11 +162,19 @@ public class Employee_showandadd extends JFrame {
 		 JButton btnNewButton = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05E2\u05D5\u05D1\u05D3");
 		 btnNewButton.addActionListener(new ActionListener() {
 		 	public void actionPerformed(ActionEvent e) {
-		 		lblNewLabel_1.setVisible(true);
-				 comboBox.setVisible(true);
-				 btnNewButton_1.setVisible(true);
+		 		Visible_dell_t();
+		 		Visible_co_f();
+		 		 Visible_add_f();
+		 		Label_id.setVisible(false);
+		 		lLabel_phone.setVisible(false);
+		 		Label_birthday.setVisible(false);
+		 		Label_fname.setVisible(false);
+		 		Label_lname.setVisible(false);
+		 		Button_add_new_cusromer.setVisible(false);
+		 		 
 		 	}
 		 });
+		 
 		 btnNewButton.setBounds(153, 89, 108, 21);
 		 contentPane.add(btnNewButton);
 		
@@ -259,6 +283,7 @@ public class Employee_showandadd extends JFrame {
 				{
 					Visible_co_t();
 					Visible_add_f();
+					Visible_dell_f();
 				}
 				else {Visible_co_f();}
 			}
@@ -272,6 +297,7 @@ public class Employee_showandadd extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Visible_add_t();
 				Visible_co_f();
+				Visible_dell_f();
 				
 			}
 		});

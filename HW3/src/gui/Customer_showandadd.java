@@ -48,6 +48,10 @@ public class Customer_showandadd extends JFrame {
 	private static JLabel Label_show_fname;
 	private static JLabel Label_show_lname;
 	private static JButton Button_add_new_cusromer;
+	private static JButton btn_del;
+	private static JComboBox comboBox_namecusro_inTheshop;
+	private static JLabel lblNewLabel_1111;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -96,6 +100,7 @@ public class Customer_showandadd extends JFrame {
 		textField_phone.setVisible(true);
 		textField_birthday.setVisible(true);
 		textField_email.setVisible(true);
+		
 	}
 	public static void Visible_add_f() {
 		
@@ -107,7 +112,23 @@ public class Customer_showandadd extends JFrame {
 		textField_birthday.setVisible(false);
 		textField_email.setVisible(false);
 	}
+public static void Visible_dell_t() {
+		
+		
+	lblNewLabel_1111.setVisible(true);
+	 comboBox_namecusro_inTheshop.setVisible(true);
+	 btn_del.setVisible(true);
+	}
+public static void Visible_dell_f() {
 	
+	
+	lblNewLabel_1111.setVisible(false);
+	 comboBox_namecusro_inTheshop.setVisible(false);
+	 btn_del.setVisible(false);
+	}
+	
+
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -138,33 +159,41 @@ public class Customer_showandadd extends JFrame {
 		Image newImage1 = img1.getScaledInstance(91, 64,Image.SCALE_DEFAULT);
 		
 		
-		 JLabel lblNewLabel_1111 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7:");
+		  lblNewLabel_1111 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7:");
 		 lblNewLabel_1111.setVisible(false);
 		 lblNewLabel_1111.setBounds(323, 154, 70, 13);
 		 contentPane.add(lblNewLabel_1111);
 		 
-		 JComboBox comboBox1 = new JComboBox();
-		 comboBox1.setVisible(false);
-		 comboBox1.setBounds(227, 150, 86, 21);
-		 contentPane.add(comboBox1);
+		  comboBox_namecusro_inTheshop = new JComboBox();
+		 comboBox_namecusro_inTheshop.setVisible(false);
+		 comboBox_namecusro_inTheshop.setBounds(227, 150, 86, 21);
+		 contentPane.add(comboBox_namecusro_inTheshop);
 		 
-		 JButton btnNewButton_11 = new JButton("\u05DE\u05D7\u05E7");
-		 btnNewButton_11.setVisible(false);
-		 btnNewButton_11.setBounds(235, 232, 85, 21);
-		 contentPane.add(btnNewButton_11);
+		  btn_del = new JButton("\u05DE\u05D7\u05E7");
+		 btn_del.setVisible(false);
+		 btn_del.setBounds(235, 232, 85, 21);
+		 contentPane.add(btn_del);
 		 
 		 
 		 
-		 JButton btnNewButton11 = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DC\u05E7\u05D5\u05D7");
-		 btnNewButton11.addActionListener(new ActionListener() {
+		 JButton btn_delcustomer = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DC\u05E7\u05D5\u05D7");
+		 btn_delcustomer.addActionListener(new ActionListener() {
 		 	public void actionPerformed(ActionEvent e) {
-		 		lblNewLabel_1111.setVisible(true);
-				 comboBox1.setVisible(true);
-				 btnNewButton_11.setVisible(true);
+		 		Visible_dell_t();
+		 		Visible_add_f();
+		 		Visible_co_f();
+		 		Label_id.setVisible(false);
+		 		lLabel_phone.setVisible(false);
+		 		Label_birthday.setVisible(false);
+		 		Label_fname.setVisible(false);
+		 		Label_lname.setVisible(false);
+		 		Label_email.setVisible(false);
+		 		Button_add_new_cusromer.setVisible(false);
+		 		
 		 	}
 		 });
-		 btnNewButton11.setBounds(220, 83, 108, 21);
-		 contentPane.add(btnNewButton11);
+		 btn_delcustomer.setBounds(220, 83, 108, 21);
+		 contentPane.add(btn_delcustomer);
 		
 		
 		 lblNewLabel = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7 \u05E7\u05D9\u05D9\u05DD:");
@@ -293,6 +322,7 @@ public class Customer_showandadd extends JFrame {
 				{
 					Visible_co_t();
 					Visible_add_f();
+					Visible_dell_f();
 				}
 				else {Visible_co_f();}
 			}
@@ -306,6 +336,7 @@ public class Customer_showandadd extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Visible_add_t();
 				Visible_co_f();
+				Visible_dell_f();
 				
 			}
 		});
