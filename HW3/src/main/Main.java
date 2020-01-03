@@ -26,10 +26,10 @@ import gui.Manager_window;
 public class Main {
 	private static Scanner scanner = new Scanner(System.in);
 	public static Shop myShop, shop, shop2, shop3, shop4, shop5;
-	static ArrayList<Employee> allEmployees;
+	public static ArrayList<Employee> allEmployees;
 	public static ArrayList<Customer> allCustomers;
-	static ArrayList<Provider> allProviders;
-	static ArrayList<UsedPhone> allusedPhones;
+	public static ArrayList<Provider> allProviders;
+	public static ArrayList<UsedPhone> allusedPhones;
 
 	public static Employee e1;
 	public static Customer c1;
@@ -41,18 +41,16 @@ public class Main {
 		FileManager fm = new FileManager();
 		fm.openFile();
 		fm.readFile();
-
+		
+		myShop = shop;
 		init();
 		// create new items for testing
 		createLists();
 		// show first menu for choosing the shop to work with
-	//	chooseShop();
+     	chooseShop();
 		// show second menu for coosing actions in selected shop
-	//	chooseAction();
-		myShop = shop;
-		 App app_win = new App();
-		 app_win.main(null);
-
+		chooseAction();
+				 
 	}
 
 	public static void init() {
@@ -294,7 +292,8 @@ public class Main {
 					break;
 				}
 				case 5 : {
-					printall();
+					App app_win = new App();
+					 app_win.main(null);
 					break;
 				}
 				case 6 : {

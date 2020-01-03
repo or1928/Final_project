@@ -13,11 +13,15 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import classes.Employee;
+import exceptions.EmployeeAlreadyExistsException;
+import exceptions.WrongInput;
 import main.Main;
 
 import javax.swing.JTable;
@@ -46,9 +50,9 @@ public class Employee_showandadd extends JFrame {
 	private static JButton Button_add_new_cusromer;
 	private JTable table;
 	private static JLabel lblNewLabel_1;
-	private static JComboBox comboBox;
+	private static JComboBox comboBox_showEmplo_inMYshop_Dell;
 	private static JButton btnNewButton_1;
-	
+	private static boolean flag=false;
 	
 	public static void Visible_co_t() {
 		Label_id.setVisible(true);
@@ -103,14 +107,14 @@ public class Employee_showandadd extends JFrame {
 		
 		
 		lblNewLabel_1.setVisible(true);
-		comboBox.setVisible(true);
+		comboBox_showEmplo_inMYshop_Dell.setVisible(true);
 		btnNewButton_1.setVisible(true);
 		}
 public static void Visible_dell_f() {
 		
 		
 		lblNewLabel_1.setVisible(false);
-		comboBox.setVisible(false);
+		comboBox_showEmplo_inMYshop_Dell.setVisible(false);
 		btnNewButton_1.setVisible(false);
 		}
 
@@ -152,12 +156,29 @@ public static void Visible_dell_f() {
 		 lblNewLabel_1.setBounds(261, 154, 70, 13);
 		 contentPane.add(lblNewLabel_1);
 		 
-		  comboBox = new JComboBox();
-		 comboBox.setVisible(false);
-		 comboBox.setBounds(165, 150, 86, 21);
-		 contentPane.add(comboBox);
+		  comboBox_showEmplo_inMYshop_Dell = new JComboBox();
+		  comboBox_showEmplo_inMYshop_Dell.addItem("");
+		  for(Employee my :Main.myShop.getEmployess())
+	  			comboBox_showEmplo_inMYshop_Dell.addItem(my.getFirstName());
+		 comboBox_showEmplo_inMYshop_Dell.setVisible(false);
+		 comboBox_showEmplo_inMYshop_Dell.setBounds(165, 150, 86, 21);
+		 contentPane.add(comboBox_showEmplo_inMYshop_Dell);
+		
 		 
 		  btnNewButton_1 = new JButton("\u05DE\u05D7\u05E7");
+		  btnNewButton_1.addActionListener(new ActionListener() {
+			 	public void actionPerformed(ActionEvent e) {
+			 		
+			 		  for(Employee my :Main.myShop.getEmployess())
+			 			 if (comboBox_showEmplo_inMYshop_Dell.getSelectedItem().equals(my.getFirstName()))
+			 			 {  Main.myShop.removeEmployee(my);
+			 		  break;}
+			 		  
+			 		  dispose();
+			 		 Manager_window.main(null);
+			 	}
+			 });
+		  
 		 btnNewButton_1.setVisible(false);
 		 btnNewButton_1.setBounds(166, 232, 85, 21);
 		 contentPane.add(btnNewButton_1);
@@ -168,6 +189,7 @@ public static void Visible_dell_f() {
 		 		Visible_dell_t();
 		 		Visible_co_f();
 		 		 Visible_add_f();
+		 		
 		 		Label_id.setVisible(false);
 		 		lLabel_phone.setVisible(false);
 		 		Label_birthday.setVisible(false);
@@ -231,10 +253,6 @@ public static void Visible_dell_f() {
 		Label_show_birthday.setBounds(70, 177, 45, 13);
 		contentPane.add(Label_show_birthday);
 		
-		 Button_add_new_cusromer = new JButton("\u05D4\u05D5\u05E1\u05E3");
-		Button_add_new_cusromer.setVisible(false);
-		Button_add_new_cusromer.setBounds(165, 232, 96, 21);
-		contentPane.add(Button_add_new_cusromer);
 		
 		textField_fnane = new JTextField();
 		textField_fnane.setVisible(false);
@@ -279,19 +297,73 @@ public static void Visible_dell_f() {
 		
 		JComboBox comboBox_show_cusromer = new JComboBox();
 		comboBox_show_cusromer.addItem("");
-	
-		comboBox_show_cusromer.addItem("abc1");
+		for(Employee emp :Main.allEmployees)
+			comboBox_show_cusromer.addItem(emp.getFirstName());
+		
 		comboBox_show_cusromer.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
-				if (comboBox_show_cusromer.getSelectedItem().equals("abc1"))
+				for(Employee emp :Main.allEmployees)
+				if (comboBox_show_cusromer.getSelectedItem().equals(emp.getFirstName()))
 				{
+					flag=true;
 					Visible_co_t();
 					Visible_add_f();
 					Visible_dell_f();
+					Label_show_lname.setText(emp.getLastName());
+					Label_show_fname.setText(emp.getFirstName());
+					Label_show_phone.setText(emp.getPhoneNumber());
+					Label_show_birthday.setText(emp.getDateOfBirth());
+					Label_show_id.setText(emp.getID());
+					break;
 				}
 				else {Visible_co_f();}
 			}
 		});
+		
+
+		 Button_add_new_cusromer = new JButton("\u05D4\u05D5\u05E1\u05E3");
+		 Button_add_new_cusromer.addActionListener(new ActionListener() {
+			 	public void actionPerformed(ActionEvent e) {
+			 	
+			 		for(Employee emp :Main.allEmployees)
+						if (comboBox_show_cusromer.getSelectedItem().equals(emp.getFirstName()))
+						{
+
+	                    try {
+							Main.myShop.addEmployee(emp);
+						} catch (EmployeeAlreadyExistsException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+							break;
+							
+						}
+			 	
+			 	
+			 		try {
+						Main.myShop.addEmployee(new Employee(textField_id.getText(), textField_fnane.getText(),textField_lname.getText(),
+								textField_phone.getText(),textField_birthday.getText()));
+						JOptionPane.showMessageDialog(null, "ברוך הבא ");
+					} catch (EmployeeAlreadyExistsException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					} catch (WrongInput e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}	
+			 		
+			 		
+			 
+			 	
+			 		dispose();
+			 		Manager_window.main(null);
+			 		
+			 		
+			 	}
+			 });
+		Button_add_new_cusromer.setVisible(false);
+		Button_add_new_cusromer.setBounds(165, 232, 96, 21);
+		contentPane.add(Button_add_new_cusromer);
 		
 		comboBox_show_cusromer.setBounds(223, 58, 89, 21);
 		contentPane.add(comboBox_show_cusromer);
@@ -299,6 +371,7 @@ public static void Visible_dell_f() {
 		JButton Button_show_add = new JButton("\u05D4\u05D5\u05E4\u05E1\u05EA \u05E2\u05D5\u05D1\u05D3 \u05D7\u05D3\u05E9");
 		Button_show_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				flag=false;
 				Visible_add_t();
 				Visible_co_f();
 				Visible_dell_f();
