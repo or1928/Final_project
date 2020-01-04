@@ -1,5 +1,6 @@
 package gui;
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -7,17 +8,30 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.StyledEditorKit.BoldAction;
+
+import classes.Customer;
+import classes.Employee;
+import classes.Sale;
+import classes.UsedPhone;
+import exceptions.CustomerAlreadyExistsException;
+import exceptions.WrongInput;
+import main.Main;
+
 import javax.swing.JTextPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import javax.swing.JTextArea;
 
 public class Sale_showandadd extends JFrame {
 	
@@ -65,6 +79,10 @@ public class Sale_showandadd extends JFrame {
 		 
 		 
 		 JComboBox comboBox1 = new JComboBox();
+		 
+		 
+		// for(HashMap<String, Sale> my :Arrays.asList(Main.myShop.getSales()))
+		//	 comboBox1.addItem(my.values(getid));
 		 comboBox1.setVisible(false);
 		 comboBox1.setBounds(177, 150, 86, 21);
 		 contentPane.add(comboBox1);
@@ -89,16 +107,25 @@ public class Sale_showandadd extends JFrame {
 		contentPane.add(Button_return);
 		
 		JComboBox comboBox_2 = new JComboBox();
+		 for(UsedPhone my :Main.myShop.getPhones())
+			 comboBox_2.addItem(my.getModelNo());
 		comboBox_2.setBounds(177, 75, 53, 21);
 		comboBox_2.setVisible(false);
 		contentPane.add(comboBox_2);
 		
 		JComboBox comboBox = new JComboBox();
+		
+		 for(Employee my :Main.myShop.getEmployess())
+			 
+			 
+			  comboBox.addItem(my.getFirstName());
 		comboBox.setBounds(325, 75, 60, 21);
 		comboBox.setVisible(false);
 		contentPane.add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
+		for(Customer my :Main.myShop.getCustomer())
+			comboBox_1.addItem(my.getFirstName());
 		comboBox_1.setBounds(325, 118, 60, 21);
 		comboBox_1.setVisible(false);
 		contentPane.add(comboBox_1);
@@ -125,6 +152,42 @@ public class Sale_showandadd extends JFrame {
 		
 		
 		JButton btnNewButton_1 = new JButton("\u05D4\u05D5\u05E1\u05E3");
+		
+		btnNewButton_1.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 	
+		 		
+					if(!textField.getText().isEmpty()) {
+						for (Employee employee :Main.myShop.getEmployess()) {
+							if (comboBox.getSelectedItem().equals(employee.getFirstName())) {
+								Main.e1 = employee;
+							}}
+						for (Customer customer :Main.myShop.getCustomer()) {
+							if (comboBox_1.getSelectedItem().equals(customer.getFirstName())) {
+								Main.c1 = customer;
+							}}
+						for (UsedPhone usedPhone :Main.myShop.getPhones()) {
+							if (comboBox_2.getSelectedItem().equals(usedPhone.getModelNo())) {
+								Main.ph1 = usedPhone;
+							}}
+		 		try {
+					Main.myShop.addSale(new Sale(Main.e1, Main.c1, textField.getText(), Main.myShop, Main.ph1));
+					JOptionPane.showMessageDialog(null, "ברוך הבא ");
+				} catch (WrongInput c1) {
+					// TODO Auto-generated catch block
+					c1.printStackTrace();
+				}	
+					}
+		 		
+		 
+		 	
+		 		dispose();
+		 		Manager_window.main(null);
+		 		
+		 		
+		 	}
+		 });
+		
 		btnNewButton_1.setVisible(false);
 		btnNewButton_1.setBounds(221, 163, 85, 21);
 		contentPane.add(btnNewButton_1); 
@@ -183,6 +246,10 @@ public class Sale_showandadd extends JFrame {
 				 
 		 	}
 		 });
+		 
+		 JTextArea textArea = new JTextArea();
+		 textArea.setBounds(10, 48, 116, 116);
+		 contentPane.add(textArea);
 		 
 		 btnNewButton11.setBounds(200, 44, 108, 21);
 		 contentPane.add(btnNewButton11);

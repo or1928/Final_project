@@ -1,5 +1,6 @@
 package classes;
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -22,7 +23,9 @@ public class Shop {
 	private ArrayList<Provider> providers = new ArrayList<Provider>();
 	private ArrayList<UsedPhone> phones = new ArrayList<UsedPhone>();
 
-	HashMap<String, Sale> sales = new HashMap<String, Sale>();
+	private	HashMap<String, Sale> sales = new HashMap<String, Sale>();
+
+	
 
 	public Shop(String shopName, String address, String phoneNumber) throws WrongInput {
 		setShopName(shopName);
@@ -182,6 +185,13 @@ public class Shop {
 
 	public ArrayList<Customer> getCustomer() {
 		return this.customers;
+	}
+	public HashMap<String, Sale> getSales() {
+		return this.sales;
+	}
+
+	public void setSales(HashMap<String, Sale> sales) {
+		this.sales = sales;
 	}
 
 }
