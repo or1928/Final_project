@@ -85,7 +85,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		Button_return.setFont(new Font("SansSerif", Font.BOLD, 14));
-		Button_return.setBounds(0, 0, 85, 21);
+		Button_return.setBounds(13, 116, 85, 21);
 		contentPane.add(Button_return);
 		
 		JComboBox comboBox_2 = new JComboBox();
@@ -114,6 +114,7 @@ public class Usedphone_showandadd extends JFrame {
 		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(144, 126, 60, 21);
+		
 		comboBox_1.setVisible(false);
 		contentPane.add(comboBox_1);
 		
@@ -129,7 +130,7 @@ public class Usedphone_showandadd extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("\u05DE\u05D7\u05E1\u05DF");
 		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 36));
-		lblNewLabel.setBounds(190, -22, 118, 64);
+		lblNewLabel.setBounds(202, -23, 118, 64);
 		contentPane.add(lblNewLabel);
 		
 		
@@ -143,6 +144,10 @@ public class Usedphone_showandadd extends JFrame {
 		
 		JLabel lblNewLabel_3 = new JLabel("\u05E9\u05E0\u05D4:");
 		lblNewLabel_3.setVisible(false);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(299, 33, 81, 21);
+		contentPane.add(comboBox);
 		lblNewLabel_3.setBounds(411, 122, 45, 13);
 		contentPane.add(lblNewLabel_3);
 		
@@ -162,6 +167,10 @@ public class Usedphone_showandadd extends JFrame {
 		
 		JLabel lblNewLabel_2 = new JLabel("\u05E9\u05DD \u05DE\u05DB\u05E9\u05D9\u05E8:");
 		lblNewLabel_2.setVisible(false);
+		
+		JLabel lblNewLabel_7 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0:");
+		lblNewLabel_7.setBounds(379, 37, 60, 13);
+		contentPane.add(lblNewLabel_7);
 		lblNewLabel_2.setBounds(390, 77, 66, 13);
 		contentPane.add(lblNewLabel_2);
 		
@@ -169,7 +178,7 @@ public class Usedphone_showandadd extends JFrame {
 		
 		
 		
-		JButton btnNewButton = new JButton("\u05D4\u05D5\u05E1\u05E4\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8");
+		JButton btnNewButton = new JButton("\u05D4\u05D5\u05E1\u05E4\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8 \u05D7\u05D3\u05E9");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -194,7 +203,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("SansSerif", Font.BOLD, 15));
-		btnNewButton.setBounds(153, 25, 155, 21);
+		btnNewButton.setBounds(67, 31, 155, 21);
 		contentPane.add(btnNewButton);
 		
 		
@@ -242,5 +251,4 @@ public class Usedphone_showandadd extends JFrame {
 		lblNewLabel_1.setBounds(5, 5, 456, 253);
 		contentPane.add(lblNewLabel_1);
 	}
-
 }

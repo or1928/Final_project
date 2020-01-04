@@ -14,10 +14,18 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import classes.Customer;
+import classes.Provider;
+import exceptions.CustomerAlreadyExistsException;
+import exceptions.ProvidersAlreadyExistsException;
+import exceptions.WrongInput;
+import main.Main;
 
 public class Provider_showandadd extends JFrame {
 	private int anaBobi;
@@ -153,11 +161,26 @@ public static void Visible_dell_f() {
 		 contentPane.add(lblNewLabel_1);
 		 
 		  comboBox = new JComboBox();
+		  comboBox.addItem("");
+		  for(Provider my :Main.myShop.getProviders())
+			  comboBox.addItem(my.getFirstName());
 		 comboBox.setVisible(false);
 		 comboBox.setBounds(165, 150, 86, 21);
 		 contentPane.add(comboBox);
 		 
 		 btnNewButton_1 = new JButton("\u05DE\u05D7\u05E7");
+		 btnNewButton_1.addActionListener(new ActionListener() {
+			 	public void actionPerformed(ActionEvent e) {
+			 		
+			 		  for(Provider my :Main.myShop.getProviders())
+			 			 if (comboBox.getSelectedItem().equals(my.getFirstName()))
+			 			 {  Main.myShop.removeProvider(my);
+			 		  break;}
+			 		  
+			 		  dispose();
+			 		 Manager_window.main(null);
+			 	}
+			 });
 		 btnNewButton_1.setVisible(false);
 		 btnNewButton_1.setBounds(166, 232, 85, 21);
 		 contentPane.add(btnNewButton_1);
@@ -229,11 +252,7 @@ public static void Visible_dell_f() {
 		Label_show_birthday.setVisible(false);
 		contentPane.add(Label_show_birthday);
 		
-		 Button_add_new_cusromer = new JButton("\u05D4\u05D5\u05E1\u05E3");
-		 Button_add_new_cusromer.setBounds(165, 232, 96, 21);
-		Button_add_new_cusromer.setVisible(false);
-		contentPane.add(Button_add_new_cusromer);
-		
+		 
 		textField_fnane = new JTextField();
 		textField_fnane.setBounds(235, 151, 96, 19);
 		textField_fnane.setVisible(false);
@@ -277,20 +296,74 @@ public static void Visible_dell_f() {
 		JComboBox comboBox_show_cusromer = new JComboBox();
 		comboBox_show_cusromer.setBounds(223, 58, 89, 21);
 		comboBox_show_cusromer.addItem("");
-	
-		comboBox_show_cusromer.addItem("abc1");
+		for(Provider pro :Main.allProviders)
+			comboBox_show_cusromer.addItem(pro.getFirstName());
+		
 		comboBox_show_cusromer.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
-				if (comboBox_show_cusromer.getSelectedItem().equals("abc1"))
+				for(Provider pro :Main.allProviders)
+					if (comboBox_show_cusromer.getSelectedItem().equals(pro.getFirstName()))
 				{
 					Visible_co_t();
 					Visible_add_f();
 					Visible_dell_f();
+					Label_show_lname.setText(pro.getLastName());
+					Label_show_fname.setText(pro.getFirstName());
+					Label_show_phone.setText(pro.getPhoneNumber());
+					Label_show_birthday.setText(pro.getDateOfBirth());
+					Label_show_id.setText(pro.getID());
+				
+					break;
 				}
 				else {Visible_co_f();}
 			}
 		});
 		contentPane.add(comboBox_show_cusromer);
+		
+		Button_add_new_cusromer = new JButton("\u05D4\u05D5\u05E1\u05E3");
+		 Button_add_new_cusromer.addActionListener(new ActionListener() {
+			 	public void actionPerformed(ActionEvent e) {
+			 	
+			 		for(Provider pro :Main.allProviders)
+						if (comboBox_show_cusromer.getSelectedItem().equals(pro.getFirstName()))
+						{
+
+	                    try {
+							Main.myShop.addProvider(pro);
+						} catch (ProvidersAlreadyExistsException p1) {
+							// TODO Auto-generated catch block
+							p1.printStackTrace();
+						}
+							break;
+							
+						}
+						if(!textField_id.getText().isEmpty()) {
+			 	
+			 		try {
+						Main.myShop.addProvider(new Provider(textField_id.getText(), textField_fnane.getText(),textField_lname.getText(),
+								textField_phone.getText(),textField_birthday.getText()));
+						JOptionPane.showMessageDialog(null, "ברוך הבא ");
+					} catch (ProvidersAlreadyExistsException p1) {
+						// TODO Auto-generated catch block
+						p1.printStackTrace();
+					} catch (WrongInput p1) {
+						// TODO Auto-generated catch block
+						p1.printStackTrace();
+					}	
+						}
+			 		
+			 
+			 	
+			 		dispose();
+			 		Manager_window.main(null);
+			 		
+			 		
+			 	}
+			 });
+		 Button_add_new_cusromer.setBounds(165, 232, 96, 21);
+		Button_add_new_cusromer.setVisible(false);
+		contentPane.add(Button_add_new_cusromer);
+		
 		
 		JButton Button_show_add = new JButton("\u05D4\u05D5\u05E4\u05E1\u05EA \u05E1\u05E4\u05E7 \u05D7\u05D3\u05E9");
 		Button_show_add.setBounds(30, 58, 133, 21);
