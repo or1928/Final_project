@@ -12,6 +12,9 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import javax.swing.SwingConstants;
+
+import main.Main;
+
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -104,11 +107,34 @@ public class App {
 								uname= textField_Username.getText();
 								paname= textField_password.getText();
 								if(uname.equals("admin")&&paname.equals("admin")) {
+									Main.users="admin";
 									JOptionPane.showMessageDialog(frame, "ברוך הבא "+uname);
 									frame.dispose();
 									 Manager_window manager_win = new Manager_window();
 											 manager_win.setVisible(true);
 									}
+								else if(uname.equals("lior")&&paname.equals("lior")){
+									Main.users="customer";
+									JOptionPane.showMessageDialog(frame, "ברוך הבא "+uname);
+									frame.dispose();
+									 Manager_window manager_win = new Manager_window();
+											 manager_win.setVisible(true);
+								}
+								else if(uname.equals("or")&&paname.equals("or")){
+									Main.users="employee";
+									JOptionPane.showMessageDialog(frame, "ברוך הבא "+uname);
+									frame.dispose();
+									 Manager_window manager_win = new Manager_window();
+											 manager_win.setVisible(true);
+								}
+								else if(uname.equals("Shahaf")&&paname.equals("Shahaf")){
+									Main.users="employee";
+									JOptionPane.showMessageDialog(frame, "ברוך הבא "+uname);
+									frame.dispose();
+									 Manager_window manager_win = new Manager_window();
+											 manager_win.setVisible(true);
+								}
+								
 								else {
 								JOptionPane.showMessageDialog(frame, "שם המשתמש או  הסיסמא לא נמצאו במערכת");
 								textField_Username.setText("");
