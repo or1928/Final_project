@@ -80,14 +80,25 @@ public class Sale_showandadd extends JFrame {
 		 
 		 JComboBox comboBox1 = new JComboBox();
 		 
-		 
-		// for(HashMap<String, Sale> my :Arrays.asList(Main.myShop.getSales()))
-		//	 comboBox1.addItem(my.values(getid));
+		 for(Sale my :Main.myShop.getSales().values())
+			 comboBox1.addItem(my.getSaleID());
 		 comboBox1.setVisible(false);
 		 comboBox1.setBounds(177, 150, 86, 21);
 		 contentPane.add(comboBox1);
 		 
 		 JButton btnNewButton_11 = new JButton("\u05DE\u05D7\u05E7");
+		 btnNewButton_11.addActionListener(new ActionListener() {
+			 	public void actionPerformed(ActionEvent e) {
+			 		
+			 		for(Sale my :Main.myShop.getSales().values())
+			 			 if (comboBox1.getSelectedItem().equals(my.getSaleID()))
+			 			 {  Main.myShop.cencelSale(my.getSellingDate(),my);
+			 		  break;}
+			 		  
+			 		  dispose();
+			 		 Manager_window.main(null);
+			 	}
+			 });
 		 btnNewButton_11.setVisible(false);
 		 btnNewButton_11.setBounds(220, 232, 85, 21);
 		 contentPane.add(btnNewButton_11);
@@ -116,8 +127,6 @@ public class Sale_showandadd extends JFrame {
 		JComboBox comboBox = new JComboBox();
 		
 		 for(Employee my :Main.myShop.getEmployess())
-			 
-			 
 			  comboBox.addItem(my.getFirstName());
 		comboBox.setBounds(325, 75, 60, 21);
 		comboBox.setVisible(false);
