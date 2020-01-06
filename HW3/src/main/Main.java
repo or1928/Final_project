@@ -25,147 +25,45 @@ import gui.Manager_window;
 
 public class Main {
 	private static Scanner scanner = new Scanner(System.in);
-	public static Shop myShop, shop, shop2, shop3, shop4, shop5;
+	public static Shop myShop;
 	public static ArrayList<Employee> allEmployees;
 	public static ArrayList<Customer> allCustomers;
 	public static ArrayList<Provider> allProviders;
 	public static ArrayList<UsedPhone> allusedPhones;
+	public static FileManager fm = new FileManager();
 
 	public static Employee e1;
 	public static Customer c1;
 	public static UsedPhone ph1;
 
 	// Files functions
-
+	
 	public static void main(String[] args) throws WrongInput {
-		FileManager fm = new FileManager();
-		fm.openFile();
-		fm.readFile();
 		
-		myShop = shop;
+		myShop = new Shop("BestSell", "Hafia" ,"046793243");
 		init();
-		// create new items for testing
-		createLists();
-		// show first menu for choosing the shop to work with
-     	chooseShop();
 		// show second menu for coosing actions in selected shop
 		chooseAction();
 				 
 	}
 
+	
 	public static void init() {
-
-		allEmployees = new ArrayList<>();
-		allCustomers = new ArrayList<>();
-		allProviders = new ArrayList<>();
-		allusedPhones = new ArrayList<>();
+		fm.openFile();
+		fm.readFile();
+	
+		allEmployees = fm.getEmployees();
+		allCustomers = fm.getCustomers();
+		allProviders = fm.getProviders();
+		allusedPhones = fm.getUsedPhones();
 	}
 
-	public static void createLists() throws WrongInput {
-
-		// create new shop s
-
-		shop = new Shop("BestBuy_Haifa", "Herzel 40 , Haifa", "048656321");
-		shop2 = new Shop("BestBuy_Tel Aviv", "Herzel 40 , Tel Aviv",
-				"048656321");
-		shop3 = new Shop("BestBuy_Afula", "Herzel 40 , Afula", "048656321");
-		shop4 = new Shop("BestBuy_Eilat", "Herzel 40 , Eilat", "048656321");
-		shop5 = new Shop("BestBuy_Gaza", "Herzel 40 , Gaza", "048656321");
-
-		// create new Customers customer id start with 100 and increase by 1
-
-		allCustomers.add(new Customer("109138534", "David", "deGea",
-				"0504462353", "07-11-1990", "deGea@ManUtd.com"));
-		allCustomers.add(new Customer("374298537", "Victor", "Lindelof",
-				"0546546247", "17-07-1994", "Lindelof@ManUtd.com"));
-		allCustomers.add(new Customer("202678343", "Eric", "Bailly",
-				"0524454763", "12-04-1994", "Bailly@ManUtd.com"));
-		allCustomers.add(new Customer("144308524", "Phil", "Jones",
-				"0504162398", "21-02-1992", "Jones@ManUtd.com"));
-		allCustomers.add(new Customer("217438501", "Harry", "Maguire",
-				"0504262353", "05-03-1993", "Maguire@ManUtd.com"));
-
-		// create new Employees employee id start with 200 and increase by 1
-
-		allEmployees.add(new Employee("234947569", "Paul", "Pogba",
-				"0542782927", "15-03-1993"));
-		allEmployees.add(new Employee("274841631", "Juan", "Mata", "0541872936",
-				"28-04-1988"));
-		allEmployees.add(new Employee("124167233", "Anthony", "Martial",
-				"0548152415", "05-12-1995"));
-		allEmployees.add(new Employee("202647939", "Ashley", "Young",
-				"0542192123", "09-07-1985"));
-		allEmployees.add(new Employee("248647596", "Marcus", "Rashford",
-				"0545442781", "31-10-1997"));
-
-		// Invalid Name Exeption
-		// Employee e6 = new Employee("248647596", "Mar4s", "Rashford",
-		// "0545442781", "31-10-1997");
-
-		// create new Provider employee id start with 300 and increase by 1
-
-		allProviders.add(new Provider("208903612", "Diogo", "Dalot",
-				"0582347121", "18-03-1999"));
-		allProviders.add(new Provider("231936363", "Luke", "Shaw", "0562561971",
-				"12-07-1995"));
-		allProviders.add(new Provider("202851724", "Mason", "Greenwood",
-				"0542285562", "01-10-2001"));
-		allProviders.add(new Provider("239744549", "Angel", "Gomes",
-				"0542929682", "31-08-2000"));
-		allProviders.add(new Provider("209381428", "Nemanja", "Matic",
-				"0542116215", "01-08-1988"));
-
-		// Invalid Phone Number Exception
-		// Provider p5 = new Provider("209381428", "Nemanja", "Matic",
-		// "4352116215", "01-08-1988");
-
-		allusedPhones.add(new UsedPhone("IPhone s7", 2015, condition.Used, 1000,
-				brand.Apple));
-		allusedPhones.add(new UsedPhone("IPhone X", 2019, condition.New, 2440,
-				brand.Apple));
-		allusedPhones.add(new UsedPhone("galaxy s8", 2019, condition.New, 1350,
-				brand.Samsung));
-		allusedPhones.add(
-				new UsedPhone("LG g5", 2017, condition.asNew, 1140, brand.LG));
-		allusedPhones.add(new UsedPhone("xiaomi mi mix", 2018, condition.Used,
-				1500, brand.Xiaomi));
-
-		// Illegal Price Exception
-		// UsedPhone ph6 = new UsedPhone("xiaomi mi mix", 2018, condition.Used,
-		// -40, brand.Xiaomi);
-	}
+	
 
 	public static void shopMenu() {
 		System.out.println("Please choose a shop:");
 		System.out.println(
 				"(1) Haifa \n(2) Tel-Aviv  \n(3) Afula \n(4) Eilat \n(5) Gaza");
-	}
-
-	private static void chooseShop() {
-
-		shopMenu();
-		boolean contLoop = true;
-
-		while (contLoop) {
-			int opt = scanner.nextInt();
-			if (opt > 0 && opt < 6) {
-				contLoop = false;
-			}
-			if (opt == 1) {
-				myShop = shop;
-			} else if (opt == 2) {
-				myShop = shop2;
-			} else if (opt == 3) {
-				myShop = shop3;
-			} else if (opt == 4) {
-				myShop = shop4;
-			} else if (opt == 5) {
-				myShop = shop5;
-			} else {
-				System.out.println("\n Wrong input. Please try again");
-				shopMenu();
-			}
-		}
 	}
 
 	private static void actionMenu() {
