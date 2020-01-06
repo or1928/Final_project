@@ -333,9 +333,13 @@ public static void Visible_dell_f() {
 					if(!textField.getText().isEmpty()) {
 		 	
 		 		try {
+		 			//condition.valueOf(comboBox_2.getSelectedItem())
+		 			//brand.valueOf(comboBox_1.getSelectedItem())
+		 			String em =(String) comboBox_2.getSelectedItem();
+		 			String em1 =(String) comboBox_1.getSelectedItem();
 					Main.myShop.addPhone(new UsedPhone(textField.getText(), Integer.parseInt(textField_1.getText())
-							,condition.valueOf(comboBox_2.getToolTipText()), Integer.parseInt(textField_2.getText()),
-							brand.valueOf(comboBox_1.getToolTipText())));
+							,condition.valueOf(em), Integer.parseInt(textField_2.getText()),
+							brand.valueOf(em1)));
 					JOptionPane.showMessageDialog(null, "ברוך הבא ");
 				} catch (AlreadyBoundException p1) {
 					// TODO Auto-generated catch block

@@ -6,6 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+
+import main.Main;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Image;
@@ -54,11 +57,22 @@ public class Manager_window extends JFrame {
 		Image newImage1 = img1.getScaledInstance(91, 64,Image.SCALE_DEFAULT);
 		
 		JLabel Label_manager_window = new JLabel("\u05DE\u05E1\u05DA \u05DE\u05E0\u05D4\u05DC");
+		if((Main.users).equals("customer"))
+		{
+			Label_manager_window.setText("מסך לקוח");
+			
+		}
+		else if((Main.users).equals("employee")) Label_manager_window.setText("מסך עובד");
 		Label_manager_window.setFont(new Font("SansSerif", Font.BOLD, 42));
 		Label_manager_window.setBounds(213, 0, 177, 59);
 		contentPane.add(Label_manager_window);
 		
 		JButton btnNewButton = new JButton("\u05D4\u05D6\u05DE\u05E0\u05D5\u05EA");
+		if((Main.users).equals("customer"))
+		{
+			btnNewButton.setVisible(false);
+			
+		}
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -74,6 +88,11 @@ public class Manager_window extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\u05E1\u05E4\u05E7\u05D9\u05DD");
+		if(Main.users.equals("customer"))
+		{
+			btnNewButton_1.setVisible(false);
+			
+		}
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -86,6 +105,11 @@ public class Manager_window extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		JButton employees_btn = new JButton("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
+		if(Main.users.equals("customer")||(Main.users).equals("employee"))
+		{
+			employees_btn.setVisible(false);
+			
+		}
 		employees_btn.setFont(new Font("SansSerif", Font.BOLD, 12));
 		employees_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -98,6 +122,11 @@ public class Manager_window extends JFrame {
 		contentPane.add(employees_btn);
 		
 		JButton Button_Customer_window = new JButton("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		if((Main.users).equals("customer"))
+		{
+			Button_Customer_window.setVisible(false);
+			
+		}
 		Button_Customer_window.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -113,7 +142,13 @@ public class Manager_window extends JFrame {
 		
 		
 		JButton btnNewButton_4 = new JButton("\u05DE\u05D7\u05E1\u05DF");
+		if((Main.users).equals("customer"))
+		{
+			btnNewButton_4.setVisible(false);
+			
+		}
 		btnNewButton_4.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				Usedphone_showandadd Usedphone_win=new Usedphone_showandadd();

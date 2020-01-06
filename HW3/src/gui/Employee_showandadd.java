@@ -339,7 +339,7 @@ public static void Visible_dell_f() {
 							
 						}
 			 	
-			 	
+			 		if(!textField_id.getText().isEmpty()) {
 			 		try {
 						Main.myShop.addEmployee(new Employee(textField_id.getText(), textField_fnane.getText(),textField_lname.getText(),
 								textField_phone.getText(),textField_birthday.getText()));
@@ -352,7 +352,7 @@ public static void Visible_dell_f() {
 						e1.printStackTrace();
 					}	
 			 		
-			 		
+			 		}
 			 
 			 	
 			 		dispose();

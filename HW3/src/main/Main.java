@@ -24,8 +24,10 @@ import gui.App;
 import gui.Manager_window;
 
 public class Main {
+	
 	private static Scanner scanner = new Scanner(System.in);
 	public static Shop myShop;
+	public static String users=null;
 	public static ArrayList<Employee> allEmployees;
 	public static ArrayList<Customer> allCustomers;
 	public static ArrayList<Provider> allProviders;

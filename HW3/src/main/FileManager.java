@@ -18,7 +18,7 @@ import exceptions.WrongInput;
 
 public class FileManager {
 	private static Scanner input;
-	 private static ObjectOutputStream output;
+	private static ObjectOutputStream output;
 	private ArrayList<Customer> customers = new ArrayList<>();
 	private ArrayList<Provider> providers = new ArrayList<>();
 	private ArrayList<UsedPhone> usedPhones = new ArrayList<>();
@@ -123,7 +123,7 @@ public class FileManager {
 		} 
 	} 
 
-
+}
 
 
 
