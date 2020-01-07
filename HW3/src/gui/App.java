@@ -148,7 +148,7 @@ public class App {
 		Button_exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// save shop to ser
+				// save shop to ser - for use in next session
 				Main.sw.writeSer(Main.myShop);
 				System.exit(0);
 			}

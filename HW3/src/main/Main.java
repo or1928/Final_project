@@ -42,6 +42,7 @@ public class Main {
 		App app_win = new App();
 		app_win.main(null);
 
+		// read objects from text file
 		fm.openFile();
 		fm.readFile();
 
@@ -50,7 +51,7 @@ public class Main {
 		allProviders = fm.getProviders();
 		allusedPhones = fm.getUsedPhones();
 
-		// Serialize functions
+		// Serialize functions - read data from last saved session
 		myShop = sr.readSer();
 
 	}
