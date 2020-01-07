@@ -31,6 +31,8 @@ public class Main {
 
 	public static void main(String[] args) throws WrongInput {
 
+		// DBconnect.openDB();
+		// DBconnect.closeDB();
 		// myShop = new Shop("BestSell", "Hafia", "046793243");
 		init();
 
