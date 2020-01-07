@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -21,7 +20,6 @@ import main.Main;
 public class App {
 	private JFrame frame;
 	private JTextField textField_Username;
-	private JLabel lblBestbuy;
 	private JPasswordField textField_password;
 
 	/**
@@ -52,7 +50,7 @@ public class App {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 480, 300);
+		frame.setBounds(500, 250, 480, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
@@ -62,7 +60,7 @@ public class App {
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 
 		Image img2 = new ImageIcon(this.getClass().getResource("/applogo.png")).getImage();
-		Image newImage2 = img2.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
+		Image newImage2 = img2.getScaledInstance(300, 180, Image.SCALE_DEFAULT);
 
 		textField_Username = new JTextField();
 		textField_Username.setBounds(187, 81, 96, 19);
@@ -78,12 +76,6 @@ public class App {
 		label_username.setFont(new Font("SansSerif", Font.BOLD, 14));
 		label_username.setBounds(293, 84, 91, 19);
 		frame.getContentPane().add(label_username);
-
-		lblBestbuy = new JLabel("BestBuy");
-		lblBestbuy.setForeground(Color.BLUE);
-		lblBestbuy.setFont(new Font("Vladimir Script", Font.BOLD, 64));
-		lblBestbuy.setBounds(161, 0, 231, 90);
-		frame.getContentPane().add(lblBestbuy);
 
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
@@ -137,7 +129,7 @@ public class App {
 		logo_secHandCell.setHorizontalAlignment(SwingConstants.CENTER);
 		logo_secHandCell.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		logo_secHandCell.setIcon(new ImageIcon(newImage2));
-		logo_secHandCell.setBounds(0, 0, 96, 35);
+		logo_secHandCell.setBounds(154, 12, 247, 61);
 		frame.getContentPane().add(logo_secHandCell);
 
 		Button_login.setBounds(187, 141, 96, 21);

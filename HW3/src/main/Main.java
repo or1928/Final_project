@@ -53,7 +53,7 @@ public class Main {
 		allProviders = fm.getProviders();
 		allusedPhones = fm.getUsedPhones();
 
-		// Serialize functions - read data from last saved session
+		// Serialize - local database - read data from last saved session
 		myShop = sr.readSer();
 
 	}
