@@ -13,7 +13,9 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 
+import classes.Shop;
 import main.Main;
+import main.SerWrite;
 
 import java.awt.Color;
 import javax.swing.JButton;
@@ -157,6 +159,10 @@ public class App {
 						Button_exit.setFont(new Font("SansSerif", Font.BOLD, 16));
 						Button_exit.addActionListener(new ActionListener() {
 							public void actionPerformed(ActionEvent e) {
+								
+								//save shop to ser
+								SerWrite.writeSer(Main.myShop);
+								
 								System.exit(0);
 							}
 						});
