@@ -1,13 +1,11 @@
 package main;
 
-import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import classes.Shop;
-import exceptions.WrongInput;
 
 public class SerRead {
 
@@ -25,23 +23,13 @@ public class SerRead {
 	}
 
 	// read data from file - deserialize
-	public static Shop readSer(Shop s) {
+	public static Shop readSer() {
 		openSer();
+		Shop recoveredShop = null;
 		try {
 
-			while (true) // loop until there is an EOFException
-			{
-				Object o = (Object) input.readObject();
-				if (o instanceof Shop) {
-					s = (Shop) o;
-				}
-			}
-		}
+			recoveredShop = (Shop) input.readObject();
 
-		catch (EOFException endOfFileException) {
-			System.out.printf("%nEnd of file%n");
-		} catch (ClassNotFoundException classNotFoundException) {
-			System.err.println("Invalid object type. Program will close.");
 		} catch (IOException ioException) {
 			System.err.println("Error reading from file. program will close.");
 		} catch (Exception e) {
@@ -49,7 +37,7 @@ public class SerRead {
 			e.printStackTrace();
 		}
 		closeSer();
-		return s;
+		return recoveredShop;
 	}
 
 	// close file and terminate application

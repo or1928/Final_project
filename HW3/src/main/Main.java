@@ -1,27 +1,14 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
 
 import classes.Customer;
 import classes.Employee;
 import classes.Provider;
-import classes.Sale;
 import classes.Shop;
 import classes.UsedPhone;
-import enums.brand;
-import enums.condition;
-import exceptions.CustomerAlreadyExistsException;
-import exceptions.EmployeeAlreadyExistsException;
-import exceptions.IllegalDateException;
-import exceptions.ItemNotFoundException;
-import exceptions.ObjectNotFound;
-import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
 import gui.App;
-import gui.Manager_window;
 
 public class Main {
 
@@ -44,15 +31,17 @@ public class Main {
 
 	public static void main(String[] args) throws WrongInput {
 
-		myShop = new Shop("BestSell", "Hafia", "046793243");
+		// myShop = new Shop("BestSell", "Hafia", "046793243");
 		init();
-
-		App app_win = new App();
-		app_win.main(null);
 
 	}
 
 	public static void init() {
+
+		// Open GUI
+		App app_win = new App();
+		app_win.main(null);
+
 		fm.openFile();
 		fm.readFile();
 
@@ -60,9 +49,9 @@ public class Main {
 		allCustomers = fm.getCustomers();
 		allProviders = fm.getProviders();
 		allusedPhones = fm.getUsedPhones();
-		// Serialize functions
 
-		// sr.readSer(myShop);
+		// Serialize functions
+		myShop = sr.readSer();
 
 	}
 

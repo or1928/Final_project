@@ -1,11 +1,13 @@
 package classes;
+
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.InputMismatchException;
 
 import enums.brand;
 import enums.condition;
 
-public class UsedPhone {
+public class UsedPhone implements Serializable {
 
 	private String phoneSN;
 	private String modelNo;
@@ -16,11 +18,9 @@ public class UsedPhone {
 
 	private static int counter = 500;
 
-	private static final int CURRENT_YEAR = Calendar.getInstance()
-			.get(Calendar.YEAR);
+	private static final int CURRENT_YEAR = Calendar.getInstance().get(Calendar.YEAR);
 
-	public UsedPhone(String modelNo, int manufactureYear,
-			condition phoneCondition, double price, brand phoneBrand) {
+	public UsedPhone(String modelNo, int manufactureYear, condition phoneCondition, double price, brand phoneBrand) {
 
 		setPhoneSN(phoneSN);
 		setModelNo(modelNo);
@@ -54,6 +54,7 @@ public class UsedPhone {
 			throw new InputMismatchException("invalid year value");
 		}
 	}
+
 	public void setPhoneCondition(condition phoneCondition) {
 		try {
 			this.phoneCondition = phoneCondition;
@@ -92,6 +93,7 @@ public class UsedPhone {
 	public int getManufactureYear() {
 		return manufactureYear;
 	}
+
 	public condition getPhoneCondition() {
 		return phoneCondition;
 	}
@@ -106,7 +108,6 @@ public class UsedPhone {
 
 	@Override
 	public String toString() {
-		return "SN:" + this.phoneSN + " " + this.phoneBrand + " "
-				+ this.modelNo;
+		return "SN:" + this.phoneSN + " " + this.phoneBrand + " " + this.modelNo;
 	}
 }

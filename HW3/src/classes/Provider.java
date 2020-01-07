@@ -1,16 +1,17 @@
 package classes;
-import java.util.InputMismatchException;
+
+import java.io.Serializable;
 
 import exceptions.WrongInput;
 
-public class Provider extends Person {
+public class Provider extends Person implements Serializable {
 
 	private int ProviderID;
-	
-	private static int counter = 300; 
 
-	public Provider(String ID, String firstName, String lastName,
-			String phoneNumber, String dateOfBirth) throws WrongInput {
+	private static int counter = 300;
+
+	public Provider(String ID, String firstName, String lastName, String phoneNumber, String dateOfBirth)
+			throws WrongInput {
 		super(ID, firstName, lastName, phoneNumber, dateOfBirth);
 		setProviderID();
 	}

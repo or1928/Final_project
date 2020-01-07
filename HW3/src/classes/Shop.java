@@ -1,6 +1,7 @@
 package classes;
-import java.util.ArrayList;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -13,7 +14,7 @@ import exceptions.PhoneNotInInventoryExeption;
 import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
 
-public class Shop {
+public class Shop implements Serializable {
 	private String shopName;
 	private String address;
 	private String phoneNumber;
@@ -23,9 +24,7 @@ public class Shop {
 	private ArrayList<Provider> providers = new ArrayList<Provider>();
 	private ArrayList<UsedPhone> phones = new ArrayList<UsedPhone>();
 
-	private	HashMap<String, Sale> sales = new HashMap<String, Sale>();
-
-	
+	private HashMap<String, Sale> sales = new HashMap<String, Sale>();
 
 	public Shop(String shopName, String address, String phoneNumber) throws WrongInput {
 		setShopName(shopName);
@@ -38,6 +37,7 @@ public class Shop {
 	public void addPhone(UsedPhone p) {
 		this.phones.add(p);
 	}
+
 	public void removePhone(UsedPhone p) {
 		phones.remove(p);
 	}
@@ -51,7 +51,7 @@ public class Shop {
 	// employees functions
 
 	public void addEmployee(Employee e) throws EmployeeAlreadyExistsException {
-		if(this.employess.contains(e)) {
+		if (this.employess.contains(e)) {
 			throw new EmployeeAlreadyExistsException("You cannot add the same employee twice!");
 		}
 		this.employess.add(e);
@@ -70,7 +70,7 @@ public class Shop {
 	// customers functions
 
 	public void addCustomer(Customer c) throws CustomerAlreadyExistsException {
-		if(this.customers.contains(c)) {
+		if (this.customers.contains(c)) {
 			throw new CustomerAlreadyExistsException("You cannot add the same employee twice!");
 		}
 		this.customers.add(c);
@@ -89,10 +89,10 @@ public class Shop {
 	// provider functions
 
 	public void addProvider(Provider p) throws ProvidersAlreadyExistsException {
-		
-		if(this.providers.contains(p)) {
+
+		if (this.providers.contains(p)) {
 			throw new ProvidersAlreadyExistsException("You cannot add the same employee twice!");
-		}	
+		}
 		this.providers.add(p);
 	}
 
@@ -115,8 +115,7 @@ public class Shop {
 			this.phones.remove(phoneToSell); // remove phone from inventory
 		} else {
 			throw new PhoneNotInInventoryExeption(
-					"The store does not have the phone"
-							+ phoneToSell.getPhoneSN() + " in stock");
+					"The store does not have the phone" + phoneToSell.getPhoneSN() + " in stock");
 
 		}
 	}
@@ -135,8 +134,7 @@ public class Shop {
 		if (shopName.length() <= 20)
 			this.shopName = shopName;
 		else {
-			throw new InputMismatchException(
-					"Shop name can contain at most 20 letters");
+			throw new InputMismatchException("Shop name can contain at most 20 letters");
 		}
 	}
 
@@ -144,14 +142,12 @@ public class Shop {
 		if (address.length() <= 40)
 			this.address = address;
 		else {
-			throw new InvalidAddressException(
-					"The address cannot contain more than 40 characters");
+			throw new InvalidAddressException("The address cannot contain more than 40 characters");
 		}
 	}
 
 	public void setPhoneNumber(String phoneNumber) throws InvalidPhoneNumberException {
-		if (phoneNumber.matches("[0-9]+")
-				&& (phoneNumber.length() == 9 || phoneNumber.length() == 10))
+		if (phoneNumber.matches("[0-9]+") && (phoneNumber.length() == 9 || phoneNumber.length() == 10))
 			this.phoneNumber = phoneNumber;
 		else {
 			throw new InvalidPhoneNumberException(
@@ -186,6 +182,7 @@ public class Shop {
 	public ArrayList<Customer> getCustomer() {
 		return this.customers;
 	}
+
 	public HashMap<String, Sale> getSales() {
 		return this.sales;
 	}

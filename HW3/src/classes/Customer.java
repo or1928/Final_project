@@ -1,24 +1,21 @@
 package classes;
-import java.util.InputMismatchException;
+
+import java.io.Serializable;
 
 import exceptions.IllegalEmailException;
 import exceptions.WrongInput;
 
-public class Customer extends Person {
-
-
+public class Customer extends Person implements Serializable {
 
 	private int customerID;
 	private String email;
-	private static int counter = 100; 
+	private static int counter = 100;
 
-	public Customer(String ID, String firstName, String lastName,
-			String phoneNumber, String dateOfBirth,
-			String email) throws WrongInput {
+	public Customer(String ID, String firstName, String lastName, String phoneNumber, String dateOfBirth, String email)
+			throws WrongInput {
 		super(ID, firstName, lastName, phoneNumber, dateOfBirth);
 		setEmail(email);
 		setCustomerID();
-
 
 	}
 
@@ -37,6 +34,7 @@ public class Customer extends Person {
 	public int getCustomerID() {
 		return customerID;
 	}
+
 	public String getEmail() {
 		return email;
 	}

@@ -1,7 +1,9 @@
 package classes;
+
+import java.io.Serializable;
 import java.util.InputMismatchException;
 
-public class Sale {
+public class Sale implements Serializable {
 
 	private String saleID;
 	private Employee employee;
@@ -12,8 +14,7 @@ public class Sale {
 
 	private static int counter = 600;
 
-	public Sale(Employee employee, Customer customer, String sellingDate,
-			Shop shop, UsedPhone phone) {
+	public Sale(Employee employee, Customer customer, String sellingDate, Shop shop, UsedPhone phone) {
 		setSaleID();
 		setEmployee(employee);
 		setCustomer(customer);
@@ -85,12 +86,12 @@ public class Sale {
 	public UsedPhone getPhone() {
 		return phone;
 	}
+
 	@Override
 	public String toString() {
 
-		return "\n-------\n" + "Sale id:" + this.saleID + "\nCustomer : "
-				+ this.customer + "\n" + "Employee : " + this.employee + "\n"
-				+ "Phone : " + this.phone + "\n\n-------\n";
+		return "\n-------\n" + "Sale id:" + this.saleID + "\nCustomer : " + this.customer + "\n" + "Employee : "
+				+ this.employee + "\n" + "Phone : " + this.phone + "\n\n-------\n";
 
 	}
 }
