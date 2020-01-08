@@ -7,6 +7,7 @@ import classes.Employee;
 import classes.Provider;
 import classes.Shop;
 import classes.UsedPhone;
+import db.DBconnect;
 import exceptions.WrongInput;
 import gui.App;
 
@@ -20,19 +21,17 @@ public class Main {
 	public static ArrayList<UsedPhone> allusedPhones;
 
 	public static FileManager fm = new FileManager();
-	public static SerWrite sw = new SerWrite();
-	public static SerRead sr = new SerRead();
+	// public static SerWrite sw = new SerWrite();
+	// public static SerRead sr = new SerRead();
 
 	public static Employee e1;
 	public static Customer c1;
 	public static UsedPhone ph1;
 
-	// Files functions
-
 	public static void main(String[] args) throws WrongInput {
 
-		// DBconnect.openDB();
-		// DBconnect.closeDB();
+		DBconnect.openDB();
+		DBconnect.closeDB();
 		// myShop = new Shop("BestSell", "Hafia", "046793243");
 		init();
 
@@ -54,7 +53,7 @@ public class Main {
 		allusedPhones = fm.getUsedPhones();
 
 		// Serialize - local database - read data from last saved session
-		myShop = sr.readSer();
+		// myShop = sr.readSer();
 
 	}
 
