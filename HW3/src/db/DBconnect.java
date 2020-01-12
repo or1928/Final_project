@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import classes.Customer;
 import classes.Shop;
@@ -38,42 +39,69 @@ public class DBconnect {
 		}
 	}
 
-	public static Shop readShop()
-	{
-		Shop recoveredShop = null;
+	public static void writeShopToDB(Shop s) {
 
-		ResultSet customerResultSet = null;
-		ResultSet employeeResultSet = null;
-		ResultSet providerResultSet = null;
-		ResultSet usedPhoneResultSet = null;
-		ResultSet saleResultSet = null;
-		
-		
-		try 
-		{
-			selectCustomer = 
-					connection.prepareStatement("SELECT * FROM customer");
-			customerResultSet = selectCustomer.executeQuery(); 
-			selectEmployee = 
-					connection.prepareStatement("SELECT * FROM employee");
-			employeeResultSet = selectEmployee.executeQuery(); 
-			selectProvider = 
-					connection.prepareStatement("SELECT * FROM provider");
-			providerResultSet = selectProvider.executeQuery(); 
-			selectUsedPhone = 
-					connection.prepareStatement("SELECT * FROM usedPhone");
-			usedPhoneResultSet = selectUsedPhone.executeQuery(); 
-			selectSale = 
-					connection.prepareStatement("SELECT * FROM sale");
-			saleResultSet = selectSale.executeQuery(); 
-			//readManager from db
-			
-			while (customerResultSet.next())
-			{
-				
-				Customer c =new Customer(customerResultSet.getString(1),customerResultSet.getString(2), customerResultSet.getString(3), customerResultSet.getString(4), customerResultSet.getString(5), customerResultSet.getString(6));
-				Main.myShop.addCustomer(c);
+		// read all customers from "myShop" in "main"
+		try {
+			insertCustomer = connection.prepareStatement(
+					"INSERT INTO customer " + "(customer_id, id, firstName, lastName, phoneNumber, dateOfBirth, email) "
+							+ "VALUES (?, ?, ?, ?, ?, ?, ?)");
+		} catch (SQLException e2) {
+// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+		for (Customer c : Main.myShop.getCustomer()) {
+			try {
+				insertCustomer.setInt(1, c.getCustomerID());
+				insertCustomer.setString(2, c.getID());
+				insertCustomer.setString(3, c.getFirstName());
+				insertCustomer.setString(4, c.getLastName());
+				insertCustomer.setString(5, c.getPhoneNumber());
+				insertCustomer.setString(6, c.getDateOfBirth());
+				insertCustomer.setString(7, c.getEmail());
+				insertCustomer.executeUpdate();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+		}
+
+	}
+
+//	public static Shop readShopFromDB() {
+//		Shop recoveredShop = null;
+//
+//		ResultSet customerResultSet = null;
+//		ResultSet employeeResultSet = null;
+//		ResultSet providerResultSet = null;
+//		ResultSet usedPhoneResultSet = null;
+//		ResultSet saleResultSet = null;
+//
+//		try {
+//			selectCustomer = connection.prepareStatement("SELECT * FROM customer");
+//			customerResultSet = selectCustomer.executeQuery();
+//			selectEmployee = connection.prepareStatement("SELECT * FROM employee");
+//			employeeResultSet = selectEmployee.executeQuery();
+//			selectProvider = connection.prepareStatement("SELECT * FROM provider");
+//			providerResultSet = selectProvider.executeQuery();
+//			selectUsedPhone = connection.prepareStatement("SELECT * FROM usedPhone");
+//			usedPhoneResultSet = selectUsedPhone.executeQuery();
+//			selectSale = connection.prepareStatement("SELECT * FROM sale");
+//			saleResultSet = selectSale.executeQuery();
+//			// readManager from db
+//
+//			while (customerResultSet.next()) {
+//
+//				Customer c = new Customer(customerResultSet.getString(1), customerResultSet.getString(2),
+//						customerResultSet.getString(3), customerResultSet.getString(4), customerResultSet.getString(5),
+//						customerResultSet.getString(6));
+//				Main.myShop.addCustomer(c);
+//			}
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
+//	}
 
 	public static void closeDB() {
 		try {

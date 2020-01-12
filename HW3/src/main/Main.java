@@ -31,9 +31,19 @@ public class Main {
 	public static void main(String[] args) throws WrongInput {
 
 		DBconnect.openDB();
-		DBconnect.closeDB();
-		// myShop = new Shop("BestSell", "Hafia", "046793243");
+
 		init();
+
+		// ******test db actions - temporary*******
+
+		myShop = new Shop("BestSell", "Hafia", "046793243");
+		myShop.addCustomer(allCustomers.get(0));
+		myShop.addCustomer(allCustomers.get(1));
+		myShop.addCustomer(allCustomers.get(2));
+
+		DBconnect.writeShopToDB(myShop);
+
+		DBconnect.closeDB();
 
 	}
 

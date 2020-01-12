@@ -6,7 +6,11 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/sqljdbc_7.4/enu/auth/x64"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="img"/>
 	<classpathentry kind="src" path="files"/>
 	<classpathentry kind="lib" path="C:/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre8.jar"/>
