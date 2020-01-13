@@ -15,6 +15,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import db.DBconnect;
 import main.Main;
 
 public class App {
@@ -142,6 +143,8 @@ public class App {
 
 				// save shop to ser - for use in next session
 				// Main.sw.writeSer(Main.myShop);
+				DBconnect.writeShopToDB(Main.myShop);
+				DBconnect.closeDB();
 				System.exit(0);
 			}
 		});

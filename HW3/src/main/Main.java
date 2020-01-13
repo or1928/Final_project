@@ -37,14 +37,18 @@ public class Main {
 		// ******test db actions - temporary*******
 
 		myShop = new Shop("BestSell", "Hafia", "046793243");
-		myShop.addCustomer(allCustomers.get(0));
-		myShop.addCustomer(allCustomers.get(1));
-		myShop.addCustomer(allCustomers.get(2));
+		// DBconnect.readShopFromDB();
 
-		DBconnect.writeShopToDB(myShop);
+		// myShop.addCustomer(allCustomers.get(0));
+		// myShop.addCustomer(allCustomers.get(1));
+		// myShop.addCustomer(allCustomers.get(2));
 
-		DBconnect.closeDB();
+		// DBconnect.writeShopToDB(myShop);
+		// DBconnect.clearDB();
 
+		// *****************************************
+
+		// DBconnect.closeDB();
 	}
 
 	public static void init() {

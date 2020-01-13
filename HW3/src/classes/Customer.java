@@ -7,7 +7,7 @@ import exceptions.WrongInput;
 
 public class Customer extends Person implements Serializable {
 
-	private int customerID;
+	public int customerID;
 	private String email;
 	private static int counter = 100;
 

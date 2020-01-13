@@ -191,4 +191,9 @@ public class Shop implements Serializable {
 		this.sales = sales;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.getShopName();
+	}
 }

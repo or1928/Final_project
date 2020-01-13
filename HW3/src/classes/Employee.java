@@ -7,7 +7,7 @@ import exceptions.WrongInput;
 public class Employee extends Person implements Serializable {
 
 	private static int counter = 200;
-	private int employeeID;
+	public int employeeID;
 
 	public Employee(String ID, String firstName, String lastName, String phoneNumber, String dateOfBirth)
 			throws WrongInput {

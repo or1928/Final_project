@@ -6,7 +6,7 @@ import exceptions.WrongInput;
 
 public class Provider extends Person implements Serializable {
 
-	private int ProviderID;
+	public int ProviderID;
 
 	private static int counter = 300;
 
