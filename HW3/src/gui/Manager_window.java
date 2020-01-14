@@ -41,16 +41,18 @@ public class Manager_window extends JFrame {
 	 */
 	public Manager_window() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 250, 480, 300);
+		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
-		Image newImage = img.getScaledInstance(480, 300, Image.SCALE_DEFAULT);
+		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
+		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
+		Image img3 = new ImageIcon(this.getClass().getResource("/brs.jpg")).getImage();
+		Image newImage3 = img3.getScaledInstance( 261, 176, Image.SCALE_DEFAULT);
 
 		JLabel Label_manager_window = new JLabel("\u05DE\u05E1\u05DA \u05DE\u05E0\u05D4\u05DC");
 		if ((Main.users).equals("customer")) {
@@ -59,7 +61,7 @@ public class Manager_window extends JFrame {
 		} else if ((Main.users).equals("employee"))
 			Label_manager_window.setText("מסך עובד");
 		Label_manager_window.setFont(new Font("SansSerif", Font.BOLD, 42));
-		Label_manager_window.setBounds(213, 0, 177, 59);
+		Label_manager_window.setBounds(150, 0, 177, 59);
 		contentPane.add(Label_manager_window);
 
 		JButton btnNewButton = new JButton("\u05D4\u05D6\u05DE\u05E0\u05D5\u05EA");
@@ -77,7 +79,7 @@ public class Manager_window extends JFrame {
 		});
 
 		btnNewButton.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btnNewButton.setBounds(161, 90, 85, 21);
+		btnNewButton.setBounds(111, 94, 85, 21);
 		contentPane.add(btnNewButton);
 
 		JButton btnNewButton_1 = new JButton("\u05E1\u05E4\u05E7\u05D9\u05DD");
@@ -93,7 +95,7 @@ public class Manager_window extends JFrame {
 			}
 		});
 		btnNewButton_1.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btnNewButton_1.setBounds(161, 168, 85, 21);
+		btnNewButton_1.setBounds(111, 220, 85, 21);
 		contentPane.add(btnNewButton_1);
 
 		JButton employees_btn = new JButton("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
@@ -109,7 +111,7 @@ public class Manager_window extends JFrame {
 				Employee_win.setVisible(true);
 			}
 		});
-		employees_btn.setBounds(337, 90, 85, 21);
+		employees_btn.setBounds(287, 94, 85, 21);
 		contentPane.add(employees_btn);
 
 		JButton Button_Customer_window = new JButton("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
@@ -126,7 +128,7 @@ public class Manager_window extends JFrame {
 			}
 		});
 		Button_Customer_window.setFont(new Font("SansSerif", Font.BOLD, 12));
-		Button_Customer_window.setBounds(337, 168, 85, 21);
+		Button_Customer_window.setBounds(287, 155, 85, 21);
 		contentPane.add(Button_Customer_window);
 
 		JButton btnNewButton_4 = new JButton("\u05DE\u05D7\u05E1\u05DF");
@@ -143,7 +145,7 @@ public class Manager_window extends JFrame {
 			}
 		});
 		btnNewButton_4.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btnNewButton_4.setBounds(247, 132, 85, 21);
+		btnNewButton_4.setBounds(111, 155, 85, 21);
 		contentPane.add(btnNewButton_4);
 
 		JButton Button_exit = new JButton("\u05E0\u05D9\u05EA\u05D5\u05E7");
@@ -157,21 +159,21 @@ public class Manager_window extends JFrame {
 
 			}
 		});
-		Button_exit.setBounds(247, 216, 85, 21);
+		Button_exit.setBounds(287, 220, 85, 21);
 		contentPane.add(Button_exit);
 
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
-		Label_logo_yvc.setBounds(375, 199, 91, 64);
+		Label_logo_yvc.setBounds(429, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
 
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_1.setIcon(new ImageIcon(newImage));
-		lblNewLabel_1.setBounds(0, 0, 480, 300);
+		lblNewLabel_1.setBounds(0, 0, 530, 357);
 		contentPane.add(lblNewLabel_1);
 
 	}

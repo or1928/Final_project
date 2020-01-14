@@ -14,6 +14,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableColumn;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class customer_show extends JFrame {
 
@@ -42,7 +45,7 @@ public class customer_show extends JFrame {
 	 */
 	public customer_show() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -87,6 +90,17 @@ public class customer_show extends JFrame {
 		scrollPane.setBounds(0, 160, 436, 103);
 		contentPane.add(scrollPane);
 		contentPane.setSize(963, 600); // setting frame size
+		
+		JButton btn_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
+		btn_return.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Customer_showandadd Customer_win = new Customer_showandadd();
+				Customer_win.setVisible(true);
+			}
+		});
+		btn_return.setBounds(172, 65, 85, 21);
+		contentPane.add(btn_return);
 		contentPane.setVisible(true);
 
 	}
