@@ -211,7 +211,7 @@ public class DBconnect {
 				Main.myShop.addPhone(up);
 			}
 
-			// read sales to shop from db ********TO FIX!!!!!
+			// read sales to shop from db
 
 			while (saleResultSet.next()) {
 				// use stream to find objects by property in myShop
@@ -246,7 +246,7 @@ public class DBconnect {
 	public static void closeDB() {
 		try {
 			connection.close();
-			System.out.println("DB closed");
+			System.out.println("Connection to DB successfully closed\nData is stored in DB.");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

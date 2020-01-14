@@ -17,8 +17,8 @@ import javax.swing.table.TableColumn;
 
 public class customer_show extends JFrame {
 
-	private Vector columnNames = new Vector();
-	private Vector data = new Vector();
+	private Vector<String> columnNames = new Vector<String>();
+	private Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 	private JPanel contentPane;
 
 	/**
@@ -61,7 +61,7 @@ public class customer_show extends JFrame {
 				columnNames.addElement(metaData.getColumnName(i));
 			}
 			while (resultSet.next()) {
-				Vector row = new Vector(columns);
+				Vector<Object> row = new Vector<Object>(columns);
 				for (int i = 1; i <= columns; i++) {
 					row.addElement(resultSet.getObject(i));
 				}

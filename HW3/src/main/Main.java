@@ -32,20 +32,15 @@ public class Main {
 
 		DBconnect.openDB();
 		myShop = new Shop("BestSell", "Hafia", "046793243");
+
+		// read shop data from DB
 		DBconnect.readShopFromDB();
+
+		// initialize system with basic data from text file input
 		init();
-
-		// ******test db actions - temporary*******
-
-		// myShop.addCustomer(allCustomers.get(0));
-		// myShop.addCustomer(allCustomers.get(1));
-		// myShop.addCustomer(allCustomers.get(2));
-		// myShop.addEmployee(allEmployees.get(0));
-		// myShop.addEmployee(allEmployees.get(1));
-		// myShop.addEmployee(allEmployees.get(2));
-
 	}
 
+	@SuppressWarnings("static-access")
 	public static void init() {
 
 		// Open GUI

@@ -89,6 +89,7 @@ public class App {
 		JButton Button_login = new JButton("\u05DB\u05E0\u05D9\u05E1\u05D4");
 		Button_login.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Button_login.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 				String uname, paname;
 				uname = textField_Username.getText();
