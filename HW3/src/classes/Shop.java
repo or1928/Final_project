@@ -113,6 +113,7 @@ public class Shop implements Serializable {
 		if (phones.contains(phoneToSell)) { // if the shop have the phone
 			this.sales.put(sale.getSellingDate(), sale);
 			// this.phones.remove(phoneToSell); // remove phone from inventory
+
 		} else {
 			throw new PhoneNotInInventoryExeption(
 					"The store does not have the phone" + phoneToSell.getPhoneSN() + " in stock");

@@ -303,6 +303,7 @@ public class Usedphone_showandadd extends JFrame {
 
 						try {
 							Main.myShop.addPhone(uPhone);
+
 						} catch (AlreadyBoundException p1) {
 							// TODO Auto-generated catch block
 							p1.printStackTrace();

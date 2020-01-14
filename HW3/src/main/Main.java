@@ -33,11 +33,12 @@ public class Main {
 		DBconnect.openDB();
 		myShop = new Shop("BestSell", "Hafia", "046793243");
 
+		// initialize system with basic data from text file input
+		init();
+
 		// read shop data from DB
 		DBconnect.readShopFromDB();
 
-		// initialize system with basic data from text file input
-		init();
 	}
 
 	@SuppressWarnings("static-access")

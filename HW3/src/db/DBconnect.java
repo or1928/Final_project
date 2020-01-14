@@ -39,7 +39,7 @@ public class DBconnect {
 		try {
 			connection = DriverManager
 					.getConnection("jdbc:sqlserver://localhost;databaseName=ShopDB;integratedSecurity=true;");
-			System.out.println("CONNECTED");
+			System.out.println("Connected to SQL Server DB");
 
 		} catch (Exception e) {
 			System.err.println("Error opening DB. Terminating.");
