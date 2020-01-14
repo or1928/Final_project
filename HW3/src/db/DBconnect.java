@@ -5,15 +5,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import classes.Customer;
 import classes.Employee;
 import classes.Provider;
 import classes.Sale;
-import classes.Shop;
 import classes.UsedPhone;
 import enums.brand;
 import enums.condition;
+import exceptions.WrongInput;
 import main.Main;
 
 public class DBconnect {
@@ -30,6 +31,9 @@ public class DBconnect {
 	private static PreparedStatement selectSale;
 	private static PreparedStatement selectUsedPhone;
 	private static PreparedStatement delete;
+	public static List<Employee> empList;
+	public static List<Customer> cList;
+	public static List<UsedPhone> phList;
 
 	public static void openDB() {
 		try {
@@ -62,7 +66,7 @@ public class DBconnect {
 		}
 	}
 
-	public static void writeShopToDB(Shop s) {
+	public static void writeShopToDB() {
 
 		// read all objects from "myShop" in "main" and store in DB
 		try {
@@ -144,13 +148,19 @@ public class DBconnect {
 
 	}
 
-	public static void readShopFromDB() {
+	public static void readShopFromDB() throws WrongInput {
 
 		ResultSet customerResultSet = null;
 		ResultSet employeeResultSet = null;
 		ResultSet providerResultSet = null;
 		ResultSet usedPhoneResultSet = null;
 		ResultSet saleResultSet = null;
+
+		// for stream use in sale add
+
+		empList = Main.myShop.getEmployess();
+		cList = Main.myShop.getCustomer();
+		phList = Main.myShop.getPhones();
 
 		try {
 			selectCustomer = connection.prepareStatement("SELECT * FROM customer");
@@ -194,22 +204,43 @@ public class DBconnect {
 			// read used phones to shop from db
 
 			while (usedPhoneResultSet.next()) {
-				UsedPhone up = new UsedPhone(usedPhoneResultSet.getString(1), usedPhoneResultSet.getInt(2),
-						condition.valueOf(usedPhoneResultSet.getString(3)), usedPhoneResultSet.getDouble(4),
-						brand.valueOf(usedPhoneResultSet.getString(5)));
+				UsedPhone up = new UsedPhone(usedPhoneResultSet.getString(2), usedPhoneResultSet.getInt(3),
+						condition.valueOf(usedPhoneResultSet.getString(4)), usedPhoneResultSet.getDouble(5),
+						brand.valueOf(usedPhoneResultSet.getString(6)));
+				up.phoneSN = usedPhoneResultSet.getString(1);
 				Main.myShop.addPhone(up);
 			}
 
 			// read sales to shop from db ********TO FIX!!!!!
-//			
-//			while(saleResultSet.next()) {
-//				Sale s =new Sale(employee, customer, sellingDate, shop, phone)
-//			}
-//			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
 
+			while (saleResultSet.next()) {
+				// use stream to find objects by property in myShop
+				Integer tempEmployeeId = saleResultSet.getInt(2);
+				Integer tempCustomerId = saleResultSet.getInt(3);
+				String tempPhoneSN = saleResultSet.getString(4);
+				String tempShopName = saleResultSet.getString(6);
+
+				Employee e = ((List<Employee>) empList).stream().filter(emp -> emp.getEmployeeID() == tempEmployeeId)
+						.findFirst().get();
+				Customer c = ((List<Customer>) cList).stream().filter(cs -> cs.getCustomerID() == tempCustomerId)
+						.findFirst().get();
+				UsedPhone up = ((List<UsedPhone>) phList).stream().filter(ph -> ph.getPhoneSN().equals(tempPhoneSN))
+						.findFirst().get();
+				Sale sl = new Sale(e, c, saleResultSet.getString(5), Main.myShop, up);
+				sl.saleID = saleResultSet.getString(1);
+				Main.myShop.addSale(sl);
+			}
+
+		} catch (SQLException e3) {
+			// TODO Auto-generated catch block
+			e3.printStackTrace();
+		}
+	}
+
+	public static void updtaeDB() throws WrongInput {
+		clearDB();
+		writeShopToDB();
+		readShopFromDB();
 	}
 
 	public static void closeDB() {

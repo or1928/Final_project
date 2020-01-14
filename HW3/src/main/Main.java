@@ -31,24 +31,19 @@ public class Main {
 	public static void main(String[] args) throws WrongInput {
 
 		DBconnect.openDB();
-
+		myShop = new Shop("BestSell", "Hafia", "046793243");
+		DBconnect.readShopFromDB();
 		init();
 
 		// ******test db actions - temporary*******
 
-		myShop = new Shop("BestSell", "Hafia", "046793243");
-		// DBconnect.readShopFromDB();
-
 		// myShop.addCustomer(allCustomers.get(0));
 		// myShop.addCustomer(allCustomers.get(1));
 		// myShop.addCustomer(allCustomers.get(2));
+		// myShop.addEmployee(allEmployees.get(0));
+		// myShop.addEmployee(allEmployees.get(1));
+		// myShop.addEmployee(allEmployees.get(2));
 
-		// DBconnect.writeShopToDB(myShop);
-		// DBconnect.clearDB();
-
-		// *****************************************
-
-		// DBconnect.closeDB();
 	}
 
 	public static void init() {

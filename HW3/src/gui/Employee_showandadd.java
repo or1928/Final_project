@@ -26,7 +26,6 @@ import exceptions.WrongInput;
 import main.Main;
 
 public class Employee_showandadd extends JFrame {
-	private int anaBobi;
 
 	private JPanel contentPane;
 	private static JTextField textField_fnane;

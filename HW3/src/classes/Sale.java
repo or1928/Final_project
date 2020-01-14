@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 
 public class Sale implements Serializable {
 
-	private String saleID;
+	public String saleID;
 	private Employee employee;
 	private Customer customer;
 	private UsedPhone phone;

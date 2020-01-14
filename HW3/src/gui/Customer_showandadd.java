@@ -25,7 +25,6 @@ import exceptions.WrongInput;
 import main.Main;
 
 public class Customer_showandadd extends JFrame {
-	private int anaBobi;
 
 	private static JPanel contentPane;
 	private static JTextField textField_fnane;

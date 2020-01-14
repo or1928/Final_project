@@ -9,7 +9,7 @@ import enums.condition;
 
 public class UsedPhone implements Serializable {
 
-	private String phoneSN;
+	public String phoneSN;
 	private String modelNo;
 	private int manufactureYear;
 	private condition phoneCondition;

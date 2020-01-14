@@ -17,7 +17,6 @@ import javax.swing.border.EmptyBorder;
 import main.Main;
 
 public class Manager_window extends JFrame {
-	private int anaBobi;
 
 	private JPanel contentPane;
 
