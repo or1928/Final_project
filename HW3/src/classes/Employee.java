@@ -3,6 +3,7 @@ package classes;
 import java.io.Serializable;
 
 import exceptions.WrongInput;
+import main.Main;
 
 public class Employee extends Person implements Serializable {
 
@@ -16,7 +17,7 @@ public class Employee extends Person implements Serializable {
 	}
 
 	public void setEmployeeID() {
-		this.employeeID = counter++;
+		this.employeeID = Main.countEmployyes++;
 	}
 
 	public int getEmployeeID() {

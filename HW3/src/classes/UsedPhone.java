@@ -6,6 +6,7 @@ import java.util.InputMismatchException;
 
 import enums.brand;
 import enums.condition;
+import main.Main;
 
 public class UsedPhone implements Serializable {
 
@@ -35,7 +36,7 @@ public class UsedPhone implements Serializable {
 	public void setPhoneSN(String phoneSN) {
 		// UP = used phone
 
-		this.phoneSN = "UP" + counter++;
+		this.phoneSN = "UP" + Main.countPhones++;
 
 	}
 

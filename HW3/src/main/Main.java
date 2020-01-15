@@ -28,16 +28,27 @@ public class Main {
 	public static Customer c1;
 	public static UsedPhone ph1;
 
+	public static int countCustomers = 100;
+	public static int countEmployyes = 200;
+	public static int countProviders = 300;
+	public static int countPhones = 500;
+	public static int countSales = 600;
+
 	public static void main(String[] args) throws WrongInput {
 
-		DBconnect.openDB();
 		myShop = new Shop("BestSell", "Hafia", "046793243");
+
+		// read shop data from DB
+
+		DBconnect.openDB();
+		DBconnect.readShopFromDB();
+		// DBconnect.clearDB();
 
 		// initialize system with basic data from text file input
 		init();
 
-		// read shop data from DB
-		DBconnect.readShopFromDB();
+		System.out.println(countCustomers);
+		System.out.println(countPhones);
 
 	}
 

@@ -3,6 +3,7 @@ package classes;
 import java.io.Serializable;
 
 import exceptions.WrongInput;
+import main.Main;
 
 public class Provider extends Person implements Serializable {
 
@@ -17,7 +18,7 @@ public class Provider extends Person implements Serializable {
 	}
 
 	public void setProviderID() {
-		this.ProviderID = counter++;
+		this.ProviderID = Main.countProviders++;
 	}
 
 	public int getProviderID() {

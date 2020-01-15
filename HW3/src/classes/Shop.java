@@ -13,6 +13,7 @@ import exceptions.InvalidPhoneNumberException;
 import exceptions.PhoneNotInInventoryExeption;
 import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
+import main.Main;
 
 public class Shop implements Serializable {
 	private String shopName;
@@ -39,6 +40,7 @@ public class Shop implements Serializable {
 			this.phones.add(p);
 		}
 		p.isInShop = 1;
+		Main.countPhones++;
 	}
 
 	public void removePhone(UsedPhone p) {
@@ -59,6 +61,7 @@ public class Shop implements Serializable {
 			throw new EmployeeAlreadyExistsException("You cannot add the same employee twice!");
 		}
 		this.employess.add(e);
+		Main.countEmployyes++;
 	}
 
 	public void removeEmployee(Employee e) {
@@ -78,6 +81,7 @@ public class Shop implements Serializable {
 			throw new CustomerAlreadyExistsException("You cannot add the same employee twice!");
 		}
 		this.customers.add(c);
+		Main.countCustomers++;
 	}
 
 	public void removeCustomer(Customer c) {
@@ -98,6 +102,7 @@ public class Shop implements Serializable {
 			throw new ProvidersAlreadyExistsException("You cannot add the same employee twice!");
 		}
 		this.providers.add(p);
+		Main.countProviders++;
 	}
 
 	public void removeProvider(Provider p) {
@@ -118,6 +123,7 @@ public class Shop implements Serializable {
 			this.sales.put(sale.getSellingDate(), sale);
 			// this.phones.remove(phoneToSell); // remove phone from inventory
 			phoneToSell.isInShop = 0;
+			Main.countSales++;
 		} else {
 			throw new PhoneNotInInventoryExeption(
 					"The store does not have the phone" + phoneToSell.getPhoneSN() + " in stock");

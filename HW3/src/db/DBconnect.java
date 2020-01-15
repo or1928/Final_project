@@ -25,11 +25,13 @@ public class DBconnect {
 	private static PreparedStatement insertProvider;
 	private static PreparedStatement insertSale;
 	private static PreparedStatement insertUsedPhone;
+	private static PreparedStatement insertUtil;
 	private static PreparedStatement selectCustomer;
 	private static PreparedStatement selectEmployee;
 	private static PreparedStatement selectProvider;
 	private static PreparedStatement selectSale;
 	private static PreparedStatement selectUsedPhone;
+	private static PreparedStatement selectUtil;
 	private static PreparedStatement delete;
 	public static List<Employee> empList;
 	public static List<Customer> cList;
@@ -59,6 +61,8 @@ public class DBconnect {
 			delete.execute();
 			delete = connection.prepareStatement("DELETE FROM sale");
 			delete.execute();
+			delete = connection.prepareStatement("DELETE FROM util");
+			delete.execute();
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -85,7 +89,9 @@ public class DBconnect {
 							+ "VALUES (?, ?, ?, ?, ?, ?, ?)");
 			insertSale = connection.prepareStatement("INSERT INTO sale "
 					+ "(sale_id, employee_id, customer_id, phoneSN, sellingDate, shop) " + "VALUES (?, ?, ?, ?, ?, ?)");
-
+			insertUtil = connection.prepareStatement(
+					"INSERT INTO util " + "(employee_count,	customer_count, provider_count, phone_count, sale_count) "
+							+ "VALUES (?, ?, ?, ?, ?)");
 			// insert customers from myshop to db
 			for (Customer c : Main.myShop.getCustomer()) {
 				insertCustomer.setInt(1, c.getCustomerID());
@@ -143,6 +149,14 @@ public class DBconnect {
 				insertSale.executeUpdate();
 			}
 
+			// insert utility data into db
+			insertUtil.setInt(2, Main.countCustomers);
+			insertUtil.setInt(1, Main.countEmployyes);
+			insertUtil.setInt(3, Main.countProviders);
+			insertUtil.setInt(4, Main.countPhones);
+			insertUtil.setInt(5, Main.countSales);
+			insertUtil.executeUpdate();
+
 		} catch (SQLException e2) {
 // TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -157,6 +171,7 @@ public class DBconnect {
 		ResultSet providerResultSet = null;
 		ResultSet usedPhoneResultSet = null;
 		ResultSet saleResultSet = null;
+		ResultSet utilResultSet = null;
 
 		// for stream use in sale add
 
@@ -175,7 +190,8 @@ public class DBconnect {
 			usedPhoneResultSet = selectUsedPhone.executeQuery();
 			selectSale = connection.prepareStatement("SELECT * FROM sale");
 			saleResultSet = selectSale.executeQuery();
-
+			selectUtil = connection.prepareStatement("SELECT * FROM util");
+			utilResultSet = selectUtil.executeQuery();
 			// read customers to shop from db
 
 			while (customerResultSet.next()) {
@@ -232,6 +248,15 @@ public class DBconnect {
 				Sale sl = new Sale(e, c, saleResultSet.getString(5), Main.myShop, up);
 				sl.saleID = saleResultSet.getString(1);
 				Main.myShop.addSale(sl);
+			}
+
+			// get util values from DB
+			while (utilResultSet.next()) {
+				Main.countCustomers = utilResultSet.getInt(2);
+				Main.countEmployyes = utilResultSet.getInt(1);
+				Main.countProviders = utilResultSet.getInt(3);
+				Main.countPhones = utilResultSet.getInt(4);
+				Main.countSales = utilResultSet.getInt(5);
 			}
 
 		} catch (SQLException e3) {
