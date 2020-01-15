@@ -80,8 +80,9 @@ public class DBconnect {
 			insertProvider = connection.prepareStatement(
 					"INSERT INTO provider " + "(provider_id, id, firstName, lastName, phoneNumber, dateOfBirth) "
 							+ "VALUES (?, ?, ?, ?, ?, ?)");
-			insertUsedPhone = connection.prepareStatement("INSERT INTO usedPhone "
-					+ "(phoneSN, modelNo, manufactureYear, condition, price, brand) " + "VALUES (?, ?, ?, ?, ?, ?)");
+			insertUsedPhone = connection.prepareStatement(
+					"INSERT INTO usedPhone " + "(phoneSN, modelNo, manufactureYear, condition, price, brand, isInShop) "
+							+ "VALUES (?, ?, ?, ?, ?, ?, ?)");
 			insertSale = connection.prepareStatement("INSERT INTO sale "
 					+ "(sale_id, employee_id, customer_id, phoneSN, sellingDate, shop) " + "VALUES (?, ?, ?, ?, ?, ?)");
 
@@ -127,6 +128,7 @@ public class DBconnect {
 				insertUsedPhone.setString(4, up.getPhoneCondition().toString());
 				insertUsedPhone.setDouble(5, up.getPrice());
 				insertUsedPhone.setString(6, up.getPhoneBrand().toString());
+				insertUsedPhone.setInt(7, up.isInShop);
 				insertUsedPhone.executeUpdate();
 			}
 
@@ -208,6 +210,7 @@ public class DBconnect {
 						condition.valueOf(usedPhoneResultSet.getString(4)), usedPhoneResultSet.getDouble(5),
 						brand.valueOf(usedPhoneResultSet.getString(6)));
 				up.phoneSN = usedPhoneResultSet.getString(1);
+				up.isInShop = usedPhoneResultSet.getInt(7);
 				Main.myShop.addPhone(up);
 			}
 

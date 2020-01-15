@@ -15,6 +15,7 @@ public class UsedPhone implements Serializable {
 	private condition phoneCondition;
 	private double price;
 	private brand phoneBrand;
+	public int isInShop = 0;
 
 	private static int counter = 500;
 

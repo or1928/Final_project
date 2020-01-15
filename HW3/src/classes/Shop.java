@@ -36,6 +36,7 @@ public class Shop implements Serializable {
 	// phone functions
 	public void addPhone(UsedPhone p) {
 		this.phones.add(p);
+		p.isInShop = 1;
 	}
 
 	public void removePhone(UsedPhone p) {
@@ -110,10 +111,10 @@ public class Shop implements Serializable {
 
 	public void addSale(Sale sale) throws PhoneNotInInventoryExeption {
 		UsedPhone phoneToSell = sale.getPhone();
-		if (phones.contains(phoneToSell)) { // if the shop have the phone
+		if (phones.contains(phoneToSell) && phoneToSell.isInShop == 1) { // if the shop have the phone
 			this.sales.put(sale.getSellingDate(), sale);
 			// this.phones.remove(phoneToSell); // remove phone from inventory
-
+			phoneToSell.isInShop = 0;
 		} else {
 			throw new PhoneNotInInventoryExeption(
 					"The store does not have the phone" + phoneToSell.getPhoneSN() + " in stock");
