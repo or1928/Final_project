@@ -22,8 +22,10 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import classes.UsedPhone;
+import db.DBconnect;
 import enums.brand;
 import enums.condition;
+import exceptions.WrongInput;
 import main.Main;
 
 public class Usedphone_showandadd extends JFrame {
@@ -37,7 +39,7 @@ public class Usedphone_showandadd extends JFrame {
 	private static JTextField textField;
 	private static JComboBox comboBox_1;
 	private static JLabel lblNewLabel_4;
-	private static JButton btnNewButton_1,btn_Switch_show;
+	private static JButton btnNewButton_1, btn_Switch_show;
 	private static JLabel lblNewLabel_3;
 	private static JLabel lblNewLabel_5;
 	private static JLabel lblNewLabel_6;
@@ -162,22 +164,24 @@ public class Usedphone_showandadd extends JFrame {
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 
-		
-
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			
+
+				try {
+					DBconnect.updtaeDB();
+				} catch (WrongInput e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				dispose();
-				customer_show Customer_win_show = new customer_show();
-				Customer_win_show.setVisible(true);
+				usedphone_show UsedPhone_win_show = new usedphone_show();
+				UsedPhone_win_show.setVisible(true);
 			}
 		});
 		btn_Switch_show.setBounds(0, 27, 96, 21);
 		contentPane.add(btn_Switch_show);
-		
-		
+
 		lblNewLabel_11 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0");
 		lblNewLabel_11.setVisible(false);
 		lblNewLabel_11.setBounds(263, 118, 126, 13);

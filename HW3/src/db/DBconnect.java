@@ -240,7 +240,7 @@ public class DBconnect {
 	public static void updtaeDB() throws WrongInput {
 		clearDB();
 		writeShopToDB();
-		readShopFromDB();
+		// readShopFromDB();
 	}
 
 	public static void closeDB() {

@@ -20,6 +20,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import classes.Provider;
+import db.DBconnect;
 import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
 import main.Main;
@@ -149,14 +150,17 @@ public class Provider_showandadd extends JFrame {
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 		contentPane.setLayout(null);
-		
-		
 
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			
+
+				try {
+					DBconnect.updtaeDB();
+				} catch (WrongInput e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				dispose();
 				provider_show provider_win_show = new provider_show();
 				provider_win_show.setVisible(true);
@@ -164,7 +168,6 @@ public class Provider_showandadd extends JFrame {
 		});
 		btn_Switch_show.setBounds(0, 27, 96, 21);
 		contentPane.add(btn_Switch_show);
-		
 
 		lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7");
 		lblNewLabel_1.setVisible(false);

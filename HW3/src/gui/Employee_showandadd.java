@@ -21,6 +21,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import classes.Employee;
+import db.DBconnect;
 import exceptions.EmployeeAlreadyExistsException;
 import exceptions.WrongInput;
 import main.Main;
@@ -49,7 +50,7 @@ public class Employee_showandadd extends JFrame {
 	private JTable table;
 	private static JLabel lblNewLabel_1;
 	private static JComboBox comboBox_showEmplo_inMYshop_Dell;
-	private static JButton btnNewButton_1,btn_Switch_show;
+	private static JButton btnNewButton_1, btn_Switch_show;
 	private static boolean flag = false;
 
 	public static void Visible_co_t() {
@@ -154,13 +155,18 @@ public class Employee_showandadd extends JFrame {
 		lblNewLabel_1.setVisible(false);
 		lblNewLabel_1.setBounds(261, 154, 70, 13);
 		contentPane.add(lblNewLabel_1);
-		
+
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			
+
 				dispose();
+				try {
+					DBconnect.updtaeDB();
+				} catch (WrongInput e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				employee_show employee_win_show = new employee_show();
 				employee_win_show.setVisible(true);
 			}
@@ -352,12 +358,13 @@ public class Employee_showandadd extends JFrame {
 					try {
 						Main.myShop.addEmployee(new Employee(textField_id.getText(), textField_fnane.getText(),
 								textField_lname.getText(), textField_phone.getText(), textField_birthday.getText()));
-						JOptionPane.showMessageDialog(null, "ברוך הבא ");
+						JOptionPane.showMessageDialog(null, "עובד נוסף בהצלחה");
 					} catch (EmployeeAlreadyExistsException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					} catch (WrongInput e1) {
-						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "שגיאה בפרטי העובד. אנא בדוק ונסה שנית", "Invalid input",
+								JOptionPane.PLAIN_MESSAGE);
 						e1.printStackTrace();
 					}
 

@@ -161,20 +161,25 @@ public class Customer_showandadd extends JFrame {
 		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
-		
+
 		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
-		Image newImage3 = img3.getScaledInstance( 103, 357, Image.SCALE_DEFAULT);
+		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
 
 		lblNewLabel_1111 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7:");
 		lblNewLabel_1111.setVisible(false);
 		lblNewLabel_1111.setBounds(294, 205, 70, 13);
 		contentPane.add(lblNewLabel_1111);
-		
+
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			
+
+				try {
+					DBconnect.updtaeDB();
+				} catch (WrongInput e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				dispose();
 				customer_show Customer_win_show = new customer_show();
 				Customer_win_show.setVisible(true);
@@ -431,7 +436,7 @@ public class Customer_showandadd extends JFrame {
 		Button_return.setFont(new Font("SansSerif", Font.BOLD, 14));
 		Button_return.setBounds(0, 331, 106, 21);
 		contentPane.add(Button_return);
-		
+
 		JLabel lblNewLabel_12 = new JLabel("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		lblNewLabel_12.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_12.setBorder(new LineBorder(Color.WHITE));
@@ -447,7 +452,7 @@ public class Customer_showandadd extends JFrame {
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		Label_logo_yvc.setBounds(433, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
-		
+
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 0, 103, 357);
@@ -460,8 +465,6 @@ public class Customer_showandadd extends JFrame {
 		lblNewLabel_111.setIcon(new ImageIcon(newImage));
 		lblNewLabel_111.setBounds(0, 0, 530, 357);
 		contentPane.add(lblNewLabel_111);
-		
-		
 
 	}
 }

@@ -23,6 +23,7 @@ import classes.Customer;
 import classes.Employee;
 import classes.Sale;
 import classes.UsedPhone;
+import db.DBconnect;
 import exceptions.WrongInput;
 import main.Main;
 
@@ -32,6 +33,7 @@ public class Sale_showandadd extends JFrame {
 	private JTable table;
 	private JTextField textField;
 	private static JButton btn_Switch_show;
+
 	/**
 	 * Launch the application.
 	 */
@@ -64,13 +66,17 @@ public class Sale_showandadd extends JFrame {
 		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
-		
 
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-			
+
+				try {
+					DBconnect.updtaeDB();
+				} catch (WrongInput e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				dispose();
 				sale_show sale_win_show = new sale_show();
 				sale_win_show.setVisible(true);
