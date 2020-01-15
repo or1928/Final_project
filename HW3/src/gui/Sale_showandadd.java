@@ -172,7 +172,7 @@ public class Sale_showandadd extends JFrame {
 					}
 					try {
 						Main.myShop.addSale(new Sale(Main.e1, Main.c1, textField.getText(), Main.myShop, Main.ph1));
-						JOptionPane.showMessageDialog(null, "ברוך הבא ");
+						JOptionPane.showMessageDialog(null, "Sale successfully added");
 					} catch (WrongInput c1) {
 						// TODO Auto-generated catch block
 						c1.printStackTrace();
