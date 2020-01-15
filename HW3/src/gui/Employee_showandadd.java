@@ -156,7 +156,7 @@ public class Employee_showandadd extends JFrame {
 		lblNewLabel_1.setBounds(261, 154, 70, 13);
 		contentPane.add(lblNewLabel_1);
 
-		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -171,7 +171,7 @@ public class Employee_showandadd extends JFrame {
 				employee_win_show.setVisible(true);
 			}
 		});
-		btn_Switch_show.setBounds(0, 27, 96, 21);
+		btn_Switch_show.setBounds(0, 27, 115, 21);
 		contentPane.add(btn_Switch_show);
 
 		comboBox_showEmplo_inMYshop_Dell = new JComboBox();

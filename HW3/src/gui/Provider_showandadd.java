@@ -151,7 +151,7 @@ public class Provider_showandadd extends JFrame {
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 		contentPane.setLayout(null);
 
-		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05E1\u05E4\u05E7\u05D9\u05DD");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -166,7 +166,7 @@ public class Provider_showandadd extends JFrame {
 				provider_win_show.setVisible(true);
 			}
 		});
-		btn_Switch_show.setBounds(0, 27, 96, 21);
+		btn_Switch_show.setBounds(0, 27, 115, 21);
 		contentPane.add(btn_Switch_show);
 
 		lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7");

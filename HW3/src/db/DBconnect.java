@@ -249,7 +249,7 @@ public class DBconnect {
 	public static void closeDB() {
 		try {
 			connection.close();
-			System.out.println("Connection to DB successfully closed\nData is stored in DB.");
+			System.out.println("\nConnection to DB successfully closed\nData is stored in DB.");
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

@@ -16,7 +16,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -164,7 +163,7 @@ public class Usedphone_showandadd extends JFrame {
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 
-		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8\u05D9\u05DD");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -269,10 +268,6 @@ public class Usedphone_showandadd extends JFrame {
 		textField.setVisible(false);
 		contentPane.add(textField);
 		textField.setColumns(10);
-
-		JTable table = new JTable();
-		table.setBounds(106, 199, 259, 54);
-		contentPane.add(table);
 
 		JLabel lblNewLabel = new JLabel("\u05DE\u05D7\u05E1\u05DF");
 		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 36));
@@ -439,7 +434,7 @@ public class Usedphone_showandadd extends JFrame {
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
-		Label_logo_yvc.setBounds(375, 199, 91, 64);
+		Label_logo_yvc.setBounds(427, 280, 91, 64);
 		contentPane.add(Label_logo_yvc);
 
 		JLabel lblNewLabel_1 = new JLabel("");

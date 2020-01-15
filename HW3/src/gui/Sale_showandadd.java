@@ -13,8 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
@@ -30,7 +28,6 @@ import main.Main;
 public class Sale_showandadd extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
 	private JTextField textField;
 	private static JButton btn_Switch_show;
 
@@ -67,7 +64,7 @@ public class Sale_showandadd extends JFrame {
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 
-		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05D4\u05D6\u05DE\u05E0\u05D5\u05EA");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -82,7 +79,7 @@ public class Sale_showandadd extends JFrame {
 				sale_win_show.setVisible(true);
 			}
 		});
-		btn_Switch_show.setBounds(0, 27, 96, 21);
+		btn_Switch_show.setBounds(0, 27, 106, 21);
 		contentPane.add(btn_Switch_show);
 
 		JLabel lblNewLabel_11 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4");
@@ -162,10 +159,6 @@ public class Sale_showandadd extends JFrame {
 		comboBox_3.setBounds(177, 126, 53, 21);
 		comboBox_3.setVisible(false);
 		contentPane.add(comboBox_3);
-
-		table = new JTable();
-		table.setBounds(106, 199, 259, 54);
-		contentPane.add(table);
 
 		JLabel lblNewLabel = new JLabel("\u05D4\u05D6\u05DE\u05E0\u05D5\u05EA");
 		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 36));
@@ -257,10 +250,6 @@ public class Sale_showandadd extends JFrame {
 
 			}
 		});
-
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 48, 116, 116);
-		contentPane.add(textArea);
 
 		btnNewButton11.setBounds(200, 44, 108, 21);
 		contentPane.add(btnNewButton11);

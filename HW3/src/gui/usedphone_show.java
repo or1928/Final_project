@@ -97,8 +97,8 @@ public class usedphone_show extends JFrame {
 		btn_return.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				Customer_showandadd Customer_win = new Customer_showandadd();
-				Customer_win.setVisible(true);
+				Usedphone_showandadd Usedphone_win = new Usedphone_showandadd();
+				Usedphone_win.setVisible(true);
 			}
 		});
 		btn_return.setBounds(172, 65, 85, 21);
