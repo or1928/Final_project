@@ -18,6 +18,8 @@ import javax.swing.SwingConstants;
 import db.DBconnect;
 import exceptions.WrongInput;
 import main.Main;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class App {
 	private JFrame frame;
@@ -52,38 +54,41 @@ public class App {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(500, 250, 480, 300);
+		frame.setBounds(500, 250, 544, 394);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
-		Image newImage = img.getScaledInstance(480, 300, Image.SCALE_DEFAULT);
+		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
+		Image newImage = img.getScaledInstance( 530, 357, Image.SCALE_DEFAULT);
 
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 
 		Image img2 = new ImageIcon(this.getClass().getResource("/applogo.png")).getImage();
 		Image newImage2 = img2.getScaledInstance(300, 180, Image.SCALE_DEFAULT);
+		
+		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
+		Image newImage3 = img3.getScaledInstance( 103, 357, Image.SCALE_DEFAULT);
 
 		textField_Username = new JTextField();
-		textField_Username.setBounds(187, 81, 96, 19);
+		textField_Username.setBounds(196, 132, 96, 19);
 		frame.getContentPane().add(textField_Username);
 		textField_Username.setColumns(10);
 
 		JLabel Label_password = new JLabel("\u05E1\u05D9\u05E1\u05DE\u05D4:");
 		Label_password.setFont(new Font("SansSerif", Font.BOLD, 14));
-		Label_password.setBounds(293, 108, 91, 19);
+		Label_password.setBounds(302, 159, 91, 19);
 		frame.getContentPane().add(Label_password);
 
 		JLabel label_username = new JLabel("\u05E9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9:");
 		label_username.setFont(new Font("SansSerif", Font.BOLD, 14));
-		label_username.setBounds(293, 84, 91, 19);
+		label_username.setBounds(302, 135, 91, 19);
 		frame.getContentPane().add(label_username);
 
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
-		Label_logo_yvc.setBounds(375, 199, 91, 64);
+		Label_logo_yvc.setBounds(429, 283, 91, 64);
 		frame.getContentPane().add(Label_logo_yvc);
 
 		JButton Button_login = new JButton("\u05DB\u05E0\u05D9\u05E1\u05D4");
@@ -132,10 +137,10 @@ public class App {
 		logo_secHandCell.setHorizontalAlignment(SwingConstants.CENTER);
 		logo_secHandCell.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		logo_secHandCell.setIcon(new ImageIcon(newImage2));
-		logo_secHandCell.setBounds(154, 12, 247, 61);
+		logo_secHandCell.setBounds(139, 31, 247, 61);
 		frame.getContentPane().add(logo_secHandCell);
 
-		Button_login.setBounds(187, 141, 96, 21);
+		Button_login.setBounds(196, 192, 96, 21);
 		frame.getContentPane().add(Button_login);
 
 		JButton Button_exit = new JButton("\u05D9\u05E6\u05D9\u05D0\u05D4");
@@ -156,18 +161,33 @@ public class App {
 			}
 		});
 
-		Button_exit.setBounds(187, 184, 96, 21);
+		Button_exit.setBounds(196, 235, 96, 21);
 		frame.getContentPane().add(Button_exit);
 
 		textField_password = new JPasswordField();
-		textField_password.setBounds(187, 110, 96, 19);
+		textField_password.setBounds(196, 161, 96, 19);
 		frame.getContentPane().add(textField_password);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u05DB\u05E0\u05D9\u05E1\u05D4");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBorder(new LineBorder(Color.WHITE));
+		lblNewLabel_1.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBackground(Color.WHITE);
+		lblNewLabel_1.setBounds(1, 155, 99, 33);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(0, 0, 103, 357);
+		lblNewLabel.setIcon(new ImageIcon(newImage3));
+		frame.getContentPane().add(lblNewLabel);
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_background.setIcon(new ImageIcon(newImage));
-		Label_logo_background.setBounds(0, 0, 466, 263);
+		Label_logo_background.setBounds(0, 0, 530, 357);
 		frame.getContentPane().add(Label_logo_background);
 	}
 }

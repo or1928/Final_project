@@ -47,6 +47,7 @@ public class Provider_showandadd extends JFrame {
 	private static JButton Button_add_new_cusromer;
 	private static JLabel lblNewLabel_1;
 	private static JComboBox comboBox;
+	private static JButton btn_Switch_show;
 	private static JButton btnNewButton_1;
 
 	/**
@@ -137,17 +138,33 @@ public class Provider_showandadd extends JFrame {
 	 */
 	public Provider_showandadd() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 250, 480, 300);
+		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
-		Image newImage = img.getScaledInstance(480, 300, Image.SCALE_DEFAULT);
+		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 		contentPane.setLayout(null);
+		
+		
+
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		btn_Switch_show.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			
+				dispose();
+				provider_show provider_win_show = new provider_show();
+				provider_win_show.setVisible(true);
+			}
+		});
+		btn_Switch_show.setBounds(0, 27, 96, 21);
+		contentPane.add(btn_Switch_show);
+		
 
 		lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7");
 		lblNewLabel_1.setVisible(false);
@@ -385,7 +402,7 @@ public class Provider_showandadd extends JFrame {
 		contentPane.add(Label_logo_yvc);
 
 		JLabel lblNewLabel_111 = new JLabel("");
-		lblNewLabel_111.setBounds(5, 5, 456, 253);
+		lblNewLabel_111.setBounds(5, 5, 530, 357);
 		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_111.setIcon(new ImageIcon(newImage));

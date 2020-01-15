@@ -31,7 +31,7 @@ public class Sale_showandadd extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private JTextField textField;
-
+	private static JButton btn_Switch_show;
 	/**
 	 * Launch the application.
 	 */
@@ -54,16 +54,30 @@ public class Sale_showandadd extends JFrame {
 	 */
 	public Sale_showandadd() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 250, 480, 300);
+		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
-		Image newImage = img.getScaledInstance(480, 300, Image.SCALE_DEFAULT);
+		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
+		
+
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		btn_Switch_show.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			
+				dispose();
+				sale_show sale_win_show = new sale_show();
+				sale_win_show.setVisible(true);
+			}
+		});
+		btn_Switch_show.setBounds(0, 27, 96, 21);
+		contentPane.add(btn_Switch_show);
 
 		JLabel lblNewLabel_11 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4");
 		lblNewLabel_11.setVisible(false);
@@ -280,7 +294,7 @@ public class Sale_showandadd extends JFrame {
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_1.setIcon(new ImageIcon(newImage));
-		lblNewLabel_1.setBounds(0, 0, 480, 300);
+		lblNewLabel_1.setBounds(0, 0, 530, 357);
 		contentPane.add(lblNewLabel_1);
 
 	}

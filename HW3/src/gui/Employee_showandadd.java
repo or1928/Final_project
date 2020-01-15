@@ -49,7 +49,7 @@ public class Employee_showandadd extends JFrame {
 	private JTable table;
 	private static JLabel lblNewLabel_1;
 	private static JComboBox comboBox_showEmplo_inMYshop_Dell;
-	private static JButton btnNewButton_1;
+	private static JButton btnNewButton_1,btn_Switch_show;
 	private static boolean flag = false;
 
 	public static void Visible_co_t() {
@@ -139,14 +139,14 @@ public class Employee_showandadd extends JFrame {
 	 */
 	public Employee_showandadd() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(500, 250, 480, 300);
+		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
-		Image newImage = img.getScaledInstance(480, 300, Image.SCALE_DEFAULT);
+		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 
@@ -154,6 +154,19 @@ public class Employee_showandadd extends JFrame {
 		lblNewLabel_1.setVisible(false);
 		lblNewLabel_1.setBounds(261, 154, 70, 13);
 		contentPane.add(lblNewLabel_1);
+		
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		btn_Switch_show.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			
+				dispose();
+				employee_show employee_win_show = new employee_show();
+				employee_win_show.setVisible(true);
+			}
+		});
+		btn_Switch_show.setBounds(0, 27, 96, 21);
+		contentPane.add(btn_Switch_show);
 
 		comboBox_showEmplo_inMYshop_Dell = new JComboBox();
 		comboBox_showEmplo_inMYshop_Dell.addItem("");
@@ -398,7 +411,7 @@ public class Employee_showandadd extends JFrame {
 		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_111.setIcon(new ImageIcon(newImage));
-		lblNewLabel_111.setBounds(0, 0, 480, 300);
+		lblNewLabel_111.setBounds(0, 0, 530, 357);
 		contentPane.add(lblNewLabel_111);
 
 	}
