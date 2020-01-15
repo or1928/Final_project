@@ -26,6 +26,8 @@ import enums.brand;
 import enums.condition;
 import exceptions.WrongInput;
 import main.Main;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class Usedphone_showandadd extends JFrame {
 
@@ -49,6 +51,7 @@ public class Usedphone_showandadd extends JFrame {
 	private static JLabel lblNewLabel_10;
 	private static JLabel lblNewLabel_12;
 	private static JLabel lblNewLabel_13;
+	private JLabel label;
 
 	/**
 	 * Launch the application.
@@ -158,10 +161,14 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 
-		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
 		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
+		
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
+
+		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
+		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
 
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8\u05D9\u05DD");
 		btn_Switch_show.addActionListener(new ActionListener() {
@@ -178,12 +185,12 @@ public class Usedphone_showandadd extends JFrame {
 				UsedPhone_win_show.setVisible(true);
 			}
 		});
-		btn_Switch_show.setBounds(0, 27, 96, 21);
+		btn_Switch_show.setBounds(0, 158, 103, 21);
 		contentPane.add(btn_Switch_show);
 
 		lblNewLabel_11 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0");
 		lblNewLabel_11.setVisible(false);
-		lblNewLabel_11.setBounds(263, 118, 126, 13);
+		lblNewLabel_11.setBounds(395, 178, 76, 13);
 		contentPane.add(lblNewLabel_11);
 
 		comboBox1 = new JComboBox();
@@ -194,7 +201,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 
 		comboBox1.setVisible(false);
-		comboBox1.setBounds(151, 126, 86, 21);
+		comboBox1.setBounds(299, 174, 86, 21);
 		contentPane.add(comboBox1);
 
 		btnNewButton_111 = new JButton("\u05DE\u05D7\u05E7");
@@ -211,7 +218,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		btnNewButton_111.setVisible(false);
-		btnNewButton_111.setBounds(209, 170, 85, 21);
+		btnNewButton_111.setBounds(225, 228, 85, 21);
 		contentPane.add(btnNewButton_111);
 
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
@@ -222,7 +229,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		Button_return.setFont(new Font("SansSerif", Font.BOLD, 14));
-		Button_return.setBounds(5, 6, 85, 21);
+		Button_return.setBounds(0, 336, 103, 21);
 		contentPane.add(Button_return);
 
 		comboBox_2 = new JComboBox();
@@ -230,31 +237,31 @@ public class Usedphone_showandadd extends JFrame {
 		comboBox_2.addItem("Used");
 		comboBox_2.addItem("New");
 		comboBox_2.addItem("asNew");
-		comboBox_2.setBounds(151, 75, 53, 21);
+		comboBox_2.setBounds(144, 98, 53, 21);
 		comboBox_2.setVisible(false);
 
 		contentPane.add(comboBox_2);
 
 		lblNewLabel_4 = new JLabel("\u05D7\u05D1\u05E8\u05D4:");
-		lblNewLabel_4.setBounds(208, 130, 45, 13);
+		lblNewLabel_4.setBounds(225, 178, 45, 13);
 		lblNewLabel_4.setVisible(false);
 		contentPane.add(lblNewLabel_4);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(108, 99, 96, 19);
+		textField_2.setBounds(119, 142, 96, 19);
 		textField_2.setVisible(false);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(284, 119, 96, 19);
+		textField_1.setBounds(289, 142, 96, 19);
 		textField_1.setVisible(false);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 
 		comboBox_1 = new JComboBox();
 
-		comboBox_1.setBounds(144, 126, 60, 21);
+		comboBox_1.setBounds(137, 174, 60, 21);
 		comboBox_1.addItem("");
 		comboBox_1.addItem("Apple");
 		comboBox_1.addItem("Samsung");
@@ -264,14 +271,14 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.add(comboBox_1);
 
 		textField = new JTextField();
-		textField.setBounds(284, 76, 96, 19);
+		textField.setBounds(289, 99, 96, 19);
 		textField.setVisible(false);
 		contentPane.add(textField);
 		textField.setColumns(10);
 
 		JLabel lblNewLabel = new JLabel("\u05DE\u05D7\u05E1\u05DF");
 		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 36));
-		lblNewLabel.setBounds(202, -23, 118, 64);
+		lblNewLabel.setBounds(251, -11, 118, 64);
 		contentPane.add(lblNewLabel);
 
 		lblNewLabel_3 = new JLabel("\u05E9\u05E0\u05D4:");
@@ -308,7 +315,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 
-		comboBox.setBounds(299, 33, 81, 21);
+		comboBox.setBounds(199, 54, 81, 21);
 		contentPane.add(comboBox);
 
 		btnNewButton_1 = new JButton("\u05D4\u05D5\u05E1\u05E3");
@@ -351,20 +358,20 @@ public class Usedphone_showandadd extends JFrame {
 		});
 
 		btnNewButton_1.setVisible(false);
-		btnNewButton_1.setBounds(209, 170, 85, 21);
+		btnNewButton_1.setBounds(225, 228, 85, 21);
 		contentPane.add(btnNewButton_1);
 
-		lblNewLabel_3.setBounds(411, 122, 45, 13);
+		lblNewLabel_3.setBounds(416, 145, 45, 13);
 		contentPane.add(lblNewLabel_3);
 
 		lblNewLabel_5 = new JLabel("\u05DE\u05E6\u05D1 \u05D4\u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
 		lblNewLabel_5.setVisible(false);
-		lblNewLabel_5.setBounds(208, 79, 76, 13);
+		lblNewLabel_5.setBounds(204, 102, 76, 13);
 		contentPane.add(lblNewLabel_5);
 
 		lblNewLabel_6 = new JLabel("\u05DE\u05D7\u05D9\u05E8:");
 		lblNewLabel_6.setVisible(false);
-		lblNewLabel_6.setBounds(208, 102, 45, 13);
+		lblNewLabel_6.setBounds(225, 145, 45, 13);
 		contentPane.add(lblNewLabel_6);
 
 		lblNewLabel_2 = new JLabel("\u05E9\u05DD \u05DE\u05DB\u05E9\u05D9\u05E8:");
@@ -372,33 +379,42 @@ public class Usedphone_showandadd extends JFrame {
 
 		lblNewLabel_8 = new JLabel("New label");
 		lblNewLabel_8.setVisible(false);
-		lblNewLabel_8.setBounds(335, 79, 45, 13);
+		lblNewLabel_8.setBounds(335, 102, 45, 13);
 		contentPane.add(lblNewLabel_8);
 
 		lblNewLabel_9 = new JLabel("New label");
 		lblNewLabel_9.setVisible(false);
-		lblNewLabel_9.setBounds(335, 122, 45, 13);
+		lblNewLabel_9.setBounds(335, 145, 45, 13);
 		contentPane.add(lblNewLabel_9);
 
 		lblNewLabel_10 = new JLabel("New label");
 		lblNewLabel_10.setVisible(false);
-		lblNewLabel_10.setBounds(159, 79, 45, 13);
+		lblNewLabel_10.setBounds(137, 89, 45, 13);
 		contentPane.add(lblNewLabel_10);
 
 		lblNewLabel_12 = new JLabel("New label");
 		lblNewLabel_12.setVisible(false);
-		lblNewLabel_12.setBounds(151, 102, 45, 13);
+		lblNewLabel_12.setBounds(170, 145, 45, 13);
 		contentPane.add(lblNewLabel_12);
 
 		lblNewLabel_13 = new JLabel("New label");
 		lblNewLabel_13.setVisible(false);
-		lblNewLabel_13.setBounds(177, 130, 45, 13);
+		
+		label = new JLabel("\u05DE\u05D7\u05E1\u05DF");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setForeground(Color.WHITE);
+		label.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		label.setBorder(new LineBorder(Color.WHITE));
+		label.setBackground(Color.WHITE);
+		label.setBounds(0, 0, 103, 33);
+		contentPane.add(label);
+		lblNewLabel_13.setBounds(137, 178, 45, 13);
 		contentPane.add(lblNewLabel_13);
 
 		JLabel lblNewLabel_7 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0:");
-		lblNewLabel_7.setBounds(379, 37, 60, 13);
+		lblNewLabel_7.setBounds(309, 59, 60, 13);
 		contentPane.add(lblNewLabel_7);
-		lblNewLabel_2.setBounds(390, 77, 66, 13);
+		lblNewLabel_2.setBounds(395, 100, 66, 13);
 		contentPane.add(lblNewLabel_2);
 
 		JButton btnNewButton = new JButton(
@@ -413,7 +429,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		btnNewButton.setFont(new Font("SansSerif", Font.BOLD, 15));
-		btnNewButton.setBounds(67, 31, 155, 21);
+		btnNewButton.setBounds(0, 59, 103, 21);
 		contentPane.add(btnNewButton);
 
 		JButton btnNewButton11 = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8");
@@ -427,7 +443,7 @@ public class Usedphone_showandadd extends JFrame {
 
 			}
 		});
-		btnNewButton11.setBounds(186, 52, 108, 21);
+		btnNewButton11.setBounds(0, 110, 103, 21);
 		contentPane.add(btnNewButton11);
 
 		JLabel Label_logo_yvc = new JLabel("");
@@ -436,12 +452,20 @@ public class Usedphone_showandadd extends JFrame {
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		Label_logo_yvc.setBounds(427, 280, 91, 64);
 		contentPane.add(Label_logo_yvc);
+		
+		
+		JLabel lblNewLabel1 = new JLabel("");
+		lblNewLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel1.setBounds(0, 0, 103, 357);
+		lblNewLabel1.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblNewLabel1);
+
 
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_1.setIcon(new ImageIcon(newImage));
-		lblNewLabel_1.setBounds(5, 5, 530, 357);
+		lblNewLabel_1.setBounds(0, 0, 530, 357);
 		contentPane.add(lblNewLabel_1);
 	}
 }

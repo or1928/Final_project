@@ -1,6 +1,8 @@
 package gui;
 
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -9,11 +11,14 @@ import java.sql.Statement;
 import java.util.Vector;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableColumn;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -49,6 +54,14 @@ public class customer_show extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		
+		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
+		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
+		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
+		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
+
+		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
+		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
 
 		try {
 
@@ -87,7 +100,7 @@ public class customer_show extends JFrame {
 		contentPane.setLayout(null);
 		// contentPane.setLayout(null);
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(0, 160, 436, 103);
+		scrollPane.setBounds(0, 107, 530, 119);
 		contentPane.add(scrollPane);
 		contentPane.setSize(963, 600); // setting frame size
 		
@@ -99,9 +112,31 @@ public class customer_show extends JFrame {
 				Customer_win.setVisible(true);
 			}
 		});
-		btn_return.setBounds(172, 65, 85, 21);
+		btn_return.setBounds(0, 336, 103, 21);
 		contentPane.add(btn_return);
 		contentPane.setVisible(true);
+		
+		
+		
+		JLabel Label_logo_yvc = new JLabel("");
+		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
+		Label_logo_yvc.setBounds(433, 283, 91, 64);
+		contentPane.add(Label_logo_yvc);
+
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(0, 0, 103, 357);
+		lblNewLabel.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblNewLabel);
+
+		JLabel lblNewLabel_111 = new JLabel("");
+		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_111.setIcon(new ImageIcon(newImage));
+		lblNewLabel_111.setBounds(0, 0, 530, 357);
+		contentPane.add(lblNewLabel_111);
 
 	}
 }

@@ -25,6 +25,8 @@ import db.DBconnect;
 import exceptions.EmployeeAlreadyExistsException;
 import exceptions.WrongInput;
 import main.Main;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class Employee_showandadd extends JFrame {
 
@@ -146,14 +148,17 @@ public class Employee_showandadd extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		Image img = new ImageIcon(this.getClass().getResource("/cellphone_background_x1.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
 		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
 		Image newImage1 = img1.getScaledInstance(91, 64, Image.SCALE_DEFAULT);
 
+		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
+		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
+
 		lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3");
 		lblNewLabel_1.setVisible(false);
-		lblNewLabel_1.setBounds(261, 154, 70, 13);
+		lblNewLabel_1.setBounds(307, 179, 70, 13);
 		contentPane.add(lblNewLabel_1);
 
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
@@ -171,7 +176,7 @@ public class Employee_showandadd extends JFrame {
 				employee_win_show.setVisible(true);
 			}
 		});
-		btn_Switch_show.setBounds(0, 27, 115, 21);
+		btn_Switch_show.setBounds(0, 58, 103, 21);
 		contentPane.add(btn_Switch_show);
 
 		comboBox_showEmplo_inMYshop_Dell = new JComboBox();
@@ -179,7 +184,7 @@ public class Employee_showandadd extends JFrame {
 		for (Employee my : Main.myShop.getEmployess())
 			comboBox_showEmplo_inMYshop_Dell.addItem(my.getFirstName());
 		comboBox_showEmplo_inMYshop_Dell.setVisible(false);
-		comboBox_showEmplo_inMYshop_Dell.setBounds(165, 150, 86, 21);
+		comboBox_showEmplo_inMYshop_Dell.setBounds(195, 175, 86, 21);
 		contentPane.add(comboBox_showEmplo_inMYshop_Dell);
 
 		btnNewButton_1 = new JButton("\u05DE\u05D7\u05E7");
@@ -198,7 +203,7 @@ public class Employee_showandadd extends JFrame {
 		});
 
 		btnNewButton_1.setVisible(false);
-		btnNewButton_1.setBounds(166, 232, 85, 21);
+		btnNewButton_1.setBounds(238, 266, 85, 21);
 		contentPane.add(btnNewButton_1);
 
 		JButton btnNewButton = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05E2\u05D5\u05D1\u05D3");
@@ -218,7 +223,7 @@ public class Employee_showandadd extends JFrame {
 			}
 		});
 
-		btnNewButton.setBounds(153, 89, 108, 21);
+		btnNewButton.setBounds(0, 153, 103, 21);
 		contentPane.add(btnNewButton);
 
 		lblNewLabel = new JLabel(
@@ -229,87 +234,87 @@ public class Employee_showandadd extends JFrame {
 
 		lab123 = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
 		lab123.setFont(new Font("SansSerif", Font.BOLD, 30));
-		lab123.setBounds(154, -20, 133, 68);
+		lab123.setBounds(250, -20, 133, 68);
 		contentPane.add(lab123);
 
 		Label_id = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05D6\u05D4\u05D5\u05EA:");
 		Label_id.setVisible(false);
-		Label_id.setBounds(140, 121, 68, 13);
+		Label_id.setBounds(219, 157, 68, 13);
 		contentPane.add(Label_id);
 
 		lLabel_phone = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
 		lLabel_phone.setVisible(false);
-		lLabel_phone.setBounds(137, 154, 71, 13);
+		lLabel_phone.setBounds(205, 179, 71, 13);
 		contentPane.add(lLabel_phone);
 
 		Label_birthday = new JLabel("\u05EA\u05D0\u05E8\u05D9\u05DA \u05DC\u05D9\u05D3\u05D4:");
 		Label_birthday.setVisible(false);
-		Label_birthday.setBounds(138, 177, 71, 13);
+		Label_birthday.setBounds(219, 206, 71, 13);
 		contentPane.add(Label_birthday);
 
 		Label_fname = new JLabel("\u05E9\u05DD \u05E4\u05E8\u05D8\u05D9:");
 		Label_fname.setVisible(false);
-		Label_fname.setBounds(331, 154, 62, 13);
+		Label_fname.setBounds(413, 157, 62, 13);
 		contentPane.add(Label_fname);
 
 		Label_lname = new JLabel("\u05E9\u05DD \u05DE\u05E9\u05E4\u05D7\u05D4:");
 		Label_lname.setVisible(false);
-		Label_lname.setBounds(331, 170, 71, 13);
+		Label_lname.setBounds(413, 205, 71, 13);
 		contentPane.add(Label_lname);
 
 		Label_show_id = new JLabel("New label");
 		Label_show_id.setVisible(false);
-		Label_show_id.setBounds(70, 121, 45, 13);
+		Label_show_id.setBounds(164, 157, 45, 13);
 		contentPane.add(Label_show_id);
 
 		Label_show_phone = new JLabel("New label");
 		Label_show_phone.setVisible(false);
-		Label_show_phone.setBounds(70, 154, 45, 13);
+		Label_show_phone.setBounds(150, 179, 45, 13);
 		contentPane.add(Label_show_phone);
 
 		Label_show_birthday = new JLabel("New label");
 		Label_show_birthday.setVisible(false);
-		Label_show_birthday.setBounds(70, 177, 45, 13);
+		Label_show_birthday.setBounds(151, 209, 45, 13);
 		contentPane.add(Label_show_birthday);
 
 		textField_fnane = new JTextField();
 		textField_fnane.setVisible(false);
-		textField_fnane.setBounds(235, 151, 96, 19);
+		textField_fnane.setBounds(307, 154, 96, 19);
 		contentPane.add(textField_fnane);
 		textField_fnane.setColumns(10);
 
 		textField_lname = new JTextField();
 		textField_lname.setVisible(false);
-		textField_lname.setBounds(235, 174, 96, 19);
+		textField_lname.setBounds(307, 202, 96, 19);
 		contentPane.add(textField_lname);
 		textField_lname.setColumns(10);
 
 		textField_id = new JTextField();
 		textField_id.setVisible(false);
-		textField_id.setBounds(34, 118, 96, 19);
+		textField_id.setBounds(113, 154, 96, 19);
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
 
 		textField_phone = new JTextField();
 		textField_phone.setVisible(false);
-		textField_phone.setBounds(31, 151, 96, 19);
+		textField_phone.setBounds(113, 176, 96, 19);
 		contentPane.add(textField_phone);
 		textField_phone.setColumns(10);
 
 		textField_birthday = new JTextField();
 		textField_birthday.setVisible(false);
-		textField_birthday.setBounds(32, 174, 96, 19);
+		textField_birthday.setBounds(113, 206, 96, 19);
 		contentPane.add(textField_birthday);
 		textField_birthday.setColumns(10);
 
 		Label_show_fname = new JLabel("New label");
 		Label_show_fname.setVisible(false);
-		Label_show_fname.setBounds(261, 154, 45, 13);
+		Label_show_fname.setBounds(358, 157, 45, 13);
 		contentPane.add(Label_show_fname);
 
 		Label_show_lname = new JLabel("New label");
 		Label_show_lname.setVisible(false);
-		Label_show_lname.setBounds(261, 170, 45, 13);
+		Label_show_lname.setBounds(338, 205, 45, 13);
 		contentPane.add(Label_show_lname);
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
@@ -376,7 +381,7 @@ public class Employee_showandadd extends JFrame {
 			}
 		});
 		Button_add_new_cusromer.setVisible(false);
-		Button_add_new_cusromer.setBounds(165, 232, 96, 21);
+		Button_add_new_cusromer.setBounds(237, 266, 96, 21);
 		contentPane.add(Button_add_new_cusromer);
 
 		comboBox_show_cusromer.setBounds(223, 58, 89, 21);
@@ -393,7 +398,16 @@ public class Employee_showandadd extends JFrame {
 
 			}
 		});
-		Button_show_add.setBounds(30, 58, 133, 21);
+		
+		JLabel label = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setForeground(Color.WHITE);
+		label.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		label.setBorder(new LineBorder(Color.WHITE));
+		label.setBackground(Color.WHITE);
+		label.setBounds(0, 0, 103, 33);
+		contentPane.add(label);
+		Button_show_add.setBounds(0, 108, 103, 21);
 		contentPane.add(Button_show_add);
 
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
@@ -404,15 +418,23 @@ public class Employee_showandadd extends JFrame {
 			}
 		});
 		Button_return.setFont(new Font("SansSerif", Font.BOLD, 14));
-		Button_return.setBounds(0, 0, 85, 21);
+		Button_return.setBounds(0, 336, 103, 21);
 		contentPane.add(Button_return);
 
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
-		Label_logo_yvc.setBounds(375, 199, 91, 64);
+		Label_logo_yvc.setBounds(429, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
+		
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(0, 0, 103, 357);
+		lblNewLabel.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblNewLabel);
+		
 
 		JLabel lblNewLabel_111 = new JLabel("");
 		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
@@ -422,5 +444,4 @@ public class Employee_showandadd extends JFrame {
 		contentPane.add(lblNewLabel_111);
 
 	}
-
 }

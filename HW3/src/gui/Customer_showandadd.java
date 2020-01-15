@@ -232,17 +232,17 @@ public class Customer_showandadd extends JFrame {
 
 			}
 		});
-		btn_delcustomer.setBounds(3, 63, 100, 21);
+		btn_delcustomer.setBounds(0, 63, 103, 21);
 		contentPane.add(btn_delcustomer);
 
 		lblNewLabel = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7 \u05E7\u05D9\u05D9\u05DD:");
 		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 14));
-		lblNewLabel.setBounds(279, 65, 102, 13);
+		lblNewLabel.setBounds(305, 65, 102, 13);
 		contentPane.add(lblNewLabel);
 
 		lab123 = new JLabel("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		lab123.setFont(new Font("SansSerif", Font.BOLD, 30));
-		lab123.setBounds(192, -20, 133, 68);
+		lab123.setBounds(248, -13, 133, 68);
 		contentPane.add(lab123);
 
 		Label_id = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05D6\u05D4\u05D5\u05EA:");
@@ -333,12 +333,12 @@ public class Customer_showandadd extends JFrame {
 
 		Label_show_fname = new JLabel("New label");
 		Label_show_fname.setVisible(false);
-		Label_show_fname.setBounds(261, 154, 45, 13);
+		Label_show_fname.setBounds(352, 136, 45, 13);
 		contentPane.add(Label_show_fname);
 
 		Label_show_lname = new JLabel("New label");
 		Label_show_lname.setVisible(false);
-		Label_show_lname.setBounds(261, 170, 45, 13);
+		Label_show_lname.setBounds(362, 159, 45, 13);
 		contentPane.add(Label_show_lname);
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
@@ -410,7 +410,7 @@ public class Customer_showandadd extends JFrame {
 		Button_add_new_cusromer.setBounds(200, 237, 96, 21);
 		contentPane.add(Button_add_new_cusromer);
 
-		comboBox_show_cusromer.setBounds(169, 59, 89, 21);
+		comboBox_show_cusromer.setBounds(173, 63, 89, 21);
 		contentPane.add(comboBox_show_cusromer);
 
 		JButton Button_show_add = new JButton(
