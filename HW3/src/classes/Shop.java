@@ -35,12 +35,15 @@ public class Shop implements Serializable {
 
 	// phone functions
 	public void addPhone(UsedPhone p) {
-		this.phones.add(p);
+		if (!this.phones.contains(p)) {
+			this.phones.add(p);
+		}
 		p.isInShop = 1;
 	}
 
 	public void removePhone(UsedPhone p) {
-		phones.remove(p);
+		// phones.remove(p);
+		p.isInShop = 0;
 	}
 
 	public void showPhoneStock() {

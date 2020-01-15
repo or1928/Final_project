@@ -129,7 +129,10 @@ public class Sale_showandadd extends JFrame {
 
 		JComboBox comboBox_2 = new JComboBox();
 		for (UsedPhone my : Main.myShop.getPhones())
-			comboBox_2.addItem(my.getModelNo());
+			if (my.isInShop == 1) {
+				comboBox_2.addItem(my.getModelNo());
+			}
+
 		comboBox_2.setBounds(177, 75, 53, 21);
 		comboBox_2.setVisible(false);
 		contentPane.add(comboBox_2);

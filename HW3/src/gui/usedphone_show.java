@@ -51,13 +51,13 @@ public class usedphone_show extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
-		
+
 		try {
 
 			Connection con = DriverManager
 					.getConnection("jdbc:sqlserver://localhost;databaseName=ShopDB;integratedSecurity=true;");
 
-			String sql = "SELECT * FROM usedphone";
+			String sql = "SELECT * FROM usedphone  WHERE isInShop=1";
 			Statement statement = con.createStatement();
 			ResultSet resultSet = statement.executeQuery(sql);
 			ResultSetMetaData metaData = resultSet.getMetaData();
@@ -92,7 +92,7 @@ public class usedphone_show extends JFrame {
 		scrollPane.setBounds(0, 160, 436, 103);
 		contentPane.add(scrollPane);
 		contentPane.setSize(963, 600); // setting frame size
-		
+
 		JButton btn_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
 		btn_return.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -104,7 +104,7 @@ public class usedphone_show extends JFrame {
 		btn_return.setBounds(172, 65, 85, 21);
 		contentPane.add(btn_return);
 		contentPane.setVisible(true);
-		
+
 	}
 
 }

@@ -190,7 +190,9 @@ public class Usedphone_showandadd extends JFrame {
 		comboBox1 = new JComboBox();
 		comboBox1.addItem("");
 		for (UsedPhone my : Main.myShop.getPhones())
-			comboBox1.addItem(my.getModelNo());
+			if (my.isInShop == 1) {
+				comboBox1.addItem(my.getModelNo());
+			}
 
 		comboBox1.setVisible(false);
 		comboBox1.setBounds(151, 126, 86, 21);
