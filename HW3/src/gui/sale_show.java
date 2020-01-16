@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -8,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
@@ -20,10 +20,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableColumn;
-import javax.swing.JTextField;
 
 public class sale_show extends JFrame {
 
@@ -57,8 +57,7 @@ public class sale_show extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
-		
+
 		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
 		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
@@ -120,8 +119,7 @@ public class sale_show extends JFrame {
 		btn_return.setBounds(0, 327, 103, 30);
 		contentPane.add(btn_return);
 		contentPane.setVisible(true);
-		
-		
+
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -134,28 +132,30 @@ public class sale_show extends JFrame {
 		lblside.setBounds(0, 0, 103, 357);
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
-		
-		JLabel lbl_show = new JLabel("\u05D4\u05E6\u05D2\u05EA \u05D4\u05D6\u05DE\u05E0\u05D5\u05EA \u05DE\u05E2\u05DC:");
+
+		JLabel lbl_show = new JLabel(
+				"\u05D4\u05E6\u05D2\u05EA \u05D4\u05D6\u05DE\u05E0\u05D5\u05EA \u05DE\u05E2\u05DC:");
 		lbl_show.setFont(new Font("SansSerif", Font.PLAIN, 17));
 		lbl_show.setBounds(341, 242, 127, 50);
 		contentPane.add(lbl_show);
-		
+
 		textField_pr = new JTextField();
 		textField_pr.setBounds(233, 259, 96, 19);
 		contentPane.add(textField_pr);
 		textField_pr.setColumns(10);
-		
+
 		JButton btnshow_newTabel = new JButton("\u05D4\u05E6\u05D2");
 		btnshow_newTabel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-
+					int salePriceInput = Integer.valueOf(textField_pr.getText());
 					Connection con = DriverManager
 							.getConnection("jdbc:sqlserver://localhost;databaseName=ShopDB;integratedSecurity=true;");
 
 					String sql = "SELECT * FROM sale where price>?";
-					Statement statement = con.createStatement();
-					ResultSet resultSet = statement.executeQuery(sql);
+					PreparedStatement statement = con.prepareStatement(sql);
+					statement.setInt(1, salePriceInput);
+					ResultSet resultSet = statement.executeQuery();
 					ResultSetMetaData metaData = resultSet.getMetaData();
 					int columns = metaData.getColumnCount();
 					for (int i = 1; i <= columns; i++) {

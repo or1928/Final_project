@@ -41,8 +41,9 @@ public class Main {
 		// read shop data from DB
 
 		DBconnect.openDB();
-		DBconnect.readShopFromDB();
+
 		// DBconnect.clearDB();
+		DBconnect.readShopFromDB();
 
 		// initialize system with basic data from text file input
 		init();
