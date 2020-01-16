@@ -32,109 +32,109 @@ import javax.swing.border.LineBorder;
 public class Usedphone_showandadd extends JFrame {
 
 	private static JPanel contentPane;
-	private static JTextField textField_1;
-	private static JTextField textField_2;
-	private static JLabel lblNewLabel_11;
-	private static JButton btnNewButton_111;
-	private static JComboBox comboBox_2;
-	private static JTextField textField;
-	private static JComboBox comboBox_1;
-	private static JLabel lblNewLabel_4;
-	private static JButton btnNewButton_1, btn_Switch_show;
-	private static JLabel lblNewLabel_3;
-	private static JLabel lblNewLabel_5;
-	private static JLabel lblNewLabel_6;
-	private static JLabel lblNewLabel_2;
-	private static JComboBox comboBox1;
-	private static JLabel lblNewLabel_8;
-	private static JLabel lblNewLabel_9;
-	private static JLabel lblNewLabel_10;
-	private static JLabel lblNewLabel_12;
-	private static JLabel lblNewLabel_13;
-	private JLabel label;
+	private static JTextField textField_year;
+	private static JTextField textField_date;
+	private static JLabel lbphonelection;
+	private static JButton btn_dell;
+	private static JComboBox comboBox_type;
+	private static JTextField textField_namephon;
+	private static JComboBox comboBox_company;
+	private static JLabel lblcompany;
+	private static JButton btnadd, btn_Switch_show;
+	private static JLabel lblyear;
+	private static JLabel lbltype;
+	private static JLabel lblprice;
+	private static JLabel lblNewname;
+	private static JComboBox comboBox_phonelection;
+	private static JLabel lblname;
+	private static JLabel lblNewyear;
+	private static JLabel lblNewtype;
+	private static JLabel lblNewprice;
+	private static JLabel lblNewcomp_13;
+	private JLabel labelphon;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void Visible_co_t() {
-		lblNewLabel_8.setVisible(true);
-		lblNewLabel_9.setVisible(true);
-		lblNewLabel_10.setVisible(true);
-		lblNewLabel_12.setVisible(true);
-		lblNewLabel_13.setVisible(true);
-		textField_2.setVisible(true);
-		lblNewLabel_2.setVisible(true);
-		lblNewLabel_3.setVisible(true);
-		lblNewLabel_4.setVisible(true);
-		lblNewLabel_5.setVisible(true);
-		lblNewLabel_6.setVisible(true);
-		lblNewLabel_4.setVisible(true);
-		btnNewButton_1.setVisible(true);
+		lblname.setVisible(true);
+		lblNewyear.setVisible(true);
+		lblNewtype.setVisible(true);
+		lblNewprice.setVisible(true);
+		lblNewcomp_13.setVisible(true);
+		textField_date.setVisible(true);
+		lblNewname.setVisible(true);
+		lblyear.setVisible(true);
+		lblcompany.setVisible(true);
+		lbltype.setVisible(true);
+		lblprice.setVisible(true);
+		lblcompany.setVisible(true);
+		btnadd.setVisible(true);
 	}
 
 	public static void Visible_co_f() {
 
-		lblNewLabel_8.setVisible(false);
-		lblNewLabel_9.setVisible(false);
-		lblNewLabel_10.setVisible(false);
-		lblNewLabel_12.setVisible(false);
-		lblNewLabel_13.setVisible(false);
-		textField_2.setVisible(false);
-		lblNewLabel_2.setVisible(false);
-		lblNewLabel_3.setVisible(false);
-		lblNewLabel_4.setVisible(false);
-		lblNewLabel_5.setVisible(false);
-		lblNewLabel_6.setVisible(false);
-		lblNewLabel_4.setVisible(false);
-		btnNewButton_1.setVisible(false);
+		lblname.setVisible(false);
+		lblNewyear.setVisible(false);
+		lblNewtype.setVisible(false);
+		lblNewprice.setVisible(false);
+		lblNewcomp_13.setVisible(false);
+		textField_date.setVisible(false);
+		lblNewname.setVisible(false);
+		lblyear.setVisible(false);
+		lblcompany.setVisible(false);
+		lbltype.setVisible(false);
+		lblprice.setVisible(false);
+		lblcompany.setVisible(false);
+		btnadd.setVisible(false);
 	}
 
 	// co
 	public static void Visible_add_t() {
-		btnNewButton_1.setVisible(true);
-		comboBox_1.setVisible(true);
-		comboBox_2.setVisible(true);
-		textField_1.setVisible(true);
-		textField.setVisible(true);
-		textField_2.setVisible(true);
-		lblNewLabel_2.setVisible(true);
-		lblNewLabel_3.setVisible(true);
-		lblNewLabel_4.setVisible(true);
-		lblNewLabel_5.setVisible(true);
-		lblNewLabel_6.setVisible(true);
-		lblNewLabel_4.setVisible(true);
+		btnadd.setVisible(true);
+		comboBox_company.setVisible(true);
+		comboBox_type.setVisible(true);
+		textField_year.setVisible(true);
+		textField_namephon.setVisible(true);
+		textField_date.setVisible(true);
+		lblNewname.setVisible(true);
+		lblyear.setVisible(true);
+		lblcompany.setVisible(true);
+		lbltype.setVisible(true);
+		lblprice.setVisible(true);
+		lblcompany.setVisible(true);
 
 	}
 
 	public static void Visible_add_f() {
 
-		btnNewButton_1.setVisible(false);
-		comboBox_1.setVisible(false);
-		comboBox_2.setVisible(false);
-		textField_1.setVisible(false);
-		textField.setVisible(false);
-		textField_2.setVisible(false);
-		lblNewLabel_2.setVisible(false);
-		lblNewLabel_3.setVisible(false);
-		lblNewLabel_4.setVisible(false);
-		lblNewLabel_5.setVisible(false);
-		lblNewLabel_6.setVisible(false);
-		lblNewLabel_4.setVisible(false);
+		btnadd.setVisible(false);
+		comboBox_company.setVisible(false);
+		comboBox_type.setVisible(false);
+		textField_year.setVisible(false);
+		textField_namephon.setVisible(false);
+		textField_date.setVisible(false);
+		lblNewname.setVisible(false);
+		lblyear.setVisible(false);
+		lblcompany.setVisible(false);
+		lbltype.setVisible(false);
+		lblprice.setVisible(false);
+		lblcompany.setVisible(false);
 	}
 
 	// co
 	public static void Visible_dell_t() {
 
-		lblNewLabel_11.setVisible(true);
-		comboBox1.setVisible(true);
-		btnNewButton_111.setVisible(true);
+		lbphonelection.setVisible(true);
+		comboBox_phonelection.setVisible(true);
+		btn_dell.setVisible(true);
 	}
 
 	public static void Visible_dell_f() {
 
-		lblNewLabel_11.setVisible(false);
-		comboBox1.setVisible(false);
-		btnNewButton_111.setVisible(false);
+		lbphonelection.setVisible(false);
+		comboBox_phonelection.setVisible(false);
+		btn_dell.setVisible(false);
 	}
 
 	public static void main(String[] args) {
@@ -188,27 +188,27 @@ public class Usedphone_showandadd extends JFrame {
 		btn_Switch_show.setBounds(0, 158, 103, 21);
 		contentPane.add(btn_Switch_show);
 
-		lblNewLabel_11 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0");
-		lblNewLabel_11.setVisible(false);
-		lblNewLabel_11.setBounds(395, 178, 76, 13);
-		contentPane.add(lblNewLabel_11);
+		lbphonelection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0");
+		lbphonelection.setVisible(false);
+		lbphonelection.setBounds(395, 178, 76, 13);
+		contentPane.add(lbphonelection);
 
-		comboBox1 = new JComboBox();
-		comboBox1.addItem("");
+		comboBox_phonelection = new JComboBox();
+		comboBox_phonelection.addItem("");
 		for (UsedPhone my : Main.myShop.getPhones())
 			if (my.isInShop == 1) {
-				comboBox1.addItem(my.getModelNo());
+				comboBox_phonelection.addItem(my.getModelNo());
 			}
 
-		comboBox1.setVisible(false);
-		comboBox1.setBounds(299, 174, 86, 21);
-		contentPane.add(comboBox1);
+		comboBox_phonelection.setVisible(false);
+		comboBox_phonelection.setBounds(299, 174, 86, 21);
+		contentPane.add(comboBox_phonelection);
 
-		btnNewButton_111 = new JButton("\u05DE\u05D7\u05E7");
-		btnNewButton_111.addActionListener(new ActionListener() {
+		btn_dell = new JButton("\u05DE\u05D7\u05E7");
+		btn_dell.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				for (UsedPhone my : Main.myShop.getPhones())
-					if (comboBox1.getSelectedItem().equals(my.getModelNo())) {
+					if (comboBox_phonelection.getSelectedItem().equals(my.getModelNo())) {
 						Main.myShop.removePhone(my);
 						break;
 					}
@@ -217,9 +217,9 @@ public class Usedphone_showandadd extends JFrame {
 				Manager_window.main(null);
 			}
 		});
-		btnNewButton_111.setVisible(false);
-		btnNewButton_111.setBounds(225, 228, 85, 21);
-		contentPane.add(btnNewButton_111);
+		btn_dell.setVisible(false);
+		btn_dell.setBounds(225, 228, 85, 21);
+		contentPane.add(btn_dell);
 
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
 		Button_return.addActionListener(new ActionListener() {
@@ -232,81 +232,81 @@ public class Usedphone_showandadd extends JFrame {
 		Button_return.setBounds(0, 336, 103, 21);
 		contentPane.add(Button_return);
 
-		comboBox_2 = new JComboBox();
-		comboBox_2.addItem("");
-		comboBox_2.addItem("Used");
-		comboBox_2.addItem("New");
-		comboBox_2.addItem("asNew");
-		comboBox_2.setBounds(144, 98, 53, 21);
-		comboBox_2.setVisible(false);
+		comboBox_type = new JComboBox();
+		comboBox_type.addItem("");
+		comboBox_type.addItem("Used");
+		comboBox_type.addItem("New");
+		comboBox_type.addItem("asNew");
+		comboBox_type.setBounds(144, 98, 53, 21);
+		comboBox_type.setVisible(false);
 
-		contentPane.add(comboBox_2);
+		contentPane.add(comboBox_type);
 
-		lblNewLabel_4 = new JLabel("\u05D7\u05D1\u05E8\u05D4:");
-		lblNewLabel_4.setBounds(225, 178, 45, 13);
-		lblNewLabel_4.setVisible(false);
-		contentPane.add(lblNewLabel_4);
+		lblcompany = new JLabel("\u05D7\u05D1\u05E8\u05D4:");
+		lblcompany.setBounds(225, 178, 45, 13);
+		lblcompany.setVisible(false);
+		contentPane.add(lblcompany);
 
-		textField_2 = new JTextField();
-		textField_2.setBounds(119, 142, 96, 19);
-		textField_2.setVisible(false);
-		contentPane.add(textField_2);
-		textField_2.setColumns(10);
+		textField_date = new JTextField();
+		textField_date.setBounds(119, 142, 96, 19);
+		textField_date.setVisible(false);
+		contentPane.add(textField_date);
+		textField_date.setColumns(10);
 
-		textField_1 = new JTextField();
-		textField_1.setBounds(289, 142, 96, 19);
-		textField_1.setVisible(false);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		textField_year = new JTextField();
+		textField_year.setBounds(289, 142, 96, 19);
+		textField_year.setVisible(false);
+		contentPane.add(textField_year);
+		textField_year.setColumns(10);
 
-		comboBox_1 = new JComboBox();
+		comboBox_company = new JComboBox();
 
-		comboBox_1.setBounds(137, 174, 60, 21);
-		comboBox_1.addItem("");
-		comboBox_1.addItem("Apple");
-		comboBox_1.addItem("Samsung");
-		comboBox_1.addItem("LG");
-		comboBox_1.addItem("Xiaomi");
-		comboBox_1.setVisible(false);
-		contentPane.add(comboBox_1);
+		comboBox_company.setBounds(137, 174, 60, 21);
+		comboBox_company.addItem("");
+		comboBox_company.addItem("Apple");
+		comboBox_company.addItem("Samsung");
+		comboBox_company.addItem("LG");
+		comboBox_company.addItem("Xiaomi");
+		comboBox_company.setVisible(false);
+		contentPane.add(comboBox_company);
 
-		textField = new JTextField();
-		textField.setBounds(289, 99, 96, 19);
-		textField.setVisible(false);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		textField_namephon = new JTextField();
+		textField_namephon.setBounds(289, 99, 96, 19);
+		textField_namephon.setVisible(false);
+		contentPane.add(textField_namephon);
+		textField_namephon.setColumns(10);
 
-		JLabel lblNewLabel = new JLabel("\u05DE\u05D7\u05E1\u05DF");
-		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 36));
-		lblNewLabel.setBounds(251, -11, 118, 64);
-		contentPane.add(lblNewLabel);
+		JLabel lblttl = new JLabel("\u05DE\u05D7\u05E1\u05DF");
+		lblttl.setFont(new Font("SansSerif", Font.BOLD, 36));
+		lblttl.setBounds(251, -11, 118, 64);
+		contentPane.add(lblttl);
 
-		lblNewLabel_3 = new JLabel("\u05E9\u05E0\u05D4:");
-		lblNewLabel_3.setVisible(false);
+		lblyear = new JLabel("\u05E9\u05E0\u05D4:");
+		lblyear.setVisible(false);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.addItem("");
+		JComboBox comboBox_show_phon = new JComboBox();
+		comboBox_show_phon.addItem("");
 		for (UsedPhone uphone : Main.allusedPhones)
-			comboBox.addItem(uphone.getModelNo());
+			comboBox_show_phon.addItem(uphone.getModelNo());
 
-		comboBox.addItemListener(new ItemListener() {
+		comboBox_show_phon.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				for (UsedPhone uphone : Main.allusedPhones)
-					if (comboBox.getSelectedItem().equals(uphone.getModelNo())) {
+					if (comboBox_show_phon.getSelectedItem().equals(uphone.getModelNo())) {
 						Visible_co_t();
 						Visible_add_t();
 						Visible_dell_f();
-						textField.setVisible(false);
-						textField_1.setVisible(false);
-						textField_2.setVisible(false);
-						comboBox1.setVisible(false);
-						comboBox_1.setVisible(false);
-						comboBox_2.setVisible(false);
-						lblNewLabel_8.setText(uphone.getModelNo());
-						lblNewLabel_9.setText(String.valueOf(uphone.getManufactureYear()));
-						lblNewLabel_10.setText(String.valueOf(uphone.getPhoneCondition()));
-						lblNewLabel_13.setText(String.valueOf(uphone.getPhoneBrand()));
-						lblNewLabel_12.setText(String.valueOf(uphone.getPrice()));
+						textField_namephon.setVisible(false);
+						textField_year.setVisible(false);
+						textField_date.setVisible(false);
+						comboBox_phonelection.setVisible(false);
+						comboBox_company.setVisible(false);
+						comboBox_type.setVisible(false);
+						lblname.setText(uphone.getModelNo());
+						lblNewyear.setText(String.valueOf(uphone.getManufactureYear()));
+						lblNewtype.setText(String.valueOf(uphone.getPhoneCondition()));
+						lblNewcomp_13.setText(String.valueOf(uphone.getPhoneBrand()));
+						lblNewprice.setText(String.valueOf(uphone.getPrice()));
 
 						break;
 					} else {
@@ -315,15 +315,15 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 
-		comboBox.setBounds(199, 54, 81, 21);
-		contentPane.add(comboBox);
+		comboBox_show_phon.setBounds(199, 54, 81, 21);
+		contentPane.add(comboBox_show_phon);
 
-		btnNewButton_1 = new JButton("\u05D4\u05D5\u05E1\u05E3");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		btnadd = new JButton("\u05D4\u05D5\u05E1\u05E3");
+		btnadd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				for (UsedPhone uPhone : Main.allusedPhones)
-					if (comboBox.getSelectedItem().equals(uPhone.getModelNo())) {
+					if (comboBox_show_phon.getSelectedItem().equals(uPhone.getModelNo())) {
 
 						try {
 							Main.myShop.addPhone(uPhone);
@@ -335,15 +335,15 @@ public class Usedphone_showandadd extends JFrame {
 						break;
 
 					}
-				if (!textField.getText().isEmpty()) {
+				if (!textField_namephon.getText().isEmpty()) {
 
 					try {
 						// condition.valueOf(comboBox_2.getSelectedItem())
 						// brand.valueOf(comboBox_1.getSelectedItem())
-						String em = (String) comboBox_2.getSelectedItem();
-						String em1 = (String) comboBox_1.getSelectedItem();
-						Main.myShop.addPhone(new UsedPhone(textField.getText(), Integer.parseInt(textField_1.getText()),
-								condition.valueOf(em), Integer.parseInt(textField_2.getText()), brand.valueOf(em1)));
+						String em = (String) comboBox_type.getSelectedItem();
+						String em1 = (String) comboBox_company.getSelectedItem();
+						Main.myShop.addPhone(new UsedPhone(textField_namephon.getText(), Integer.parseInt(textField_year.getText()),
+								condition.valueOf(em), Integer.parseInt(textField_date.getText()), brand.valueOf(em1)));
 						JOptionPane.showMessageDialog(null, "ברוך הבא ");
 					} catch (AlreadyBoundException p1) {
 						// TODO Auto-generated catch block
@@ -357,69 +357,69 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 
-		btnNewButton_1.setVisible(false);
-		btnNewButton_1.setBounds(225, 228, 85, 21);
-		contentPane.add(btnNewButton_1);
+		btnadd.setVisible(false);
+		btnadd.setBounds(225, 228, 85, 21);
+		contentPane.add(btnadd);
 
-		lblNewLabel_3.setBounds(416, 145, 45, 13);
-		contentPane.add(lblNewLabel_3);
+		lblyear.setBounds(416, 145, 45, 13);
+		contentPane.add(lblyear);
 
-		lblNewLabel_5 = new JLabel("\u05DE\u05E6\u05D1 \u05D4\u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
-		lblNewLabel_5.setVisible(false);
-		lblNewLabel_5.setBounds(204, 102, 76, 13);
-		contentPane.add(lblNewLabel_5);
+		lbltype = new JLabel("\u05DE\u05E6\u05D1 \u05D4\u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
+		lbltype.setVisible(false);
+		lbltype.setBounds(204, 102, 76, 13);
+		contentPane.add(lbltype);
 
-		lblNewLabel_6 = new JLabel("\u05DE\u05D7\u05D9\u05E8:");
-		lblNewLabel_6.setVisible(false);
-		lblNewLabel_6.setBounds(225, 145, 45, 13);
-		contentPane.add(lblNewLabel_6);
+		lblprice = new JLabel("\u05DE\u05D7\u05D9\u05E8:");
+		lblprice.setVisible(false);
+		lblprice.setBounds(225, 145, 45, 13);
+		contentPane.add(lblprice);
 
-		lblNewLabel_2 = new JLabel("\u05E9\u05DD \u05DE\u05DB\u05E9\u05D9\u05E8:");
-		lblNewLabel_2.setVisible(false);
+		lblNewname = new JLabel("\u05E9\u05DD \u05DE\u05DB\u05E9\u05D9\u05E8:");
+		lblNewname.setVisible(false);
 
-		lblNewLabel_8 = new JLabel("New label");
-		lblNewLabel_8.setVisible(false);
-		lblNewLabel_8.setBounds(335, 102, 45, 13);
-		contentPane.add(lblNewLabel_8);
+		lblname = new JLabel("New label");
+		lblname.setVisible(false);
+		lblname.setBounds(335, 102, 45, 13);
+		contentPane.add(lblname);
 
-		lblNewLabel_9 = new JLabel("New label");
-		lblNewLabel_9.setVisible(false);
-		lblNewLabel_9.setBounds(335, 145, 45, 13);
-		contentPane.add(lblNewLabel_9);
+		lblNewyear = new JLabel("New label");
+		lblNewyear.setVisible(false);
+		lblNewyear.setBounds(335, 145, 45, 13);
+		contentPane.add(lblNewyear);
 
-		lblNewLabel_10 = new JLabel("New label");
-		lblNewLabel_10.setVisible(false);
-		lblNewLabel_10.setBounds(137, 89, 45, 13);
-		contentPane.add(lblNewLabel_10);
+		lblNewtype = new JLabel("New label");
+		lblNewtype.setVisible(false);
+		lblNewtype.setBounds(137, 89, 45, 13);
+		contentPane.add(lblNewtype);
 
-		lblNewLabel_12 = new JLabel("New label");
-		lblNewLabel_12.setVisible(false);
-		lblNewLabel_12.setBounds(170, 145, 45, 13);
-		contentPane.add(lblNewLabel_12);
+		lblNewprice = new JLabel("New label");
+		lblNewprice.setVisible(false);
+		lblNewprice.setBounds(170, 145, 45, 13);
+		contentPane.add(lblNewprice);
 
-		lblNewLabel_13 = new JLabel("New label");
-		lblNewLabel_13.setVisible(false);
+		lblNewcomp_13 = new JLabel("New label");
+		lblNewcomp_13.setVisible(false);
 		
-		label = new JLabel("\u05DE\u05D7\u05E1\u05DF");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setForeground(Color.WHITE);
-		label.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
-		label.setBorder(new LineBorder(Color.WHITE));
-		label.setBackground(Color.WHITE);
-		label.setBounds(0, 0, 103, 33);
-		contentPane.add(label);
-		lblNewLabel_13.setBounds(137, 178, 45, 13);
-		contentPane.add(lblNewLabel_13);
+		labelphon = new JLabel("\u05DE\u05D7\u05E1\u05DF");
+		labelphon.setHorizontalAlignment(SwingConstants.CENTER);
+		labelphon.setForeground(Color.WHITE);
+		labelphon.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		labelphon.setBorder(new LineBorder(Color.WHITE));
+		labelphon.setBackground(Color.WHITE);
+		labelphon.setBounds(0, 0, 103, 33);
+		contentPane.add(labelphon);
+		lblNewcomp_13.setBounds(137, 178, 45, 13);
+		contentPane.add(lblNewcomp_13);
 
-		JLabel lblNewLabel_7 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0:");
-		lblNewLabel_7.setBounds(309, 59, 60, 13);
-		contentPane.add(lblNewLabel_7);
-		lblNewLabel_2.setBounds(395, 100, 66, 13);
-		contentPane.add(lblNewLabel_2);
+		JLabel lblusdephon_selection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0:");
+		lblusdephon_selection.setBounds(309, 59, 60, 13);
+		contentPane.add(lblusdephon_selection);
+		lblNewname.setBounds(395, 100, 66, 13);
+		contentPane.add(lblNewname);
 
-		JButton btnNewButton = new JButton(
+		JButton btnaddnew = new JButton(
 				"\u05D4\u05D5\u05E1\u05E4\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8 \u05D7\u05D3\u05E9");
-		btnNewButton.addActionListener(new ActionListener() {
+		btnaddnew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				Visible_dell_f();
@@ -428,23 +428,23 @@ public class Usedphone_showandadd extends JFrame {
 
 			}
 		});
-		btnNewButton.setFont(new Font("SansSerif", Font.BOLD, 15));
-		btnNewButton.setBounds(0, 59, 103, 21);
-		contentPane.add(btnNewButton);
+		btnaddnew.setFont(new Font("SansSerif", Font.BOLD, 15));
+		btnaddnew.setBounds(0, 59, 103, 21);
+		contentPane.add(btnaddnew);
 
-		JButton btnNewButton11 = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8");
-		btnNewButton11.addActionListener(new ActionListener() {
+		JButton btndell = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8");
+		btndell.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				Visible_co_f();
 				Visible_add_f();
 				Visible_dell_t();
-				lblNewLabel_8.setVisible(false);
+				lblname.setVisible(false);
 
 			}
 		});
-		btnNewButton11.setBounds(0, 110, 103, 21);
-		contentPane.add(btnNewButton11);
+		btndell.setBounds(0, 110, 103, 21);
+		contentPane.add(btndell);
 
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
@@ -454,18 +454,18 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.add(Label_logo_yvc);
 		
 		
-		JLabel lblNewLabel1 = new JLabel("");
-		lblNewLabel1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel1.setBounds(0, 0, 103, 357);
-		lblNewLabel1.setIcon(new ImageIcon(newImage3));
-		contentPane.add(lblNewLabel1);
+		JLabel lblside = new JLabel("");
+		lblside.setHorizontalAlignment(SwingConstants.CENTER);
+		lblside.setBounds(0, 0, 103, 357);
+		lblside.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblside);
 
 
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_1.setIcon(new ImageIcon(newImage));
-		lblNewLabel_1.setBounds(0, 0, 530, 357);
-		contentPane.add(lblNewLabel_1);
+		JLabel Label_logo_background = new JLabel("");
+		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		Label_logo_background.setIcon(new ImageIcon(newImage));
+		Label_logo_background.setBounds(0, 0, 530, 357);
+		contentPane.add(Label_logo_background);
 	}
 }

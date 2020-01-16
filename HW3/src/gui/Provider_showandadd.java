@@ -35,8 +35,8 @@ public class Provider_showandadd extends JFrame {
 	private static JTextField textField_id;
 	private static JTextField textField_phone;
 	private static JTextField textField_birthday;
-	private static JLabel lblNewLabel;
-	private static JLabel lab123;
+	private static JLabel lblprov_selection;
+	private static JLabel labttl;
 	private static JLabel Label_id;
 	private static JLabel lLabel_phone;
 	private static JLabel Label_birthday;
@@ -48,11 +48,11 @@ public class Provider_showandadd extends JFrame {
 	private static JLabel Label_show_fname;
 	private static JLabel Label_show_lname;
 	private static JButton Button_add_new_cusromer;
-	private static JLabel lblNewLabel_1;
-	private static JComboBox comboBox;
+	private static JLabel lblpro_selection;
+	private static JComboBox comboBox_namepro_inTheshop;
 	private static JButton btn_Switch_show;
-	private static JButton btnNewButton_1;
-	private JLabel label;
+	private static JButton btndel;
+	private JLabel lblNewpage;
 
 	/**
 	 * Launch the application.
@@ -112,16 +112,16 @@ public class Provider_showandadd extends JFrame {
 
 	public static void Visible_dell_t() {
 
-		lblNewLabel_1.setVisible(true);
-		comboBox.setVisible(true);
-		btnNewButton_1.setVisible(true);
+		lblpro_selection.setVisible(true);
+		comboBox_namepro_inTheshop.setVisible(true);
+		btndel.setVisible(true);
 	}
 
 	public static void Visible_dell_f() {
 
-		lblNewLabel_1.setVisible(false);
-		comboBox.setVisible(false);
-		btnNewButton_1.setVisible(false);
+		lblpro_selection.setVisible(false);
+		comboBox_namepro_inTheshop.setVisible(false);
+		btndel.setVisible(false);
 	}
 
 	public static void main(String[] args) {
@@ -174,25 +174,25 @@ public class Provider_showandadd extends JFrame {
 		btn_Switch_show.setBounds(0, 70, 103, 21);
 		contentPane.add(btn_Switch_show);
 
-		lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7");
-		lblNewLabel_1.setVisible(false);
-		lblNewLabel_1.setBounds(281, 178, 70, 13);
-		contentPane.add(lblNewLabel_1);
+		lblpro_selection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7");
+		lblpro_selection.setVisible(false);
+		lblpro_selection.setBounds(281, 178, 70, 13);
+		contentPane.add(lblpro_selection);
 
-		comboBox = new JComboBox();
-		comboBox.addItem("");
+		comboBox_namepro_inTheshop = new JComboBox();
+		comboBox_namepro_inTheshop.addItem("");
 		for (Provider my : Main.myShop.getProviders())
-			comboBox.addItem(my.getFirstName());
-		comboBox.setVisible(false);
-		comboBox.setBounds(185, 174, 86, 21);
-		contentPane.add(comboBox);
+			comboBox_namepro_inTheshop.addItem(my.getFirstName());
+		comboBox_namepro_inTheshop.setVisible(false);
+		comboBox_namepro_inTheshop.setBounds(185, 174, 86, 21);
+		contentPane.add(comboBox_namepro_inTheshop);
 
-		btnNewButton_1 = new JButton("\u05DE\u05D7\u05E7");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		btndel = new JButton("\u05DE\u05D7\u05E7");
+		btndel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				for (Provider my : Main.myShop.getProviders())
-					if (comboBox.getSelectedItem().equals(my.getFirstName())) {
+					if (comboBox_namepro_inTheshop.getSelectedItem().equals(my.getFirstName())) {
 						Main.myShop.removeProvider(my);
 						break;
 					}
@@ -201,12 +201,12 @@ public class Provider_showandadd extends JFrame {
 				Manager_window.main(null);
 			}
 		});
-		btnNewButton_1.setVisible(false);
-		btnNewButton_1.setBounds(248, 252, 85, 21);
-		contentPane.add(btnNewButton_1);
+		btndel.setVisible(false);
+		btndel.setBounds(248, 252, 85, 21);
+		contentPane.add(btndel);
 
-		JButton btnNewButton = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05E1\u05E4\u05E7");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton del = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05E1\u05E4\u05E7");
+		del.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Visible_dell_t();
 				Visible_add_f();
@@ -219,18 +219,18 @@ public class Provider_showandadd extends JFrame {
 				Button_add_new_cusromer.setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(-5, 166, 108, 21);
-		contentPane.add(btnNewButton);
+		del.setBounds(-5, 166, 108, 21);
+		contentPane.add(del);
 
-		lblNewLabel = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7 \u05E7\u05D9\u05D9\u05DD:");
-		lblNewLabel.setBounds(322, 72, 102, 13);
-		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 14));
-		contentPane.add(lblNewLabel);
+		lblprov_selection = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7 \u05E7\u05D9\u05D9\u05DD:");
+		lblprov_selection.setBounds(322, 72, 102, 13);
+		lblprov_selection.setFont(new Font("SansSerif", Font.BOLD, 14));
+		contentPane.add(lblprov_selection);
 
-		lab123 = new JLabel("\u05E1\u05E4\u05E7\u05D9\u05DD");
-		lab123.setBounds(260, -10, 133, 68);
-		lab123.setFont(new Font("SansSerif", Font.BOLD, 30));
-		contentPane.add(lab123);
+		labttl = new JLabel("\u05E1\u05E4\u05E7\u05D9\u05DD");
+		labttl.setBounds(260, -10, 133, 68);
+		labttl.setFont(new Font("SansSerif", Font.BOLD, 30));
+		contentPane.add(labttl);
 
 		Label_id = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05D6\u05D4\u05D5\u05EA:");
 		Label_id.setBounds(219, 151, 68, 13);
@@ -390,14 +390,14 @@ public class Provider_showandadd extends JFrame {
 			}
 		});
 		
-		label = new JLabel("\u05E1\u05E4\u05E7\u05D9\u05DD");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setForeground(Color.WHITE);
-		label.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
-		label.setBorder(new LineBorder(Color.WHITE));
-		label.setBackground(Color.WHITE);
-		label.setBounds(0, 0, 103, 33);
-		contentPane.add(label);
+		lblNewpage = new JLabel("\u05E1\u05E4\u05E7\u05D9\u05DD");
+		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewpage.setForeground(Color.WHITE);
+		lblNewpage.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		lblNewpage.setBorder(new LineBorder(Color.WHITE));
+		lblNewpage.setBackground(Color.WHITE);
+		lblNewpage.setBounds(0, 0, 103, 33);
+		contentPane.add(lblNewpage);
 		contentPane.add(Button_show_add);
 
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
@@ -418,19 +418,19 @@ public class Provider_showandadd extends JFrame {
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		contentPane.add(Label_logo_yvc);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 0, 103, 357);
-		lblNewLabel.setIcon(new ImageIcon(newImage3));
-		contentPane.add(lblNewLabel);
+		JLabel lblside = new JLabel("");
+		lblside.setHorizontalAlignment(SwingConstants.CENTER);
+		lblside.setBounds(0, 0, 103, 357);
+		lblside.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblside);
 
 
-		JLabel lblNewLabel_111 = new JLabel("");
-		lblNewLabel_111.setBounds(0, 0, 530, 357);
-		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_111.setIcon(new ImageIcon(newImage));
-		contentPane.add(lblNewLabel_111);
+		JLabel Label_logo_background = new JLabel("");
+		Label_logo_background.setBounds(0, 0, 530, 357);
+		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		Label_logo_background.setIcon(new ImageIcon(newImage));
+		contentPane.add(Label_logo_background);
 
 	}
 }

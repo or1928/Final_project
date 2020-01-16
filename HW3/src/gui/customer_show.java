@@ -125,18 +125,18 @@ public class customer_show extends JFrame {
 		Label_logo_yvc.setBounds(433, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 0, 103, 357);
-		lblNewLabel.setIcon(new ImageIcon(newImage3));
-		contentPane.add(lblNewLabel);
+		JLabel sidelogo = new JLabel("");
+		sidelogo.setHorizontalAlignment(SwingConstants.CENTER);
+		sidelogo.setBounds(0, 0, 103, 357);
+		sidelogo.setIcon(new ImageIcon(newImage3));
+		contentPane.add(sidelogo);
 
-		JLabel lblNewLabel_111 = new JLabel("");
-		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_111.setIcon(new ImageIcon(newImage));
-		lblNewLabel_111.setBounds(0, 0, 530, 357);
-		contentPane.add(lblNewLabel_111);
+		JLabel lblbackground = new JLabel("");
+		lblbackground.setHorizontalAlignment(SwingConstants.CENTER);
+		lblbackground.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblbackground.setIcon(new ImageIcon(newImage));
+		lblbackground.setBounds(0, 0, 530, 357);
+		contentPane.add(lblbackground);
 
 	}
 }

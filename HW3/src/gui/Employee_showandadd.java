@@ -36,8 +36,8 @@ public class Employee_showandadd extends JFrame {
 	private static JTextField textField_id;
 	private static JTextField textField_phone;
 	private static JTextField textField_birthday;
-	private static JLabel lblNewLabel;
-	private static JLabel lab123;
+	private static JLabel lblCustomer_selection;
+	private static JLabel labttl;
 	private static JLabel Label_id;
 	private static JLabel lLabel_phone;
 	private static JLabel Label_birthday;
@@ -50,9 +50,9 @@ public class Employee_showandadd extends JFrame {
 	private static JLabel Label_show_lname;
 	private static JButton Button_add_new_cusromer;
 	private JTable table;
-	private static JLabel lblNewLabel_1;
+	private static JLabel lblempselection;
 	private static JComboBox comboBox_showEmplo_inMYshop_Dell;
-	private static JButton btnNewButton_1, btn_Switch_show;
+	private static JButton btndell, btn_Switch_show;
 	private static boolean flag = false;
 
 	public static void Visible_co_t() {
@@ -109,16 +109,16 @@ public class Employee_showandadd extends JFrame {
 
 	public static void Visible_dell_t() {
 
-		lblNewLabel_1.setVisible(true);
+		lblempselection.setVisible(true);
 		comboBox_showEmplo_inMYshop_Dell.setVisible(true);
-		btnNewButton_1.setVisible(true);
+		btndell.setVisible(true);
 	}
 
 	public static void Visible_dell_f() {
 
-		lblNewLabel_1.setVisible(false);
+		lblempselection.setVisible(false);
 		comboBox_showEmplo_inMYshop_Dell.setVisible(false);
-		btnNewButton_1.setVisible(false);
+		btndell.setVisible(false);
 	}
 
 	/**
@@ -156,10 +156,10 @@ public class Employee_showandadd extends JFrame {
 		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
 		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
 
-		lblNewLabel_1 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3");
-		lblNewLabel_1.setVisible(false);
-		lblNewLabel_1.setBounds(307, 179, 70, 13);
-		contentPane.add(lblNewLabel_1);
+		lblempselection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3");
+		lblempselection.setVisible(false);
+		lblempselection.setBounds(307, 179, 70, 13);
+		contentPane.add(lblempselection);
 
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
 		btn_Switch_show.addActionListener(new ActionListener() {
@@ -187,8 +187,8 @@ public class Employee_showandadd extends JFrame {
 		comboBox_showEmplo_inMYshop_Dell.setBounds(195, 175, 86, 21);
 		contentPane.add(comboBox_showEmplo_inMYshop_Dell);
 
-		btnNewButton_1 = new JButton("\u05DE\u05D7\u05E7");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		btndell = new JButton("\u05DE\u05D7\u05E7");
+		btndell.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				for (Employee my : Main.myShop.getEmployess())
@@ -202,12 +202,12 @@ public class Employee_showandadd extends JFrame {
 			}
 		});
 
-		btnNewButton_1.setVisible(false);
-		btnNewButton_1.setBounds(238, 266, 85, 21);
-		contentPane.add(btnNewButton_1);
+		btndell.setVisible(false);
+		btndell.setBounds(238, 266, 85, 21);
+		contentPane.add(btndell);
 
-		JButton btnNewButton = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05E2\u05D5\u05D1\u05D3");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btndel = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05E2\u05D5\u05D1\u05D3");
+		btndel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Visible_dell_t();
 				Visible_co_f();
@@ -223,19 +223,19 @@ public class Employee_showandadd extends JFrame {
 			}
 		});
 
-		btnNewButton.setBounds(0, 153, 103, 21);
-		contentPane.add(btnNewButton);
+		btndel.setBounds(0, 153, 103, 21);
+		contentPane.add(btndel);
 
-		lblNewLabel = new JLabel(
+		lblCustomer_selection = new JLabel(
 				" \u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3\u05D9\u05DD \u05E7\u05D9\u05D9\u05DD:");
-		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 14));
-		lblNewLabel.setBounds(322, 60, 123, 13);
-		contentPane.add(lblNewLabel);
+		lblCustomer_selection.setFont(new Font("SansSerif", Font.BOLD, 14));
+		lblCustomer_selection.setBounds(322, 60, 123, 13);
+		contentPane.add(lblCustomer_selection);
 
-		lab123 = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
-		lab123.setFont(new Font("SansSerif", Font.BOLD, 30));
-		lab123.setBounds(250, -20, 133, 68);
-		contentPane.add(lab123);
+		labttl = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
+		labttl.setFont(new Font("SansSerif", Font.BOLD, 30));
+		labttl.setBounds(250, -20, 133, 68);
+		contentPane.add(labttl);
 
 		Label_id = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05D6\u05D4\u05D5\u05EA:");
 		Label_id.setVisible(false);
@@ -399,14 +399,14 @@ public class Employee_showandadd extends JFrame {
 			}
 		});
 		
-		JLabel label = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setForeground(Color.WHITE);
-		label.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
-		label.setBorder(new LineBorder(Color.WHITE));
-		label.setBackground(Color.WHITE);
-		label.setBounds(0, 0, 103, 33);
-		contentPane.add(label);
+		JLabel lblNewpage = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
+		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewpage.setForeground(Color.WHITE);
+		lblNewpage.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		lblNewpage.setBorder(new LineBorder(Color.WHITE));
+		lblNewpage.setBackground(Color.WHITE);
+		lblNewpage.setBounds(0, 0, 103, 33);
+		contentPane.add(lblNewpage);
 		Button_show_add.setBounds(0, 108, 103, 21);
 		contentPane.add(Button_show_add);
 
@@ -429,19 +429,19 @@ public class Employee_showandadd extends JFrame {
 		contentPane.add(Label_logo_yvc);
 		
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 0, 103, 357);
-		lblNewLabel.setIcon(new ImageIcon(newImage3));
-		contentPane.add(lblNewLabel);
+		JLabel lblside = new JLabel("");
+		lblside.setHorizontalAlignment(SwingConstants.CENTER);
+		lblside.setBounds(0, 0, 103, 357);
+		lblside.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblside);
 		
 
-		JLabel lblNewLabel_111 = new JLabel("");
-		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_111.setIcon(new ImageIcon(newImage));
-		lblNewLabel_111.setBounds(0, 0, 530, 357);
-		contentPane.add(lblNewLabel_111);
+		JLabel Label_logo_background = new JLabel("");
+		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		Label_logo_background.setIcon(new ImageIcon(newImage));
+		Label_logo_background.setBounds(0, 0, 530, 357);
+		contentPane.add(Label_logo_background);
 
 	}
 }

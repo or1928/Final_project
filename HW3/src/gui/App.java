@@ -168,20 +168,20 @@ public class App {
 		textField_password.setBounds(196, 161, 96, 19);
 		frame.getContentPane().add(textField_password);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u05DB\u05E0\u05D9\u05E1\u05D4");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBorder(new LineBorder(Color.WHITE));
-		lblNewLabel_1.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
-		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setBackground(Color.WHITE);
-		lblNewLabel_1.setBounds(1, 155, 99, 33);
-		frame.getContentPane().add(lblNewLabel_1);
+		JLabel lblNewpage = new JLabel("\u05DB\u05E0\u05D9\u05E1\u05D4");
+		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewpage.setBorder(new LineBorder(Color.WHITE));
+		lblNewpage.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		lblNewpage.setForeground(Color.WHITE);
+		lblNewpage.setBackground(Color.WHITE);
+		lblNewpage.setBounds(1, 155, 99, 33);
+		frame.getContentPane().add(lblNewpage);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 0, 103, 357);
-		lblNewLabel.setIcon(new ImageIcon(newImage3));
-		frame.getContentPane().add(lblNewLabel);
+		JLabel side_logo = new JLabel("");
+		side_logo.setHorizontalAlignment(SwingConstants.CENTER);
+		side_logo.setBounds(0, 0, 103, 357);
+		side_logo.setIcon(new ImageIcon(newImage3));
+		frame.getContentPane().add(side_logo);
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);

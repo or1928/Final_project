@@ -36,7 +36,7 @@ public class Customer_showandadd extends JFrame {
 	private static JTextField textField_phone;
 	private static JTextField textField_birthday;
 	private static JTextField textField_email;
-	private static JLabel lblNewLabel;
+	private static JLabel lblCustomer_selection;
 	private static JLabel lab123;
 	private static JLabel Label_id;
 	private static JLabel lLabel_phone;
@@ -235,10 +235,10 @@ public class Customer_showandadd extends JFrame {
 		btn_delcustomer.setBounds(0, 63, 103, 21);
 		contentPane.add(btn_delcustomer);
 
-		lblNewLabel = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7 \u05E7\u05D9\u05D9\u05DD:");
-		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 14));
-		lblNewLabel.setBounds(305, 65, 102, 13);
-		contentPane.add(lblNewLabel);
+		lblCustomer_selection = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7 \u05E7\u05D9\u05D9\u05DD:");
+		lblCustomer_selection.setFont(new Font("SansSerif", Font.BOLD, 14));
+		lblCustomer_selection.setBounds(305, 65, 102, 13);
+		contentPane.add(lblCustomer_selection);
 
 		lab123 = new JLabel("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
 		lab123.setFont(new Font("SansSerif", Font.BOLD, 30));
@@ -437,14 +437,14 @@ public class Customer_showandadd extends JFrame {
 		Button_return.setBounds(0, 331, 106, 21);
 		contentPane.add(Button_return);
 
-		JLabel lblNewLabel_12 = new JLabel("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
-		lblNewLabel_12.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_12.setBorder(new LineBorder(Color.WHITE));
-		lblNewLabel_12.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
-		lblNewLabel_12.setForeground(Color.WHITE);
-		lblNewLabel_12.setBackground(Color.WHITE);
-		lblNewLabel_12.setBounds(0, 0, 103, 33);
-		contentPane.add(lblNewLabel_12);
+		JLabel lblNewpage = new JLabel("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
+		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewpage.setBorder(new LineBorder(Color.WHITE));
+		lblNewpage.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 24));
+		lblNewpage.setForeground(Color.WHITE);
+		lblNewpage.setBackground(Color.WHITE);
+		lblNewpage.setBounds(0, 0, 103, 33);
+		contentPane.add(lblNewpage);
 
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
@@ -453,18 +453,18 @@ public class Customer_showandadd extends JFrame {
 		Label_logo_yvc.setBounds(433, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 0, 103, 357);
-		lblNewLabel.setIcon(new ImageIcon(newImage3));
-		contentPane.add(lblNewLabel);
+		JLabel lblside = new JLabel("");
+		lblside.setHorizontalAlignment(SwingConstants.CENTER);
+		lblside.setBounds(0, 0, 103, 357);
+		lblside.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblside);
 
-		JLabel lblNewLabel_111 = new JLabel("");
-		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_111.setIcon(new ImageIcon(newImage));
-		lblNewLabel_111.setBounds(0, 0, 530, 357);
-		contentPane.add(lblNewLabel_111);
+		JLabel Label_logo_background = new JLabel("");
+		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		Label_logo_background.setIcon(new ImageIcon(newImage));
+		Label_logo_background.setBounds(0, 0, 530, 357);
+		contentPane.add(Label_logo_background);
 
 	}
 }

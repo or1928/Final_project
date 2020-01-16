@@ -128,18 +128,18 @@ public class provider_show extends JFrame {
 		Label_logo_yvc.setBounds(433, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
 
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 0, 103, 357);
-		lblNewLabel.setIcon(new ImageIcon(newImage3));
-		contentPane.add(lblNewLabel);
+		JLabel lblside = new JLabel("");
+		lblside.setHorizontalAlignment(SwingConstants.CENTER);
+		lblside.setBounds(0, 0, 103, 357);
+		lblside.setIcon(new ImageIcon(newImage3));
+		contentPane.add(lblside);
 
-		JLabel lblNewLabel_111 = new JLabel("");
-		lblNewLabel_111.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_111.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblNewLabel_111.setIcon(new ImageIcon(newImage));
-		lblNewLabel_111.setBounds(0, 0, 530, 357);
-		contentPane.add(lblNewLabel_111);
+		JLabel Label_logo_background = new JLabel("");
+		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		Label_logo_background.setIcon(new ImageIcon(newImage));
+		Label_logo_background.setBounds(0, 0, 530, 357);
+		contentPane.add(Label_logo_background);
 
 	}
 
