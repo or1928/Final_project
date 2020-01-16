@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
@@ -20,6 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableColumn;
@@ -29,6 +31,7 @@ public class usedphone_show extends JFrame {
 	private Vector<String> columnNames = new Vector<String>();
 	private Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 	private JPanel contentPane;
+	private JTextField textField_pr;
 
 	/**
 	 * Launch the application.
@@ -132,6 +135,78 @@ public class usedphone_show extends JFrame {
 		lblside.setBounds(0, 0, 103, 357);
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
+		
+		JLabel lbl_show = new JLabel(
+				"\u05D4\u05E6\u05D2\u05EA \u05D4\u05D6\u05DE\u05E0\u05D5\u05EA \u05DE\u05E2\u05DC:");
+		lbl_show.setFont(new Font("SansSerif", Font.PLAIN, 17));
+		lbl_show.setBounds(341, 242, 127, 50);
+		contentPane.add(lbl_show);
+
+		textField_pr = new JTextField();
+		textField_pr.setBounds(233, 259, 96, 19);
+		contentPane.add(textField_pr);
+		textField_pr.setColumns(10);
+
+		JButton btnshow_newTabel = new JButton("\u05D4\u05E6\u05D2");
+		btnshow_newTabel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					int salePriceInput = Integer.valueOf(textField_pr.getText());
+					Connection con = DriverManager
+							.getConnection("jdbc:sqlserver://localhost;databaseName=ShopDB;integratedSecurity=true;");
+
+					String sql = "SELECT * FROM sale where price>?";
+					PreparedStatement statement = con.prepareStatement(sql);
+					statement.setInt(1, salePriceInput);
+					ResultSet resultSet = statement.executeQuery();
+					ResultSetMetaData metaData = resultSet.getMetaData();
+					int columns = metaData.getColumnCount();
+					for (int i = 1; i <= columns; i++) {
+						columnNames.addElement(metaData.getColumnName(i));
+					}
+					while (resultSet.next()) {
+						Vector<Object> row = new Vector<Object>(columns);
+						for (int i = 1; i <= columns; i++) {
+							row.addElement(resultSet.getObject(i));
+						}
+						data.addElement(row);
+					}
+					resultSet.close();
+					statement.close();
+				} catch (Exception d) {
+					System.out.println(d);
+				}
+				JTable table = new JTable(data, columnNames);
+				table.setColumnSelectionAllowed(true);
+				table.setCellSelectionEnabled(true);
+
+				TableColumn column;
+				for (int i = 0; i < table.getColumnCount(); i++) {
+					column = table.getColumnModel().getColumn(i);
+					column.setMaxWidth(250);
+				}
+				contentPane.setLayout(null);
+				contentPane.setLayout(null);
+				// contentPane.setLayout(null);
+				JScrollPane scrollPane = new JScrollPane(table);
+				scrollPane.setBounds(0, 89, 530, 143);
+				contentPane.add(scrollPane);
+				contentPane.setSize(963, 600); // setting frame size
+
+				JButton btn_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
+				btn_return.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						dispose();
+						Sale_showandadd Sale_win = new Sale_showandadd();
+						Sale_win.setVisible(true);
+					}
+				});
+			}
+		});
+		btnshow_newTabel.setBounds(138, 260, 85, 21);
+		contentPane.add(btnshow_newTabel);
+
+		
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
