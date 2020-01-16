@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -16,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import classes.Customer;
 import classes.Employee;
@@ -24,8 +26,6 @@ import classes.UsedPhone;
 import db.DBconnect;
 import exceptions.WrongInput;
 import main.Main;
-import java.awt.Color;
-import javax.swing.border.LineBorder;
 
 public class Sale_showandadd extends JFrame {
 
@@ -187,10 +187,11 @@ public class Sale_showandadd extends JFrame {
 						}
 					}
 					try {
-						Main.myShop.addSale(new Sale(Main.e1, Main.c1, textField_date.getText(), Main.myShop, Main.ph1));
-						JOptionPane.showMessageDialog(null, "Sale successfully added");
+						Main.myShop
+								.addSale(new Sale(Main.e1, Main.c1, textField_date.getText(), Main.myShop, Main.ph1));
+						JOptionPane.showMessageDialog(null, "מכירה נוספה בהצלחה");
 					} catch (WrongInput c1) {
-						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת נתוני מכירה");
 						c1.printStackTrace();
 					}
 				}
@@ -222,7 +223,7 @@ public class Sale_showandadd extends JFrame {
 
 		JLabel lblNameemp = new JLabel("\u05E2\u05D5\u05D1\u05D3:");
 		lblNameemp.setVisible(false);
-		
+
 		JLabel labelsale = new JLabel("\u05D4\u05D6\u05DE\u05E0\u05D5\u05EA");
 		labelsale.setHorizontalAlignment(SwingConstants.CENTER);
 		labelsale.setForeground(Color.WHITE);
@@ -244,13 +245,12 @@ public class Sale_showandadd extends JFrame {
 				comboBox_emp.setVisible(false);
 				comboBox_cust.setVisible(false);
 				comboBox_Type.setVisible(false);
-				
+
 				textField_date.setVisible(false);
 				lblNameemp.setVisible(false);
 				lblcust.setVisible(false);
 				lbltype.setVisible(false);
 				lbldate.setVisible(false);
-				
 
 			}
 		});
@@ -271,18 +271,17 @@ public class Sale_showandadd extends JFrame {
 				comboBox_emp.setVisible(true);
 				comboBox_cust.setVisible(true);
 				comboBox_Type.setVisible(true);
-				
+
 				textField_date.setVisible(true);
 				lblNameemp.setVisible(true);
 				lblcust.setVisible(true);
 				lbltype.setVisible(true);
 				lbldate.setVisible(true);
-			
 
 			}
 		});
 		btnadd_new.setFont(new Font("SansSerif", Font.BOLD, 15));
-		btnadd_new.setBounds(0, 56,103, 21);
+		btnadd_new.setBounds(0, 56, 103, 21);
 		contentPane.add(btnadd_new);
 
 		JLabel Label_logo_yvc = new JLabel("");
@@ -291,14 +290,12 @@ public class Sale_showandadd extends JFrame {
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		Label_logo_yvc.setBounds(429, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
-		
-		
+
 		JLabel lblside = new JLabel("");
 		lblside.setHorizontalAlignment(SwingConstants.CENTER);
 		lblside.setBounds(0, 0, 103, 357);
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
-
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);

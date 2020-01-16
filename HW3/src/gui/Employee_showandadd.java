@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -19,14 +20,13 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import classes.Employee;
 import db.DBconnect;
 import exceptions.EmployeeAlreadyExistsException;
 import exceptions.WrongInput;
 import main.Main;
-import java.awt.Color;
-import javax.swing.border.LineBorder;
 
 public class Employee_showandadd extends JFrame {
 
@@ -352,7 +352,7 @@ public class Employee_showandadd extends JFrame {
 						try {
 							Main.myShop.addEmployee(emp);
 						} catch (EmployeeAlreadyExistsException e1) {
-							// TODO Auto-generated catch block
+							JOptionPane.showMessageDialog(null, "עובד כבר קיים במערכת");
 							e1.printStackTrace();
 						}
 						break;
@@ -365,7 +365,7 @@ public class Employee_showandadd extends JFrame {
 								textField_lname.getText(), textField_phone.getText(), textField_birthday.getText()));
 						JOptionPane.showMessageDialog(null, "עובד נוסף בהצלחה");
 					} catch (EmployeeAlreadyExistsException e1) {
-						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "עובד כבר קיים במערכת");
 						e1.printStackTrace();
 					} catch (WrongInput e1) {
 						JOptionPane.showMessageDialog(null, "שגיאה בפרטי העובד. אנא בדוק ונסה שנית", "Invalid input",
@@ -398,7 +398,7 @@ public class Employee_showandadd extends JFrame {
 
 			}
 		});
-		
+
 		JLabel lblNewpage = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
 		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewpage.setForeground(Color.WHITE);
@@ -427,14 +427,12 @@ public class Employee_showandadd extends JFrame {
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		Label_logo_yvc.setBounds(429, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
-		
-		
+
 		JLabel lblside = new JLabel("");
 		lblside.setHorizontalAlignment(SwingConstants.CENTER);
 		lblside.setBounds(0, 0, 103, 357);
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
-		
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);

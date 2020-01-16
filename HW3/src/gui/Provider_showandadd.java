@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -18,14 +19,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import classes.Provider;
 import db.DBconnect;
 import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
 import main.Main;
-import java.awt.Color;
-import javax.swing.border.LineBorder;
 
 public class Provider_showandadd extends JFrame {
 
@@ -349,7 +349,7 @@ public class Provider_showandadd extends JFrame {
 						try {
 							Main.myShop.addProvider(pro);
 						} catch (ProvidersAlreadyExistsException p1) {
-							// TODO Auto-generated catch block
+							JOptionPane.showMessageDialog(null, "ספק קיים במערכת");
 							p1.printStackTrace();
 						}
 						break;
@@ -360,12 +360,12 @@ public class Provider_showandadd extends JFrame {
 					try {
 						Main.myShop.addProvider(new Provider(textField_id.getText(), textField_fnane.getText(),
 								textField_lname.getText(), textField_phone.getText(), textField_birthday.getText()));
-						JOptionPane.showMessageDialog(null, "ברוך הבא ");
+						JOptionPane.showMessageDialog(null, "ספק נוסף בהצלחה");
 					} catch (ProvidersAlreadyExistsException p1) {
-						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "ספק כבר קיים במערכת");
 						p1.printStackTrace();
 					} catch (WrongInput p1) {
-						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת נתוני ספק");
 						p1.printStackTrace();
 					}
 				}
@@ -389,7 +389,7 @@ public class Provider_showandadd extends JFrame {
 
 			}
 		});
-		
+
 		lblNewpage = new JLabel("\u05E1\u05E4\u05E7\u05D9\u05DD");
 		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewpage.setForeground(Color.WHITE);
@@ -417,13 +417,12 @@ public class Provider_showandadd extends JFrame {
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		contentPane.add(Label_logo_yvc);
-		
+
 		JLabel lblside = new JLabel("");
 		lblside.setHorizontalAlignment(SwingConstants.CENTER);
 		lblside.setBounds(0, 0, 103, 357);
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
-
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setBounds(0, 0, 530, 357);

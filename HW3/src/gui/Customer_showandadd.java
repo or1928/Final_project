@@ -379,7 +379,7 @@ public class Customer_showandadd extends JFrame {
 						try {
 							Main.myShop.addCustomer(cus);
 						} catch (CustomerAlreadyExistsException c1) {
-							// TODO Auto-generated catch block
+							JOptionPane.showMessageDialog(null, "לקוח כבר קיים במערכת");
 							c1.printStackTrace();
 						}
 						break;
@@ -391,12 +391,12 @@ public class Customer_showandadd extends JFrame {
 						Main.myShop.addCustomer(new Customer(textField_id.getText(), textField_fnane.getText(),
 								textField_lname.getText(), textField_phone.getText(), textField_birthday.getText(),
 								textField_email.getText()));
-						JOptionPane.showMessageDialog(null, "ברוך הבא ");
+						JOptionPane.showMessageDialog(null, "לקוח נוסף בהצלחה");
 					} catch (CustomerAlreadyExistsException c1) {
-						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "לקוח כבר קיים במערכת");
 						c1.printStackTrace();
 					} catch (WrongInput c1) {
-						// TODO Auto-generated catch block
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת פרטי לקוח");
 						c1.printStackTrace();
 					}
 				}
