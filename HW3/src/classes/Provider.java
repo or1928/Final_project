@@ -3,13 +3,12 @@ package classes;
 import java.io.Serializable;
 
 import exceptions.WrongInput;
-import main.Main;
 
 public class Provider extends Person implements Serializable {
 
 	public int ProviderID;
 
-	private static int counter = 300;
+	public static int counter = 300;
 
 	public Provider(String ID, String firstName, String lastName, String phoneNumber, String dateOfBirth)
 			throws WrongInput {
@@ -18,7 +17,7 @@ public class Provider extends Person implements Serializable {
 	}
 
 	public void setProviderID() {
-		this.ProviderID = Main.countProviders++;
+		this.ProviderID = counter++;
 	}
 
 	public int getProviderID() {

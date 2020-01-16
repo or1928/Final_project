@@ -13,7 +13,6 @@ import exceptions.InvalidPhoneNumberException;
 import exceptions.PhoneNotInInventoryExeption;
 import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
-import main.Main;
 
 public class Shop implements Serializable {
 	private String shopName;
@@ -40,7 +39,11 @@ public class Shop implements Serializable {
 			this.phones.add(p);
 		}
 		p.isInShop = 1;
-		Main.countPhones++;
+		for (UsedPhone up : this.phones) {
+			if (up.counter == p.counter) {
+				p.counter++;
+			}
+		}
 	}
 
 	public void removePhone(UsedPhone p) {
@@ -57,11 +60,16 @@ public class Shop implements Serializable {
 	// employees functions
 
 	public void addEmployee(Employee e) throws EmployeeAlreadyExistsException {
-		if (this.employess.contains(e)) {
+		if (!this.employess.contains(e)) {
+			for (Employee emp : this.employess) {
+				if (e.counter == emp.counter) {
+					e.counter++;
+				}
+			}
+			this.employess.add(e);
+		} else
 			throw new EmployeeAlreadyExistsException("You cannot add the same employee twice!");
-		}
-		this.employess.add(e);
-		Main.countEmployyes++;
+
 	}
 
 	public void removeEmployee(Employee e) {
@@ -77,11 +85,15 @@ public class Shop implements Serializable {
 	// customers functions
 
 	public void addCustomer(Customer c) throws CustomerAlreadyExistsException {
-		if (this.customers.contains(c)) {
-			throw new CustomerAlreadyExistsException("You cannot add the same employee twice!");
-		}
-		this.customers.add(c);
-		Main.countCustomers++;
+		if (!this.customers.contains(c)) {
+			for (Customer cu : this.customers) {
+				if (c.counter == cu.counter) {
+					c.counter++;
+				}
+			}
+			this.customers.add(c);
+		} else
+			throw new CustomerAlreadyExistsException("You cannot add the same customer twice!");
 	}
 
 	public void removeCustomer(Customer c) {
@@ -98,11 +110,16 @@ public class Shop implements Serializable {
 
 	public void addProvider(Provider p) throws ProvidersAlreadyExistsException {
 
-		if (this.providers.contains(p)) {
+		if (!this.providers.contains(p)) {
+			for (Provider pr : this.providers) {
+				if (p.counter == pr.counter) {
+					p.counter++;
+				}
+			}
+			this.providers.add(p);
+		} else
 			throw new ProvidersAlreadyExistsException("You cannot add the same employee twice!");
-		}
-		this.providers.add(p);
-		Main.countProviders++;
+
 	}
 
 	public void removeProvider(Provider p) {
@@ -123,7 +140,7 @@ public class Shop implements Serializable {
 			this.sales.put(sale.getSellingDate(), sale);
 			// this.phones.remove(phoneToSell); // remove phone from inventory
 			phoneToSell.isInShop = 0;
-			Main.countSales++;
+
 		} else {
 			throw new PhoneNotInInventoryExeption(
 					"The store does not have the phone" + phoneToSell.getPhoneSN() + " in stock");

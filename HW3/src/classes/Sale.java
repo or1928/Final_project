@@ -3,8 +3,6 @@ package classes;
 import java.io.Serializable;
 import java.util.InputMismatchException;
 
-import main.Main;
-
 public class Sale implements Serializable {
 
 	public String saleID;
@@ -35,7 +33,7 @@ public class Sale implements Serializable {
 	}
 
 	public void setSaleID() {
-		this.saleID = "SL" + Main.countSales++;
+		this.saleID = "SL" + counter++;
 	}
 
 	public void setCustomer(Customer customer) {

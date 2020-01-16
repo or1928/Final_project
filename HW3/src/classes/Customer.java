@@ -4,13 +4,12 @@ import java.io.Serializable;
 
 import exceptions.IllegalEmailException;
 import exceptions.WrongInput;
-import main.Main;
 
 public class Customer extends Person implements Serializable {
 
 	public int customerID;
 	private String email;
-	private int counter = 100;
+	public static int counter = 100;
 
 	public Customer(String ID, String firstName, String lastName, String phoneNumber, String dateOfBirth, String email)
 			throws WrongInput {
@@ -21,7 +20,7 @@ public class Customer extends Person implements Serializable {
 	}
 
 	private void setCustomerID() {
-		this.customerID = Main.countCustomers++;
+		this.customerID = counter++;
 	}
 
 	public void setEmail(String email) {
