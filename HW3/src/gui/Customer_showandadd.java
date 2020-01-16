@@ -235,7 +235,8 @@ public class Customer_showandadd extends JFrame {
 		btn_delcustomer.setBounds(0, 63, 103, 21);
 		contentPane.add(btn_delcustomer);
 
-		lblCustomer_selection = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7 \u05E7\u05D9\u05D9\u05DD:");
+		lblCustomer_selection = new JLabel(
+				" \u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7 \u05E7\u05D9\u05D9\u05DD:");
 		lblCustomer_selection.setFont(new Font("SansSerif", Font.BOLD, 14));
 		lblCustomer_selection.setBounds(305, 65, 102, 13);
 		contentPane.add(lblCustomer_selection);

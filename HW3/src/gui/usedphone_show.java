@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
@@ -58,8 +57,7 @@ public class usedphone_show extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
-		
+
 		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
 		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
 		Image img1 = new ImageIcon(this.getClass().getResource("/logol.png")).getImage();
@@ -121,8 +119,7 @@ public class usedphone_show extends JFrame {
 		btn_return.setBounds(0, 327, 103, 30);
 		contentPane.add(btn_return);
 		contentPane.setVisible(true);
-		
-		
+
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -135,7 +132,7 @@ public class usedphone_show extends JFrame {
 		lblside.setBounds(0, 0, 103, 357);
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
-		
+
 		JLabel lbl_show = new JLabel(
 				"\u05D4\u05E6\u05D2\u05EA \u05D4\u05D6\u05DE\u05E0\u05D5\u05EA \u05DE\u05E2\u05DC:");
 		lbl_show.setFont(new Font("SansSerif", Font.PLAIN, 17));
@@ -151,13 +148,13 @@ public class usedphone_show extends JFrame {
 		btnshow_newTabel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					int salePriceInput = Integer.valueOf(textField_pr.getText());
+					float priceInput = Integer.valueOf(textField_pr.getText());
 					Connection con = DriverManager
 							.getConnection("jdbc:sqlserver://localhost;databaseName=ShopDB;integratedSecurity=true;");
 
-					String sql = "SELECT * FROM sale where price>?";
+					String sql = "SELECT * FROM usedPhone WHERE price>?";
 					PreparedStatement statement = con.prepareStatement(sql);
-					statement.setInt(1, salePriceInput);
+					statement.setFloat(1, priceInput);
 					ResultSet resultSet = statement.executeQuery();
 					ResultSetMetaData metaData = resultSet.getMetaData();
 					int columns = metaData.getColumnCount();
@@ -205,8 +202,6 @@ public class usedphone_show extends JFrame {
 		});
 		btnshow_newTabel.setBounds(138, 260, 85, 21);
 		contentPane.add(btnshow_newTabel);
-
-		
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);

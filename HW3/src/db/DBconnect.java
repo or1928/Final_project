@@ -265,6 +265,33 @@ public class DBconnect {
 		}
 	}
 
+	public static void updateDB2() {
+
+		// read all objects from "myShop" in "main" and store in DB
+		try {
+
+			insertCustomer = connection.prepareStatement(
+					"UPDATE customer SET customer_id = ?, id=?, firstName=?, lastName=?, phoneNumber=?, dateOfBirth=?, email=?");
+
+			// insert customers from myshop to db
+			for (Customer c : Main.myShop.getCustomer()) {
+				insertCustomer.setInt(1, c.getCustomerID());
+				insertCustomer.setString(2, c.getID());
+				insertCustomer.setString(3, c.getFirstName());
+				insertCustomer.setString(4, c.getLastName());
+				insertCustomer.setString(5, c.getPhoneNumber());
+				insertCustomer.setString(6, c.getDateOfBirth());
+				insertCustomer.setString(7, c.getEmail());
+				insertCustomer.execute();
+			}
+
+		} catch (SQLException e2) {
+// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
+	}
+
 	public static void updtaeDB() throws WrongInput {
 		clearDB();
 		writeShopToDB();
