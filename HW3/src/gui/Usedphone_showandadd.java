@@ -188,12 +188,14 @@ public class Usedphone_showandadd extends JFrame {
 		btn_Switch_show.setBounds(0, 158, 103, 21);
 		contentPane.add(btn_Switch_show);
 
-		lbphonelection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0");
+		lbphonelection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0:");
+		lbphonelection.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lbphonelection.setVisible(false);
-		lbphonelection.setBounds(395, 178, 76, 13);
+		lbphonelection.setBounds(442, 174, 76, 13);
 		contentPane.add(lbphonelection);
 
 		comboBox_phonelection = new JComboBox();
+		comboBox_phonelection.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		comboBox_phonelection.addItem("");
 		for (UsedPhone my : Main.myShop.getPhones())
 			if (my.isInShop == 1) {
@@ -201,7 +203,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 
 		comboBox_phonelection.setVisible(false);
-		comboBox_phonelection.setBounds(299, 174, 86, 21);
+		comboBox_phonelection.setBounds(358, 170, 86, 21);
 		contentPane.add(comboBox_phonelection);
 
 		btn_dell = new JButton("\u05DE\u05D7\u05E7");
@@ -218,7 +220,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		btn_dell.setVisible(false);
-		btn_dell.setBounds(225, 228, 85, 21);
+		btn_dell.setBounds(284, 228, 85, 21);
 		contentPane.add(btn_dell);
 
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
@@ -233,35 +235,40 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.add(Button_return);
 
 		comboBox_type = new JComboBox();
+		comboBox_type.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		comboBox_type.addItem("");
 		comboBox_type.addItem("Used");
 		comboBox_type.addItem("New");
 		comboBox_type.addItem("asNew");
-		comboBox_type.setBounds(144, 98, 53, 21);
+		comboBox_type.setBounds(183, 95, 53, 21);
 		comboBox_type.setVisible(false);
 
 		contentPane.add(comboBox_type);
 
 		lblcompany = new JLabel("\u05D7\u05D1\u05E8\u05D4:");
-		lblcompany.setBounds(225, 178, 45, 13);
+		lblcompany.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
+		lblcompany.setBounds(284, 174, 45, 13);
 		lblcompany.setVisible(false);
 		contentPane.add(lblcompany);
 
 		textField_date = new JTextField();
-		textField_date.setBounds(119, 142, 96, 19);
+		textField_date.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
+		textField_date.setBounds(178, 138, 96, 19);
 		textField_date.setVisible(false);
 		contentPane.add(textField_date);
 		textField_date.setColumns(10);
 
 		textField_year = new JTextField();
-		textField_year.setBounds(289, 142, 96, 19);
+		textField_year.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
+		textField_year.setBounds(348, 138, 96, 19);
 		textField_year.setVisible(false);
 		contentPane.add(textField_year);
 		textField_year.setColumns(10);
 
 		comboBox_company = new JComboBox();
+		comboBox_company.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 
-		comboBox_company.setBounds(137, 174, 60, 21);
+		comboBox_company.setBounds(214, 170, 60, 21);
 		comboBox_company.addItem("");
 		comboBox_company.addItem("Apple");
 		comboBox_company.addItem("Samsung");
@@ -271,7 +278,8 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.add(comboBox_company);
 
 		textField_namephon = new JTextField();
-		textField_namephon.setBounds(289, 99, 96, 19);
+		textField_namephon.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
+		textField_namephon.setBounds(348, 95, 96, 19);
 		textField_namephon.setVisible(false);
 		contentPane.add(textField_namephon);
 		textField_namephon.setColumns(10);
@@ -282,6 +290,7 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.add(lblttl);
 
 		lblyear = new JLabel("\u05E9\u05E0\u05D4:");
+		lblyear.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lblyear.setVisible(false);
 
 		JComboBox comboBox_show_phon = new JComboBox();
@@ -315,7 +324,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 
-		comboBox_show_phon.setBounds(199, 54, 81, 21);
+		comboBox_show_phon.setBounds(217, 59, 81, 21);
 		contentPane.add(comboBox_show_phon);
 
 		btnadd = new JButton("\u05D4\u05D5\u05E1\u05E3");
@@ -358,46 +367,54 @@ public class Usedphone_showandadd extends JFrame {
 		});
 
 		btnadd.setVisible(false);
-		btnadd.setBounds(225, 228, 85, 21);
+		btnadd.setBounds(284, 228, 85, 21);
 		contentPane.add(btnadd);
 
-		lblyear.setBounds(416, 145, 45, 13);
+		lblyear.setBounds(473, 142, 45, 13);
 		contentPane.add(lblyear);
 
 		lbltype = new JLabel("\u05DE\u05E6\u05D1 \u05D4\u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
+		lbltype.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lbltype.setVisible(false);
-		lbltype.setBounds(204, 102, 76, 13);
+		lbltype.setBounds(253, 98, 86, 13);
 		contentPane.add(lbltype);
 
 		lblprice = new JLabel("\u05DE\u05D7\u05D9\u05E8:");
+		lblprice.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lblprice.setVisible(false);
-		lblprice.setBounds(225, 145, 45, 13);
+		lblprice.setBounds(284, 141, 45, 13);
 		contentPane.add(lblprice);
 
 		lblNewname = new JLabel("\u05E9\u05DD \u05DE\u05DB\u05E9\u05D9\u05E8:");
+		lblNewname.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lblNewname.setVisible(false);
 
 		lblname = new JLabel("New label");
+		lblname.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lblname.setVisible(false);
-		lblname.setBounds(335, 102, 45, 13);
+		lblname.setBounds(358, 98, 81, 13);
 		contentPane.add(lblname);
 
 		lblNewyear = new JLabel("New label");
+		lblNewyear.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lblNewyear.setVisible(false);
-		lblNewyear.setBounds(335, 145, 45, 13);
+		lblNewyear.setBounds(379, 141, 60, 13);
 		contentPane.add(lblNewyear);
 
 		lblNewtype = new JLabel("New label");
+		lblNewtype.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lblNewtype.setVisible(false);
-		lblNewtype.setBounds(137, 89, 45, 13);
+		lblNewtype.setBounds(178, 99, 65, 13);
 		contentPane.add(lblNewtype);
 
 		lblNewprice = new JLabel("New label");
+		lblNewprice.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
 		lblNewprice.setVisible(false);
-		lblNewprice.setBounds(170, 145, 45, 13);
+		lblNewprice.setBounds(183, 141, 91, 13);
 		contentPane.add(lblNewprice);
 
 		lblNewcomp_13 = new JLabel("New label");
+		lblNewcomp_13.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblNewcomp_13.setVisible(false);
 		
 		labelphon = new JLabel("\u05DE\u05D7\u05E1\u05DF");
@@ -408,13 +425,14 @@ public class Usedphone_showandadd extends JFrame {
 		labelphon.setBackground(Color.WHITE);
 		labelphon.setBounds(0, 0, 103, 33);
 		contentPane.add(labelphon);
-		lblNewcomp_13.setBounds(137, 178, 45, 13);
+		lblNewcomp_13.setBounds(199, 174, 88, 13);
 		contentPane.add(lblNewcomp_13);
 
 		JLabel lblusdephon_selection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E4\u05DC\u05D0:");
-		lblusdephon_selection.setBounds(309, 59, 60, 13);
+		lblusdephon_selection.setFont(new Font("SansSerif", Font.BOLD, 16));
+		lblusdephon_selection.setBounds(308, 64, 79, 13);
 		contentPane.add(lblusdephon_selection);
-		lblNewname.setBounds(395, 100, 66, 13);
+		lblNewname.setBounds(444, 99, 86, 13);
 		contentPane.add(lblNewname);
 
 		JButton btnaddnew = new JButton(

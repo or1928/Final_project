@@ -87,9 +87,10 @@ public class Sale_showandadd extends JFrame {
 		btn_Switch_show.setBounds(0, 154, 103, 21);
 		contentPane.add(btn_Switch_show);
 
-		JLabel lblsaleselection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4");
+		JLabel lblsaleselection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4:");
+		lblsaleselection.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblsaleselection.setVisible(false);
-		lblsaleselection.setBounds(284, 162, 70, 13);
+		lblsaleselection.setBounds(281, 185, 103, 13);
 		contentPane.add(lblsaleselection);
 
 		JComboBox comboBox_namesale_inTheshop = new JComboBox();
@@ -97,7 +98,7 @@ public class Sale_showandadd extends JFrame {
 		for (Sale my : Main.myShop.getSales().values())
 			comboBox_namesale_inTheshop.addItem(my.getSaleID());
 		comboBox_namesale_inTheshop.setVisible(false);
-		comboBox_namesale_inTheshop.setBounds(188, 158, 86, 21);
+		comboBox_namesale_inTheshop.setBounds(181, 183, 86, 21);
 		contentPane.add(comboBox_namesale_inTheshop);
 
 		JButton btn_del = new JButton("\u05DE\u05D7\u05E7");
@@ -115,7 +116,7 @@ public class Sale_showandadd extends JFrame {
 			}
 		});
 		btn_del.setVisible(false);
-		btn_del.setBounds(241, 241, 85, 21);
+		btn_del.setBounds(255, 241, 85, 21);
 		contentPane.add(btn_del);
 
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
@@ -135,7 +136,7 @@ public class Sale_showandadd extends JFrame {
 				comboBox_Type.addItem(my.getModelNo());
 			}
 
-		comboBox_Type.setBounds(145, 105, 53, 21);
+		comboBox_Type.setBounds(180, 105, 53, 21);
 		comboBox_Type.setVisible(false);
 		contentPane.add(comboBox_Type);
 
@@ -155,7 +156,7 @@ public class Sale_showandadd extends JFrame {
 		contentPane.add(comboBox_cust);
 
 		textField_date = new JTextField();
-		textField_date.setBounds(123, 154, 96, 19);
+		textField_date.setBounds(160, 155, 96, 19);
 		textField_date.setVisible(false);
 		contentPane.add(textField_date);
 		textField_date.setColumns(10);
@@ -206,22 +207,26 @@ public class Sale_showandadd extends JFrame {
 		btnadd.setBounds(241, 241, 85, 21);
 		contentPane.add(btnadd);
 
-		JLabel lblcust = new JLabel("\u05DC\u05E7\u05D5\u05D7");
+		JLabel lblcust = new JLabel(":\u05DC\u05E7\u05D5\u05D7");
+		lblcust.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblcust.setVisible(false);
-		lblcust.setBounds(411, 158, 45, 13);
+		lblcust.setBounds(408, 156, 72, 13);
 		contentPane.add(lblcust);
 
-		JLabel lbltype = new JLabel("\u05E1\u05D5\u05D2 \u05E4\u05DC\u05D0\u05E4\u05D5\u05DF");
+		JLabel lbltype = new JLabel("\u05E1\u05D5\u05D2 \u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
+		lbltype.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lbltype.setVisible(false);
-		lbltype.setBounds(208, 109, 60, 13);
+		lbltype.setBounds(243, 107, 72, 13);
 		contentPane.add(lbltype);
 
 		JLabel lbldate = new JLabel("\u05EA\u05D0\u05E8\u05D9\u05DA:");
+		lbldate.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lbldate.setVisible(false);
-		lbldate.setBounds(229, 158, 45, 13);
+		lbldate.setBounds(255, 156, 60, 13);
 		contentPane.add(lbldate);
 
 		JLabel lblNameemp = new JLabel("\u05E2\u05D5\u05D1\u05D3:");
+		lblNameemp.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblNameemp.setVisible(false);
 
 		JLabel labelsale = new JLabel("\u05D4\u05D6\u05DE\u05E0\u05D5\u05EA");
@@ -232,7 +237,7 @@ public class Sale_showandadd extends JFrame {
 		labelsale.setBackground(Color.WHITE);
 		labelsale.setBounds(0, 0, 103, 33);
 		contentPane.add(labelsale);
-		lblNameemp.setBounds(411, 107, 45, 13);
+		lblNameemp.setBounds(408, 105, 72, 13);
 		contentPane.add(lblNameemp);
 
 		JButton btndel = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4");

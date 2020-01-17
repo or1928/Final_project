@@ -24,14 +24,16 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableColumn;
+import javax.swing.table.AbstractTableModel;
 
-public class usedphone_show extends JFrame {
+public class usedphone_show extends JFrame{
 
 	private Vector<String> columnNames = new Vector<String>();
 	private Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 	private JPanel contentPane;
 	private JTextField textField_pr;
-
+	private JTable table1;
+	private JTable table;
 	/**
 	 * Launch the application.
 	 */
@@ -51,12 +53,23 @@ public class usedphone_show extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public usedphone_show() {
+	
+		
+		
+
+		
+
+		
+	
+	
+	public usedphone_show()  {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setSize(963, 600); // setting frame size
+		contentPane.setVisible(true);
 
 		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
 		Image newImage = img.getScaledInstance(530, 357, Image.SCALE_DEFAULT);
@@ -91,7 +104,7 @@ public class usedphone_show extends JFrame {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		JTable table = new JTable(data, columnNames);
+		 table = new JTable(data, columnNames);
 		table.setColumnSelectionAllowed(true);
 		table.setCellSelectionEnabled(true);
 
@@ -104,22 +117,10 @@ public class usedphone_show extends JFrame {
 		contentPane.setLayout(null);
 		// contentPane.setLayout(null);
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(0, 105, 530, 126);
+		scrollPane.setBounds(0, 89, 530, 126);
 		contentPane.add(scrollPane);
-		contentPane.setSize(963, 600); // setting frame size
-
-		JButton btn_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
-		btn_return.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				Usedphone_showandadd Usedphone_win = new Usedphone_showandadd();
-				Usedphone_win.setVisible(true);
-			}
-		});
-		btn_return.setBounds(0, 327, 103, 30);
-		contentPane.add(btn_return);
-		contentPane.setVisible(true);
-
+	
+		
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -133,8 +134,7 @@ public class usedphone_show extends JFrame {
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
 
-		JLabel lbl_show = new JLabel(
-				"\u05D4\u05E6\u05D2\u05EA \u05D4\u05D6\u05DE\u05E0\u05D5\u05EA \u05DE\u05E2\u05DC:");
+		JLabel lbl_show = new JLabel("\u05D4\u05E6\u05D2\u05EA \u05D4\u05D6\u05DE\u05E0\u05D5\u05EA \u05DE\u05E2\u05DC:");
 		lbl_show.setFont(new Font("SansSerif", Font.PLAIN, 17));
 		lbl_show.setBounds(341, 242, 127, 50);
 		contentPane.add(lbl_show);
@@ -143,18 +143,37 @@ public class usedphone_show extends JFrame {
 		textField_pr.setBounds(233, 259, 96, 19);
 		contentPane.add(textField_pr);
 		textField_pr.setColumns(10);
+		
+		
+		
+
+		JButton btn_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
+		btn_return.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				Usedphone_showandadd Usedphone_win = new Usedphone_showandadd();
+				Usedphone_win.setVisible(true);
+			}
+		});
+		btn_return.setBounds(0, 327, 103, 30);
+		contentPane.add(btn_return);
+		
+		
 
 		JButton btnshow_newTabel = new JButton("\u05D4\u05E6\u05D2");
 		btnshow_newTabel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				
 				try {
-					float priceInput = Integer.valueOf(textField_pr.getText());
+					int salePriceInput = Integer.valueOf(textField_pr.getText());
 					Connection con = DriverManager
 							.getConnection("jdbc:sqlserver://localhost;databaseName=ShopDB;integratedSecurity=true;");
 
-					String sql = "SELECT * FROM usedPhone WHERE price>?";
+					String sql = "SELECT * FROM sale where price>?";
 					PreparedStatement statement = con.prepareStatement(sql);
-					statement.setFloat(1, priceInput);
+					statement.setInt(1, salePriceInput);
 					ResultSet resultSet = statement.executeQuery();
 					ResultSetMetaData metaData = resultSet.getMetaData();
 					int columns = metaData.getColumnCount();
@@ -190,16 +209,11 @@ public class usedphone_show extends JFrame {
 				contentPane.add(scrollPane);
 				contentPane.setSize(963, 600); // setting frame size
 
-				JButton btn_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
-				btn_return.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						dispose();
-						Sale_showandadd Sale_win = new Sale_showandadd();
-						Sale_win.setVisible(true);
-					}
-				});
 			}
 		});
+		btnshow_newTabel.setBounds(138, 260, 85, 21);
+		contentPane.add(btnshow_newTabel);
+		
 		btnshow_newTabel.setBounds(138, 260, 85, 21);
 		contentPane.add(btnshow_newTabel);
 
@@ -211,5 +225,7 @@ public class usedphone_show extends JFrame {
 		contentPane.add(Label_logo_background);
 
 	}
+
+	
 
 }

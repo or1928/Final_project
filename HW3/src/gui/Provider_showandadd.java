@@ -175,8 +175,9 @@ public class Provider_showandadd extends JFrame {
 		contentPane.add(btn_Switch_show);
 
 		lblpro_selection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7");
+		lblpro_selection.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblpro_selection.setVisible(false);
-		lblpro_selection.setBounds(281, 178, 70, 13);
+		lblpro_selection.setBounds(293, 207, 70, 13);
 		contentPane.add(lblpro_selection);
 
 		comboBox_namepro_inTheshop = new JComboBox();
@@ -184,7 +185,7 @@ public class Provider_showandadd extends JFrame {
 		for (Provider my : Main.myShop.getProviders())
 			comboBox_namepro_inTheshop.addItem(my.getFirstName());
 		comboBox_namepro_inTheshop.setVisible(false);
-		comboBox_namepro_inTheshop.setBounds(185, 174, 86, 21);
+		comboBox_namepro_inTheshop.setBounds(188, 205, 86, 21);
 		contentPane.add(comboBox_namepro_inTheshop);
 
 		btndel = new JButton("\u05DE\u05D7\u05E7");
@@ -223,8 +224,8 @@ public class Provider_showandadd extends JFrame {
 		contentPane.add(del);
 
 		lblprov_selection = new JLabel(" \u05D1\u05D7\u05D9\u05E8\u05EA \u05E1\u05E4\u05E7 \u05E7\u05D9\u05D9\u05DD:");
-		lblprov_selection.setBounds(322, 72, 102, 13);
-		lblprov_selection.setFont(new Font("SansSerif", Font.BOLD, 14));
+		lblprov_selection.setBounds(298, 72, 126, 13);
+		lblprov_selection.setFont(new Font("SansSerif", Font.BOLD, 16));
 		contentPane.add(lblprov_selection);
 
 		labttl = new JLabel("\u05E1\u05E4\u05E7\u05D9\u05DD");
@@ -233,82 +234,92 @@ public class Provider_showandadd extends JFrame {
 		contentPane.add(labttl);
 
 		Label_id = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05D6\u05D4\u05D5\u05EA:");
-		Label_id.setBounds(219, 151, 68, 13);
+		Label_id.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_id.setBounds(322, 126, 85, 13);
 		Label_id.setVisible(false);
 		contentPane.add(Label_id);
 
 		lLabel_phone = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
-		lLabel_phone.setBounds(219, 174, 71, 13);
+		lLabel_phone.setFont(new Font("SansSerif", Font.BOLD, 16));
+		lLabel_phone.setBounds(322, 149, 93, 13);
 		lLabel_phone.setVisible(false);
 		contentPane.add(lLabel_phone);
 
 		Label_birthday = new JLabel("\u05EA\u05D0\u05E8\u05D9\u05DA \u05DC\u05D9\u05D3\u05D4:");
-		Label_birthday.setBounds(220, 197, 71, 13);
+		Label_birthday.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_birthday.setBounds(322, 176, 85, 13);
 		Label_birthday.setVisible(false);
 		contentPane.add(Label_birthday);
 
 		Label_fname = new JLabel("\u05E9\u05DD \u05E4\u05E8\u05D8\u05D9:");
-		Label_fname.setBounds(418, 148, 62, 13);
+		Label_fname.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_fname.setBounds(427, 94, 62, 13);
 		Label_fname.setVisible(false);
 		contentPane.add(Label_fname);
 
 		Label_lname = new JLabel("\u05E9\u05DD \u05DE\u05E9\u05E4\u05D7\u05D4:");
-		Label_lname.setBounds(418, 174, 71, 13);
+		Label_lname.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_lname.setBounds(243, 94, 86, 13);
 		Label_lname.setVisible(false);
 		contentPane.add(Label_lname);
 
 		Label_show_id = new JLabel("New label");
-		Label_show_id.setBounds(152, 148, 45, 13);
+		Label_show_id.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_show_id.setBounds(216, 126, 96, 13);
 		Label_show_id.setVisible(false);
 		contentPane.add(Label_show_id);
 
 		Label_show_phone = new JLabel("New label");
-		Label_show_phone.setBounds(152, 174, 45, 13);
+		Label_show_phone.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_show_phone.setBounds(216, 149, 96, 13);
 		Label_show_phone.setVisible(false);
 		contentPane.add(Label_show_phone);
 
 		Label_show_birthday = new JLabel("New label");
-		Label_show_birthday.setBounds(152, 197, 45, 13);
+		Label_show_birthday.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_show_birthday.setBounds(216, 171, 96, 13);
 		Label_show_birthday.setVisible(false);
 		contentPane.add(Label_show_birthday);
 
 		textField_fnane = new JTextField();
-		textField_fnane.setBounds(322, 145, 96, 19);
+		textField_fnane.setBounds(329, 91, 96, 19);
 		textField_fnane.setVisible(false);
 		contentPane.add(textField_fnane);
 		textField_fnane.setColumns(10);
 
 		textField_lname = new JTextField();
-		textField_lname.setBounds(322, 168, 96, 19);
+		textField_lname.setBounds(142, 93, 96, 19);
 		textField_lname.setVisible(false);
 		contentPane.add(textField_lname);
 		textField_lname.setColumns(10);
 
 		textField_id = new JTextField();
-		textField_id.setBounds(113, 145, 96, 19);
+		textField_id.setBounds(216, 120, 96, 19);
 		textField_id.setVisible(false);
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
 
 		textField_phone = new JTextField();
-		textField_phone.setBounds(113, 171, 96, 19);
+		textField_phone.setBounds(216, 146, 96, 19);
 		textField_phone.setVisible(false);
 		contentPane.add(textField_phone);
 		textField_phone.setColumns(10);
 
 		textField_birthday = new JTextField();
-		textField_birthday.setBounds(114, 194, 96, 19);
+		textField_birthday.setBounds(216, 168, 96, 19);
 		textField_birthday.setVisible(false);
 		contentPane.add(textField_birthday);
 		textField_birthday.setColumns(10);
 
 		Label_show_fname = new JLabel("New label");
-		Label_show_fname.setBounds(368, 174, 45, 13);
+		Label_show_fname.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_show_fname.setBounds(148, 94, 85, 13);
 		Label_show_fname.setVisible(false);
 		contentPane.add(Label_show_fname);
 
 		Label_show_lname = new JLabel("New label");
-		Label_show_lname.setBounds(368, 148, 45, 13);
+		Label_show_lname.setFont(new Font("SansSerif", Font.BOLD, 16));
+		Label_show_lname.setBounds(338, 95, 86, 13);
 		Label_show_lname.setVisible(false);
 		contentPane.add(Label_show_lname);
 
@@ -425,7 +436,7 @@ public class Provider_showandadd extends JFrame {
 		contentPane.add(lblside);
 
 		JLabel Label_logo_background = new JLabel("");
-		Label_logo_background.setBounds(0, 0, 530, 357);
+		Label_logo_background.setBounds(0, -10, 530, 357);
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_background.setIcon(new ImageIcon(newImage));

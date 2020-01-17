@@ -156,9 +156,10 @@ public class Employee_showandadd extends JFrame {
 		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
 		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
 
-		lblempselection = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3");
+		lblempselection = new JLabel(":\u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3");
+		lblempselection.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblempselection.setVisible(false);
-		lblempselection.setBounds(307, 179, 70, 13);
+		lblempselection.setBounds(313, 216, 80, 13);
 		contentPane.add(lblempselection);
 
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
@@ -184,7 +185,7 @@ public class Employee_showandadd extends JFrame {
 		for (Employee my : Main.myShop.getEmployess())
 			comboBox_showEmplo_inMYshop_Dell.addItem(my.getFirstName());
 		comboBox_showEmplo_inMYshop_Dell.setVisible(false);
-		comboBox_showEmplo_inMYshop_Dell.setBounds(195, 175, 86, 21);
+		comboBox_showEmplo_inMYshop_Dell.setBounds(223, 214, 86, 21);
 		contentPane.add(comboBox_showEmplo_inMYshop_Dell);
 
 		btndell = new JButton("\u05DE\u05D7\u05E7");
@@ -228,8 +229,8 @@ public class Employee_showandadd extends JFrame {
 
 		lblCustomer_selection = new JLabel(
 				" \u05D1\u05D7\u05D9\u05E8\u05EA \u05E2\u05D5\u05D1\u05D3\u05D9\u05DD \u05E7\u05D9\u05D9\u05DD:");
-		lblCustomer_selection.setFont(new Font("SansSerif", Font.BOLD, 14));
-		lblCustomer_selection.setBounds(322, 60, 123, 13);
+		lblCustomer_selection.setFont(new Font("SansSerif", Font.BOLD, 16));
+		lblCustomer_selection.setBounds(322, 60, 133, 13);
 		contentPane.add(lblCustomer_selection);
 
 		labttl = new JLabel("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
@@ -238,83 +239,93 @@ public class Employee_showandadd extends JFrame {
 		contentPane.add(labttl);
 
 		Label_id = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05D6\u05D4\u05D5\u05EA:");
+		Label_id.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_id.setVisible(false);
-		Label_id.setBounds(219, 157, 68, 13);
+		Label_id.setBounds(301, 125, 82, 13);
 		contentPane.add(Label_id);
 
 		lLabel_phone = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
+		lLabel_phone.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lLabel_phone.setVisible(false);
-		lLabel_phone.setBounds(205, 179, 71, 13);
+		lLabel_phone.setBounds(293, 156, 100, 13);
 		contentPane.add(lLabel_phone);
 
 		Label_birthday = new JLabel("\u05EA\u05D0\u05E8\u05D9\u05DA \u05DC\u05D9\u05D3\u05D4:");
+		Label_birthday.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_birthday.setVisible(false);
-		Label_birthday.setBounds(219, 206, 71, 13);
+		Label_birthday.setBounds(298, 179, 95, 13);
 		contentPane.add(Label_birthday);
 
 		Label_fname = new JLabel("\u05E9\u05DD \u05E4\u05E8\u05D8\u05D9:");
+		Label_fname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_fname.setVisible(false);
-		Label_fname.setBounds(413, 157, 62, 13);
+		Label_fname.setBounds(422, 99, 62, 13);
 		contentPane.add(Label_fname);
 
 		Label_lname = new JLabel("\u05E9\u05DD \u05DE\u05E9\u05E4\u05D7\u05D4:");
+		Label_lname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_lname.setVisible(false);
-		Label_lname.setBounds(413, 205, 71, 13);
+		Label_lname.setBounds(223, 99, 87, 13);
 		contentPane.add(Label_lname);
 
 		Label_show_id = new JLabel("New label");
+		Label_show_id.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_id.setVisible(false);
-		Label_show_id.setBounds(164, 157, 45, 13);
+		Label_show_id.setBounds(205, 125, 86, 13);
 		contentPane.add(Label_show_id);
 
 		Label_show_phone = new JLabel("New label");
+		Label_show_phone.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_phone.setVisible(false);
-		Label_show_phone.setBounds(150, 179, 45, 13);
+		Label_show_phone.setBounds(205, 156, 78, 13);
 		contentPane.add(Label_show_phone);
 
 		Label_show_birthday = new JLabel("New label");
+		Label_show_birthday.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_birthday.setVisible(false);
-		Label_show_birthday.setBounds(151, 209, 45, 13);
+		Label_show_birthday.setBounds(195, 182, 80, 13);
 		contentPane.add(Label_show_birthday);
 
 		textField_fnane = new JTextField();
 		textField_fnane.setVisible(false);
-		textField_fnane.setBounds(307, 154, 96, 19);
+		textField_fnane.setBounds(316, 96, 96, 19);
 		contentPane.add(textField_fnane);
 		textField_fnane.setColumns(10);
 
 		textField_lname = new JTextField();
 		textField_lname.setVisible(false);
-		textField_lname.setBounds(307, 202, 96, 19);
+		textField_lname.setBounds(133, 96, 96, 19);
 		contentPane.add(textField_lname);
 		textField_lname.setColumns(10);
 
 		textField_id = new JTextField();
 		textField_id.setVisible(false);
-		textField_id.setBounds(113, 154, 96, 19);
+		textField_id.setBounds(195, 122, 96, 19);
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
 
 		textField_phone = new JTextField();
 		textField_phone.setVisible(false);
-		textField_phone.setBounds(113, 176, 96, 19);
+		textField_phone.setBounds(201, 153, 96, 19);
 		contentPane.add(textField_phone);
 		textField_phone.setColumns(10);
 
 		textField_birthday = new JTextField();
 		textField_birthday.setVisible(false);
-		textField_birthday.setBounds(113, 206, 96, 19);
+		textField_birthday.setBounds(192, 179, 96, 19);
 		contentPane.add(textField_birthday);
 		textField_birthday.setColumns(10);
 
 		Label_show_fname = new JLabel("New label");
+		Label_show_fname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_fname.setVisible(false);
-		Label_show_fname.setBounds(358, 157, 45, 13);
+		Label_show_fname.setBounds(331, 99, 77, 13);
 		contentPane.add(Label_show_fname);
 
 		Label_show_lname = new JLabel("New label");
+		Label_show_lname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_lname.setVisible(false);
-		Label_show_lname.setBounds(338, 205, 45, 13);
+		Label_show_lname.setBounds(133, 99, 99, 13);
 		contentPane.add(Label_show_lname);
 
 		JComboBox comboBox_show_cusromer = new JComboBox();

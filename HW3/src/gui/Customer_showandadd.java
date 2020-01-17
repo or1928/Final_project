@@ -26,6 +26,8 @@ import db.DBconnect;
 import exceptions.CustomerAlreadyExistsException;
 import exceptions.WrongInput;
 import main.Main;
+import java.awt.Cursor;
+import java.awt.Dimension;
 
 public class Customer_showandadd extends JFrame {
 
@@ -166,8 +168,9 @@ public class Customer_showandadd extends JFrame {
 		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
 
 		lblNewLabel_1111 = new JLabel("\u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7:");
+		lblNewLabel_1111.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lblNewLabel_1111.setVisible(false);
-		lblNewLabel_1111.setBounds(294, 205, 70, 13);
+		lblNewLabel_1111.setBounds(294, 205, 87, 13);
 		contentPane.add(lblNewLabel_1111);
 
 		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
@@ -198,6 +201,7 @@ public class Customer_showandadd extends JFrame {
 		contentPane.add(comboBox_namecusro_inTheshop);
 
 		btn_del = new JButton("\u05DE\u05D7\u05E7");
+		btn_del.setMaximumSize(new Dimension(26, 21));
 		btn_del.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -213,7 +217,7 @@ public class Customer_showandadd extends JFrame {
 		});
 
 		btn_del.setVisible(false);
-		btn_del.setBounds(208, 265, 85, 21);
+		btn_del.setBounds(234, 267, 85, 21);
 		contentPane.add(btn_del);
 
 		JButton btn_delcustomer = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DC\u05E7\u05D5\u05D7");
@@ -237,8 +241,8 @@ public class Customer_showandadd extends JFrame {
 
 		lblCustomer_selection = new JLabel(
 				" \u05D1\u05D7\u05D9\u05E8\u05EA \u05DC\u05E7\u05D5\u05D7 \u05E7\u05D9\u05D9\u05DD:");
-		lblCustomer_selection.setFont(new Font("SansSerif", Font.BOLD, 14));
-		lblCustomer_selection.setBounds(305, 65, 102, 13);
+		lblCustomer_selection.setFont(new Font("SansSerif", Font.BOLD, 16));
+		lblCustomer_selection.setBounds(306, 65, 172, 13);
 		contentPane.add(lblCustomer_selection);
 
 		lab123 = new JLabel("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
@@ -247,99 +251,111 @@ public class Customer_showandadd extends JFrame {
 		contentPane.add(lab123);
 
 		Label_id = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05D6\u05D4\u05D5\u05EA:");
+		Label_id.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_id.setVisible(false);
-		Label_id.setBounds(216, 103, 68, 13);
+		Label_id.setBounds(326, 135, 74, 13);
 		contentPane.add(Label_id);
 
 		lLabel_phone = new JLabel("\u05DE\u05E1\u05E4\u05E8 \u05E4\u05DC\u05D0\u05E4\u05D5\u05DF:");
+		lLabel_phone.setFont(new Font("SansSerif", Font.BOLD, 16));
 		lLabel_phone.setVisible(false);
-		lLabel_phone.setBounds(213, 136, 71, 13);
+		lLabel_phone.setBounds(321, 161, 89, 13);
 		contentPane.add(lLabel_phone);
 
 		Label_birthday = new JLabel("\u05EA\u05D0\u05E8\u05D9\u05DA \u05DC\u05D9\u05D3\u05D4:");
+		Label_birthday.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_birthday.setVisible(false);
-		Label_birthday.setBounds(214, 159, 71, 13);
+		Label_birthday.setBounds(325, 184, 86, 13);
 		contentPane.add(Label_birthday);
 
 		Label_email = new JLabel("\u05D0\u05D9\u05DE\u05D9\u05D9\u05DC:");
+		Label_email.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_email.setVisible(false);
-		Label_email.setBounds(242, 182, 34, 13);
+		Label_email.setBounds(355, 207, 49, 13);
 		contentPane.add(Label_email);
 
 		Label_fname = new JLabel("\u05E9\u05DD \u05E4\u05E8\u05D8\u05D9:");
+		Label_fname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_fname.setVisible(false);
-		Label_fname.setBounds(407, 136, 62, 13);
+		Label_fname.setBounds(449, 91, 70, 13);
 		contentPane.add(Label_fname);
 
 		Label_lname = new JLabel("\u05E9\u05DD \u05DE\u05E9\u05E4\u05D7\u05D4:");
+		Label_lname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_lname.setVisible(false);
-		Label_lname.setBounds(407, 152, 71, 13);
+		Label_lname.setBounds(235, 92, 84, 13);
 		contentPane.add(Label_lname);
 
 		Label_show_id = new JLabel("New label");
+		Label_show_id.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_id.setVisible(false);
-		Label_show_id.setBounds(146, 103, 45, 13);
+		Label_show_id.setBounds(246, 135, 79, 13);
 		contentPane.add(Label_show_id);
 
 		Label_show_phone = new JLabel("New label");
+		Label_show_phone.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_phone.setVisible(false);
-		Label_show_phone.setBounds(146, 136, 45, 13);
+		Label_show_phone.setBounds(226, 161, 97, 13);
 		contentPane.add(Label_show_phone);
 
 		Label_show_birthday = new JLabel("New label");
+		Label_show_birthday.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_birthday.setVisible(false);
-		Label_show_birthday.setBounds(146, 159, 45, 13);
+		Label_show_birthday.setBounds(212, 186, 103, 13);
 		contentPane.add(Label_show_birthday);
 
 		Label_show_email = new JLabel("New label");
+		Label_show_email.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_email.setVisible(false);
-		Label_show_email.setBounds(146, 182, 45, 13);
+		Label_show_email.setBounds(243, 207, 120, 13);
 		contentPane.add(Label_show_email);
 
 		textField_fnane = new JTextField();
 		textField_fnane.setVisible(false);
-		textField_fnane.setBounds(311, 133, 96, 19);
+		textField_fnane.setBounds(352, 88, 96, 19);
 		contentPane.add(textField_fnane);
 		textField_fnane.setColumns(10);
 
 		textField_lname = new JTextField();
 		textField_lname.setVisible(false);
-		textField_lname.setBounds(311, 156, 96, 19);
+		textField_lname.setBounds(142, 91, 96, 19);
 		contentPane.add(textField_lname);
 		textField_lname.setColumns(10);
 
 		textField_id = new JTextField();
 		textField_id.setVisible(false);
-		textField_id.setBounds(110, 100, 96, 19);
+		textField_id.setBounds(219, 132, 96, 19);
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
 
 		textField_phone = new JTextField();
 		textField_phone.setVisible(false);
-		textField_phone.setBounds(107, 133, 96, 19);
+		textField_phone.setBounds(215, 158, 96, 19);
 		contentPane.add(textField_phone);
 		textField_phone.setColumns(10);
 
 		textField_birthday = new JTextField();
 		textField_birthday.setVisible(false);
-		textField_birthday.setBounds(108, 156, 96, 19);
+		textField_birthday.setBounds(219, 183, 96, 19);
 		contentPane.add(textField_birthday);
 		textField_birthday.setColumns(10);
 
 		textField_email = new JTextField();
 		textField_email.setVisible(false);
-		textField_email.setBounds(110, 179, 96, 19);
+		textField_email.setBounds(249, 207, 96, 19);
 		contentPane.add(textField_email);
 		textField_email.setColumns(10);
 
 		Label_show_fname = new JLabel("New label");
+		Label_show_fname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_fname.setVisible(false);
-		Label_show_fname.setBounds(352, 136, 45, 13);
+		Label_show_fname.setBounds(347, 91, 101, 13);
 		contentPane.add(Label_show_fname);
 
 		Label_show_lname = new JLabel("New label");
+		Label_show_lname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_lname.setVisible(false);
-		Label_show_lname.setBounds(362, 159, 45, 13);
+		Label_show_lname.setBounds(149, 94, 89, 13);
 		contentPane.add(Label_show_lname);
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
@@ -408,7 +424,7 @@ public class Customer_showandadd extends JFrame {
 		});
 
 		Button_add_new_cusromer.setVisible(false);
-		Button_add_new_cusromer.setBounds(200, 237, 96, 21);
+		Button_add_new_cusromer.setBounds(267, 236, 96, 21);
 		contentPane.add(Button_add_new_cusromer);
 
 		comboBox_show_cusromer.setBounds(173, 63, 89, 21);
@@ -416,6 +432,9 @@ public class Customer_showandadd extends JFrame {
 
 		JButton Button_show_add = new JButton(
 				"\u05D4\u05D5\u05E4\u05E1\u05EA \u05DC\u05E7\u05D5\u05D7 \u05D7\u05D3\u05E9");
+		Button_show_add.setMinimumSize(new Dimension(26, 21));
+		Button_show_add.setMaximumSize(new Dimension(28, 21));
+		Button_show_add.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		Button_show_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Visible_add_t();
