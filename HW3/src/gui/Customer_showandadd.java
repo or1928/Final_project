@@ -525,6 +525,5 @@ public class Customer_showandadd extends JFrame {
 		Label_logo_background.setIcon(new ImageIcon(newImage));
 		Label_logo_background.setBounds(0, 0, 530, 357);
 		contentPane.add(Label_logo_background);
-
 	}
 }
