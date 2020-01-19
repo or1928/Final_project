@@ -24,7 +24,12 @@ import javax.swing.border.LineBorder;
 
 import classes.Employee;
 import db.DBconnect;
+import exceptions.CustomerAlreadyExistsException;
 import exceptions.EmployeeAlreadyExistsException;
+import exceptions.IllegalDateException;
+import exceptions.IllegalEmailException;
+import exceptions.InvalidNameException;
+import exceptions.InvalidPhoneNumberException;
 import exceptions.WrongInput;
 import main.Main;
 
@@ -48,12 +53,15 @@ public class Employee_showandadd extends JFrame {
 	private static JLabel Label_show_birthday;
 	private static JLabel Label_show_fname;
 	private static JLabel Label_show_lname;
+	private static JLabel Label_employee_photo;
 	private static JButton Button_add_new_cusromer;
 	private JTable table;
 	private static JLabel lblempselection;
 	private static JComboBox comboBox_showEmplo_inMYshop_Dell;
 	private static JButton btndell, btn_Switch_show;
 	private static boolean flag = false;
+	private static Image employeePhotoName;
+	private static Image employeePhoto;
 
 	public static void Visible_co_t() {
 		Label_id.setVisible(true);
@@ -69,6 +77,7 @@ public class Employee_showandadd extends JFrame {
 
 		Label_show_id.setVisible(true);
 		Button_add_new_cusromer.setVisible(true);
+		Label_employee_photo.setVisible(true);
 	}
 
 	public static void Visible_co_f() {
@@ -77,6 +86,7 @@ public class Employee_showandadd extends JFrame {
 		Label_show_fname.setVisible(false);
 		Label_show_phone.setVisible(false);
 		Label_show_birthday.setVisible(false);
+		Label_employee_photo.setVisible(false);
 
 		Label_show_id.setVisible(false);
 	}
@@ -104,6 +114,7 @@ public class Employee_showandadd extends JFrame {
 		textField_id.setVisible(false);
 		textField_phone.setVisible(false);
 		textField_birthday.setVisible(false);
+
 
 	}
 
@@ -327,6 +338,12 @@ public class Employee_showandadd extends JFrame {
 		Label_show_lname.setVisible(false);
 		Label_show_lname.setBounds(133, 99, 99, 13);
 		contentPane.add(Label_show_lname);
+		
+		Label_employee_photo = new JLabel("");
+		Label_employee_photo.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_employee_photo.setVisible(true);
+		Label_employee_photo.setBounds(412, 121, 107, 149);
+		contentPane.add(Label_employee_photo);		
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
 		comboBox_show_cusromer.addItem("");
@@ -346,7 +363,22 @@ public class Employee_showandadd extends JFrame {
 						Label_show_phone.setText(emp.getPhoneNumber());
 						Label_show_birthday.setText(emp.getDateOfBirth());
 						Label_show_id.setText(emp.getID());
+						
+						String photoName = "/" + emp.getFirstName().toLowerCase() + ".jpg";
+						try {
+							employeePhotoName = new ImageIcon(this.getClass().getResource(photoName)).getImage();
+							employeePhoto = employeePhotoName.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+							Label_employee_photo.setIcon(new ImageIcon(employeePhoto));
+							
+						}
+						catch(NullPointerException e2){
+							employeePhotoName = new ImageIcon(this.getClass().getResource("/unknown.png")).getImage();
+							employeePhoto = employeePhotoName.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+							Label_employee_photo.setIcon(new ImageIcon(employeePhoto));
+							
+						}
 						break;
+						
 					} else {
 						Visible_co_f();
 					}
@@ -378,9 +410,18 @@ public class Employee_showandadd extends JFrame {
 					} catch (EmployeeAlreadyExistsException e1) {
 						JOptionPane.showMessageDialog(null, "עובד כבר קיים במערכת");
 						e1.printStackTrace();
+					} catch (CustomerAlreadyExistsException c1) {
+						JOptionPane.showMessageDialog(null, "לקוח כבר קיים במערכת");
+					} catch (IllegalEmailException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת מייל עובד");
+					} catch (InvalidPhoneNumberException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת מספר פלאפון ");
+					} catch (IllegalDateException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת תאריך לידה ");
+					} catch (InvalidNameException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת שם עובד");
 					} catch (WrongInput e1) {
-						JOptionPane.showMessageDialog(null, "שגיאה בפרטי העובד. אנא בדוק ונסה שנית", "Invalid input",
-								JOptionPane.PLAIN_MESSAGE);
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת פרטי עובד");
 						e1.printStackTrace();
 					}
 

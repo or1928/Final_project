@@ -24,6 +24,10 @@ import javax.swing.border.LineBorder;
 import classes.Customer;
 import db.DBconnect;
 import exceptions.CustomerAlreadyExistsException;
+import exceptions.IllegalDateException;
+import exceptions.IllegalEmailException;
+import exceptions.InvalidNameException;
+import exceptions.InvalidPhoneNumberException;
 import exceptions.WrongInput;
 import main.Main;
 import java.awt.Cursor;
@@ -52,11 +56,14 @@ public class Customer_showandadd extends JFrame {
 	private static JLabel Label_show_email;
 	private static JLabel Label_show_fname;
 	private static JLabel Label_show_lname;
+	private static JLabel Label_customer_photo;
 	private static JButton Button_add_new_cusromer;
 	private static JButton btn_del;
 	private static JComboBox comboBox_namecusro_inTheshop;
 	private static JLabel lblNewLabel_1111;
 	private JButton btn_Switch_show;
+	private static Image customerPhotoName;
+	private static Image customerPhoto;
 
 	/**
 	 * Launch the application.
@@ -82,6 +89,7 @@ public class Customer_showandadd extends JFrame {
 		Label_show_email.setVisible(true);
 		Label_show_id.setVisible(true);
 		Button_add_new_cusromer.setVisible(true);
+		Label_customer_photo.setVisible(true);
 	}
 
 	public static void Visible_co_f() {
@@ -92,6 +100,8 @@ public class Customer_showandadd extends JFrame {
 		Label_show_birthday.setVisible(false);
 		Label_show_email.setVisible(false);
 		Label_show_id.setVisible(false);
+		Label_customer_photo.setVisible(false);
+
 	}
 
 	public static void Visible_add_t() {
@@ -352,18 +362,25 @@ public class Customer_showandadd extends JFrame {
 		Label_show_fname.setBounds(347, 91, 101, 13);
 		contentPane.add(Label_show_fname);
 
-		Label_show_lname = new JLabel("New label");
+		Label_show_lname = new JLabel("");
 		Label_show_lname.setFont(new Font("SansSerif", Font.BOLD, 16));
 		Label_show_lname.setVisible(false);
 		Label_show_lname.setBounds(149, 94, 89, 13);
 		contentPane.add(Label_show_lname);
 
+		Label_customer_photo = new JLabel("");
+		Label_customer_photo.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_customer_photo.setVisible(true);
+		Label_customer_photo.setBounds(412, 121, 107, 149);
+		contentPane.add(Label_customer_photo);		
+
+
 		JComboBox comboBox_show_cusromer = new JComboBox();
 
 		comboBox_show_cusromer.addItem("");
-		for (Customer cu : Main.allCustomers)
+		for (Customer cu : Main.allCustomers) {
 			comboBox_show_cusromer.addItem(cu.getFirstName());
-
+		}
 		comboBox_show_cusromer.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				for (Customer cu : Main.allCustomers)
@@ -377,6 +394,21 @@ public class Customer_showandadd extends JFrame {
 						Label_show_birthday.setText(cu.getDateOfBirth());
 						Label_show_id.setText(cu.getID());
 						Label_show_email.setText(cu.getEmail());
+
+
+						String photoName = "/" + cu.getFirstName().toLowerCase() + ".jpg";
+						try {
+							customerPhotoName = new ImageIcon(this.getClass().getResource(photoName)).getImage();
+							customerPhoto = customerPhotoName.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+							Label_customer_photo.setIcon(new ImageIcon(customerPhoto));
+
+						}
+						catch(NullPointerException e2){
+							customerPhotoName = new ImageIcon(this.getClass().getResource("/unknown.png")).getImage();
+							customerPhoto = customerPhotoName.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+							Label_customer_photo.setIcon(new ImageIcon(customerPhoto));
+
+						}
 						break;
 					} else {
 						Visible_co_f();
@@ -410,11 +442,19 @@ public class Customer_showandadd extends JFrame {
 						JOptionPane.showMessageDialog(null, "לקוח נוסף בהצלחה");
 					} catch (CustomerAlreadyExistsException c1) {
 						JOptionPane.showMessageDialog(null, "לקוח כבר קיים במערכת");
-						c1.printStackTrace();
-					} catch (WrongInput c1) {
+					} catch (IllegalEmailException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת שם לקוח");
+					} catch (InvalidPhoneNumberException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת מספר פלאפון ");
+					} catch (IllegalDateException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת תאריך לידה ");
+					} catch (InvalidNameException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת מייל לקוח");
+					} catch (WrongInput e1) {
 						JOptionPane.showMessageDialog(null, "שגיאה בהזנת פרטי לקוח");
-						c1.printStackTrace();
+						e1.printStackTrace();
 					}
+
 				}
 
 				dispose();

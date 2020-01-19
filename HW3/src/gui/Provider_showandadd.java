@@ -23,6 +23,11 @@ import javax.swing.border.LineBorder;
 
 import classes.Provider;
 import db.DBconnect;
+import exceptions.CustomerAlreadyExistsException;
+import exceptions.IllegalDateException;
+import exceptions.IllegalEmailException;
+import exceptions.InvalidNameException;
+import exceptions.InvalidPhoneNumberException;
 import exceptions.ProvidersAlreadyExistsException;
 import exceptions.WrongInput;
 import main.Main;
@@ -49,10 +54,13 @@ public class Provider_showandadd extends JFrame {
 	private static JLabel Label_show_lname;
 	private static JButton Button_add_new_cusromer;
 	private static JLabel lblpro_selection;
+	private static JLabel Label_provider_photo;
 	private static JComboBox comboBox_namepro_inTheshop;
 	private static JButton btn_Switch_show;
 	private static JButton btndel;
 	private JLabel lblNewpage;
+	private static Image ProviderPhotoName;
+	private static Image ProviderPhoto;
 
 	/**
 	 * Launch the application.
@@ -72,6 +80,8 @@ public class Provider_showandadd extends JFrame {
 
 		Label_show_id.setVisible(true);
 		Button_add_new_cusromer.setVisible(true);
+		Label_provider_photo.setVisible(true);
+
 	}
 
 	public static void Visible_co_f() {
@@ -80,15 +90,15 @@ public class Provider_showandadd extends JFrame {
 		Label_show_fname.setVisible(false);
 		Label_show_phone.setVisible(false);
 		Label_show_birthday.setVisible(false);
-
 		Label_show_id.setVisible(false);
+		Label_provider_photo.setVisible(false);
+
 	}
 
 	public static void Visible_add_t() {
 		Label_id.setVisible(true);
 		lLabel_phone.setVisible(true);
 		Label_birthday.setVisible(true);
-
 		Label_fname.setVisible(true);
 		Label_lname.setVisible(true);
 		Button_add_new_cusromer.setVisible(true);
@@ -322,13 +332,20 @@ public class Provider_showandadd extends JFrame {
 		Label_show_lname.setBounds(338, 95, 86, 13);
 		Label_show_lname.setVisible(false);
 		contentPane.add(Label_show_lname);
+		
+		Label_provider_photo = new JLabel("");
+		Label_provider_photo.setHorizontalAlignment(SwingConstants.CENTER);
+		Label_provider_photo.setVisible(true);
+		Label_provider_photo.setBounds(412, 121, 107, 149);
+		contentPane.add(Label_provider_photo);		
+
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
 		comboBox_show_cusromer.setBounds(199, 70, 89, 21);
 		comboBox_show_cusromer.addItem("");
-		for (Provider pro : Main.allProviders)
+		for (Provider pro : Main.allProviders) {
 			comboBox_show_cusromer.addItem(pro.getFirstName());
-
+		}
 		comboBox_show_cusromer.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
 				for (Provider pro : Main.allProviders)
@@ -341,6 +358,24 @@ public class Provider_showandadd extends JFrame {
 						Label_show_phone.setText(pro.getPhoneNumber());
 						Label_show_birthday.setText(pro.getDateOfBirth());
 						Label_show_id.setText(pro.getID());
+						
+						String photoName = "/" + pro.getFirstName().toLowerCase() + ".jpg";
+						try {
+							ProviderPhotoName = new ImageIcon(this.getClass().getResource(photoName)).getImage();
+							ProviderPhoto = ProviderPhotoName.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+							Label_provider_photo.setIcon(new ImageIcon(ProviderPhoto));
+							
+						}
+						
+						catch(NullPointerException e2){
+							ProviderPhotoName = new ImageIcon(this.getClass().getResource("/unknown.png")).getImage();
+							ProviderPhoto = ProviderPhotoName.getScaledInstance(200, 200, Image.SCALE_DEFAULT);
+							Label_provider_photo.setIcon(new ImageIcon(ProviderPhoto));
+							
+							
+						}
+						
+						
 
 						break;
 					} else {
@@ -375,10 +410,22 @@ public class Provider_showandadd extends JFrame {
 					} catch (ProvidersAlreadyExistsException p1) {
 						JOptionPane.showMessageDialog(null, "ספק כבר קיים במערכת");
 						p1.printStackTrace();
-					} catch (WrongInput p1) {
-						JOptionPane.showMessageDialog(null, "שגיאה בהזנת נתוני ספק");
-						p1.printStackTrace();
+					} catch (IllegalEmailException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת מייל");
+					} catch (InvalidPhoneNumberException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת מספר פלאפון ");
+					} catch (IllegalDateException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת תאריך לידה ");
+					} catch (InvalidNameException c1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת שם ספק");
+					} catch (WrongInput e1) {
+						JOptionPane.showMessageDialog(null, "שגיאה בהזנת פרטי ספק");
+						e1.printStackTrace();
 					}
+
+
+
+
 				}
 
 				dispose();

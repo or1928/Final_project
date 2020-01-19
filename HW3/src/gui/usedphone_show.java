@@ -53,15 +53,15 @@ public class usedphone_show extends JFrame{
 	/**
 	 * Create the frame.
 	 */
-	
-		
-		
 
-		
 
-		
-	
-	
+
+
+
+
+
+
+
 	public usedphone_show()  {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 250, 544, 394);
@@ -104,7 +104,7 @@ public class usedphone_show extends JFrame{
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		 table = new JTable(data, columnNames);
+		table = new JTable(data, columnNames);
 		table.setColumnSelectionAllowed(true);
 		table.setCellSelectionEnabled(true);
 
@@ -119,8 +119,8 @@ public class usedphone_show extends JFrame{
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 89, 530, 126);
 		contentPane.add(scrollPane);
-	
-		
+
+
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -143,9 +143,9 @@ public class usedphone_show extends JFrame{
 		textField_pr.setBounds(233, 259, 96, 19);
 		contentPane.add(textField_pr);
 		textField_pr.setColumns(10);
-		
-		
-		
+
+
+
 
 		JButton btn_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
 		btn_return.addActionListener(new ActionListener() {
@@ -157,29 +157,29 @@ public class usedphone_show extends JFrame{
 		});
 		btn_return.setBounds(0, 327, 103, 30);
 		contentPane.add(btn_return);
-		
-		
+
+
 
 		JButton btnshow_newTabel = new JButton("\u05D4\u05E6\u05D2");
 		btnshow_newTabel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
-				
+
+
+
 				try {
+					data.removeAllElements();
+
 					int salePriceInput = Integer.valueOf(textField_pr.getText());
 					Connection con = DriverManager
 							.getConnection("jdbc:sqlserver://localhost;databaseName=ShopDB;integratedSecurity=true;");
 
-					String sql = "SELECT * FROM sale where price>?";
-					PreparedStatement statement = con.prepareStatement(sql);
-					statement.setInt(1, salePriceInput);
-					ResultSet resultSet = statement.executeQuery();
+					
+					String sql = "SELECT * FROM usedphone where price > " + salePriceInput;
+					Statement statement = con.createStatement();
+					ResultSet resultSet = statement.executeQuery(sql);
 					ResultSetMetaData metaData = resultSet.getMetaData();
 					int columns = metaData.getColumnCount();
-					for (int i = 1; i <= columns; i++) {
-						columnNames.addElement(metaData.getColumnName(i));
-					}
+					
 					while (resultSet.next()) {
 						Vector<Object> row = new Vector<Object>(columns);
 						for (int i = 1; i <= columns; i++) {
@@ -213,7 +213,7 @@ public class usedphone_show extends JFrame{
 		});
 		btnshow_newTabel.setBounds(138, 260, 85, 21);
 		contentPane.add(btnshow_newTabel);
-		
+
 		btnshow_newTabel.setBounds(138, 260, 85, 21);
 		contentPane.add(btnshow_newTabel);
 
@@ -226,6 +226,6 @@ public class usedphone_show extends JFrame{
 
 	}
 
-	
+
 
 }

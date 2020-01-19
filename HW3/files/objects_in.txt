@@ -20,4 +20,4 @@ UsedPhone IPhone_s7 2015 Used 1000 Apple
 UsedPhone IPhone_X 2019 New 2440 Apple
 UsedPhone galaxy_s8 2019 New 1350 Samsung
 UsedPhone LG_g5 2017 asNew 1140 LG
-UsedPhone xiaomi_mi_mix 2018 Used 1500 Xiaomi
+UsedPhone xiaomi_mi 2018 Used 1500 Xiaomi
