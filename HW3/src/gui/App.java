@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,14 +23,16 @@ import main.Main;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 
+import classes.Username;
+
 public class App {
 	private JFrame frame;
 	private JTextField textField_Username;
 	private JPasswordField textField_password;
+	private ArrayList<Username> users = new ArrayList<>();
+	private HashMap<String,String> usersPasswords = new HashMap<>();
 
-	/**
-	 * Launch the application.
-	 */
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -51,8 +55,31 @@ public class App {
 
 	/**
 	 * Initialize the contents of the frame.
+	 * 
 	 */
+
+	private void initUsers() {
+		Username lior = new Username("lior", "lior","customer");
+		Username or = new Username("or", "or","employee");
+		Username shahaf = new Username("shahaf", "shahaf","employee");
+		Username admin = new Username("admin", "admin","admin");
+
+		users.add(lior);
+		users.add(or);
+		users.add(shahaf);
+		users.add(admin);
+
+		users.forEach((n) -> usersPasswords.put(n.getUserName(),n.getPassword()));
+
+	}
+	
+	private void addUser(String userName , String password , String rank) {
+		Username user = new Username(userName, password, rank);
+		users.add(user);
+		usersPasswords.put(user.getUserName(), user.getPassword());
+	}
 	private void initialize() {
+		initUsers();
 		frame = new JFrame();
 		frame.setBounds(500, 250, 544, 394);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,7 +92,7 @@ public class App {
 
 		Image img2 = new ImageIcon(this.getClass().getResource("/applogo.png")).getImage();
 		Image newImage2 = img2.getScaledInstance(300, 180, Image.SCALE_DEFAULT);
-		
+
 		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
 		Image newImage3 = img3.getScaledInstance( 103, 357, Image.SCALE_DEFAULT);
 
@@ -99,39 +126,23 @@ public class App {
 				String uname, paname;
 				uname = textField_Username.getText();
 				paname = textField_password.getText();
-				if (uname.equals("admin") && paname.equals("admin")) {
-					Main.users = "admin";
-					JOptionPane.showMessageDialog(frame, "ברוך הבא " + uname);
-					frame.dispose();
-					Manager_window manager_win = new Manager_window();
-					manager_win.setVisible(true);
-				} else if (uname.equals("lior") && paname.equals("lior")) {
-					Main.users = "customer";
-					JOptionPane.showMessageDialog(frame, "ברוך הבא " + uname);
-					frame.dispose();
-					Manager_window manager_win = new Manager_window();
-					manager_win.setVisible(true);
-				} else if (uname.equals("or") && paname.equals("or")) {
-					Main.users = "employee";
-					JOptionPane.showMessageDialog(frame, "ברוך הבא " + uname);
-					frame.dispose();
-					Manager_window manager_win = new Manager_window();
-					manager_win.setVisible(true);
-				} else if (uname.equals("Shahaf") && paname.equals("Shahaf")) {
-					Main.users = "employee";
-					JOptionPane.showMessageDialog(frame, "ברוך הבא " + uname);
-					frame.dispose();
-					Manager_window manager_win = new Manager_window();
-					manager_win.setVisible(true);
-				}
+				if (usersPasswords.containsKey(uname)) {
+					if(usersPasswords.get(uname).equals(paname)) {
+						Main.users = users.stream().filter(u -> u.getUserName().equals(paname)).findFirst().get().getRank();
+						JOptionPane.showMessageDialog(frame, "ברוך הבא " + uname);
+						frame.dispose();
+						Manager_window manager_win = new Manager_window();
+						manager_win.setVisible(true);
+					}
 
-				else {
-					JOptionPane.showMessageDialog(frame, "שם המשתמש או  הסיסמא לא נמצאו במערכת");
-					textField_Username.setText("");
-					textField_password.setText("");
+
+					else {
+						JOptionPane.showMessageDialog(frame, "שם המשתמש או  הסיסמא לא נמצאו במערכת");
+						textField_Username.setText("");
+						textField_password.setText("");
+					}
 				}
-			}
-		});
+			}});
 
 		JLabel logo_secHandCell = new JLabel("");
 		logo_secHandCell.setHorizontalAlignment(SwingConstants.CENTER);
@@ -167,7 +178,7 @@ public class App {
 		textField_password = new JPasswordField();
 		textField_password.setBounds(196, 161, 96, 19);
 		frame.getContentPane().add(textField_password);
-		
+
 		JLabel lblNewpage = new JLabel("\u05DB\u05E0\u05D9\u05E1\u05D4");
 		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewpage.setBorder(new LineBorder(Color.WHITE));
@@ -176,7 +187,7 @@ public class App {
 		lblNewpage.setBackground(Color.WHITE);
 		lblNewpage.setBounds(1, 155, 99, 33);
 		frame.getContentPane().add(lblNewpage);
-		
+
 		JLabel side_logo = new JLabel("");
 		side_logo.setHorizontalAlignment(SwingConstants.CENTER);
 		side_logo.setBounds(0, 0, 103, 357);

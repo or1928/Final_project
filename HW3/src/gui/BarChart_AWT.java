@@ -41,7 +41,7 @@ public class BarChart_AWT extends ApplicationFrame {
     		comboBox_namecusro_inTheshop.setBounds(201, 202, 86, 21);
     		   
     		String employeeName = (String) comboBox_namecusro_inTheshop.getSelectedItem();
-    		System.out.println(employeeName);
+    		System.out.println("");
       barChart = ChartFactory.createBarChart(
          chartTitle,           
          "Brand",            
@@ -104,10 +104,7 @@ public class BarChart_AWT extends ApplicationFrame {
 		
 		for(Vector<Object> v : data) {
 			dataset.setValue( new Double((int)v.get(1)), name + " sell's" , (String)v.get(0));  
-			
 		}     
-            
-
       return dataset; 
    }
    
