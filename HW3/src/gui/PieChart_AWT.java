@@ -75,7 +75,7 @@ public class PieChart_AWT extends ApplicationFrame {
 
 	private static JFreeChart createChart( PieDataset dataset ) {
 		JFreeChart chart = ChartFactory.createPieChart(      
-				"התפלגות מותגים",   // chart title 
+				"",   // chart title 
 				dataset,          // data    
 				true,             // include legend   
 				true, 
@@ -103,7 +103,7 @@ public class PieChart_AWT extends ApplicationFrame {
 				Manager_window.main(null);
 			}
 		});
-		Button_return.setFont(new Font("SansSerif", Font.BOLD, 14));
+		Button_return.setFont(new Font("SansSerif", Font.BOLD, 10));
 	    Button_return.setBounds(0, 336, 2, 21);
 		demo.add(Button_return);
 		
