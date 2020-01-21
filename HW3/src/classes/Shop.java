@@ -34,7 +34,6 @@ public class Shop implements Serializable {
 	}
 
 	// phone functions
-	@SuppressWarnings("static-access")
 	public void addPhone(UsedPhone p) {
 		if (!this.phones.contains(p)) {
 			this.phones.add(p);
@@ -149,7 +148,7 @@ public class Shop implements Serializable {
 	public void addSale(Sale sale) throws PhoneNotInInventoryExeption {
 		UsedPhone phoneToSell = sale.getPhone();
 		if (phones.contains(phoneToSell) && phoneToSell.isInShop == 1) { // if the shop have the phone
-			this.sales.put(sale.getSellingDate(), sale);
+			this.sales.put(sale.getSaleID(), sale);
 			// this.phones.remove(phoneToSell); // remove phone from inventory
 			phoneToSell.isInShop = 0;
 
@@ -160,8 +159,8 @@ public class Shop implements Serializable {
 		}
 	}
 
-	public void cencelSale(String sellingDate, Sale sale) {
-		this.sales.remove(sellingDate, sale);
+	public void cencelSale(String saleID, Sale sale) {
+		this.sales.remove(saleID, sale);
 	}
 
 	public void showSales() {
