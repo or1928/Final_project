@@ -3,6 +3,8 @@ package classes;
 import java.io.Serializable;
 import java.util.InputMismatchException;
 
+import exceptions.IllegalDateException;
+
 public class Sale implements Serializable {
 
 	public String saleID;
@@ -14,7 +16,8 @@ public class Sale implements Serializable {
 
 	private static int counter = 600;
 
-	public Sale(Employee employee, Customer customer, String sellingDate, Shop shop, UsedPhone phone) {
+	public Sale(Employee employee, Customer customer, String sellingDate, Shop shop, UsedPhone phone)
+			throws IllegalDateException {
 		setSaleID();
 		setEmployee(employee);
 		setCustomer(customer);
@@ -44,8 +47,12 @@ public class Sale implements Serializable {
 		}
 	}
 
-	public void setSellingDate(String sellingDate) {
-		this.sellingDate = sellingDate;
+	public void setSellingDate(String sellingDate) throws IllegalDateException {
+		if (sellingDate.matches("\\d{2}-\\d{2}-\\d{4}")) {
+			this.sellingDate = sellingDate;
+		} else
+			throw new IllegalDateException("invalid date - please use DD-MM-YYYY format.");
+
 	}
 
 	public void setShop(Shop shop) {
