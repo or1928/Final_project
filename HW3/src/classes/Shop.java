@@ -34,6 +34,7 @@ public class Shop implements Serializable {
 	}
 
 	// phone functions
+	@SuppressWarnings("static-access")
 	public void addPhone(UsedPhone p) {
 		if (!this.phones.contains(p)) {
 			this.phones.add(p);
@@ -60,16 +61,19 @@ public class Shop implements Serializable {
 	// employees functions
 
 	public void addEmployee(Employee e) throws EmployeeAlreadyExistsException {
-		if (!this.employess.contains(e)) {
-			for (Employee emp : this.employess) {
-				if (e.counter == emp.counter) {
-					e.counter++;
-				}
+		boolean found = false;
+		for (Employee emp : this.employess) {
+			if (emp.counter == e.counter) {
+				e.counter++;
 			}
+			if ((emp.getID().equals(e.getID()))) {
+				found = true;
+			}
+		}
+		if (found == false) {
 			this.employess.add(e);
 		} else
-			throw new EmployeeAlreadyExistsException("You cannot add the same employee twice!");
-
+			throw new EmployeeAlreadyExistsException("You cannot add the same Employee twice!");
 	}
 
 	public void removeEmployee(Employee e) {
@@ -85,12 +89,16 @@ public class Shop implements Serializable {
 	// customers functions
 
 	public void addCustomer(Customer c) throws CustomerAlreadyExistsException {
-		if (!this.customers.contains(c)) {
-			for (Customer cu : this.customers) {
-				if (c.counter == cu.counter) {
-					c.counter++;
-				}
+		boolean found = false;
+		for (Customer cs : this.customers) {
+			if (cs.counter == c.counter) {
+				c.counter++;
 			}
+			if ((cs.getID().equals(c.getID()))) {
+				found = true;
+			}
+		}
+		if (found == false) {
 			this.customers.add(c);
 		} else
 			throw new CustomerAlreadyExistsException("You cannot add the same customer twice!");
@@ -110,12 +118,16 @@ public class Shop implements Serializable {
 
 	public void addProvider(Provider p) throws ProvidersAlreadyExistsException {
 
-		if (!this.providers.contains(p)) {
-			for (Provider pr : this.providers) {
-				if (p.counter == pr.counter) {
-					p.counter++;
-				}
+		boolean found = false;
+		for (Provider pro : this.providers) {
+			if (pro.counter == p.counter) {
+				p.counter++;
 			}
+			if ((pro.getID().equals(p.getID()))) {
+				found = true;
+			}
+		}
+		if (found == false) {
 			this.providers.add(p);
 		} else
 			throw new ProvidersAlreadyExistsException("You cannot add the same employee twice!");
