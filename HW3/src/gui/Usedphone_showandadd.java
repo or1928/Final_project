@@ -170,7 +170,7 @@ public class Usedphone_showandadd extends JFrame {
 		Image img3 = new ImageIcon(this.getClass().getResource("/brs1.jpg")).getImage();
 		Image newImage3 = img3.getScaledInstance(103, 357, Image.SCALE_DEFAULT);
 
-		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8\u05D9\u05DD");
+		btn_Switch_show = new JButton("\u05D4\u05E6\u05D2\u05EA \u05DE\u05D7\u05E1\u05DF");
 		btn_Switch_show.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -196,7 +196,7 @@ public class Usedphone_showandadd extends JFrame {
 
 		comboBox_phonelection = new JComboBox();
 		comboBox_phonelection.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
-		comboBox_phonelection.addItem("");
+		comboBox_phonelection.addItem("בחר פלאפון");
 		for (UsedPhone my : Main.myShop.getPhones())
 			if (my.isInShop == 1) {
 				comboBox_phonelection.addItem(my.getModelNo());
@@ -436,7 +436,7 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.add(lblNewname);
 
 		JButton btnaddnew = new JButton(
-				"\u05D4\u05D5\u05E1\u05E4\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8 \u05D7\u05D3\u05E9");
+				"\u05DE\u05DB\u05E9\u05D9\u05E8 \u05D7\u05D3\u05E9");
 		btnaddnew.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -446,7 +446,7 @@ public class Usedphone_showandadd extends JFrame {
 
 			}
 		});
-		btnaddnew.setFont(new Font("SansSerif", Font.BOLD, 15));
+		btnaddnew.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnaddnew.setBounds(0, 59, 103, 21);
 		contentPane.add(btnaddnew);
 

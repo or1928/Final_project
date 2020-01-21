@@ -13,6 +13,9 @@ import classes.Customer;
 import classes.UsedPhone;
 import main.Main;
 
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -20,6 +23,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.Vector;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField; 
 
@@ -112,11 +116,23 @@ public class BarChart_AWT extends ApplicationFrame {
 	   
       BarChart_AWT chart = new BarChart_AWT("התפלגות מכירות עובד", 
          " ");
+      
+      JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
+    		Button_return.addActionListener(new ActionListener() {
+    			public void actionPerformed(ActionEvent e) {
+    				chart.dispose();
+    				Manager_window.main(null);
+    			}
+    		});
+    		Button_return.setFont(new Font("SansSerif", Font.BOLD, 14));
+    	    Button_return.setBounds(0, 336, 2, 21);
+    	    chart.add(Button_return);
     
 		
       chart.pack( );   
       
       RefineryUtilities.centerFrameOnScreen( chart );        
       chart.setVisible( true ); 
+    
    }
 }

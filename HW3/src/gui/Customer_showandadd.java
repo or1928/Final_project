@@ -202,7 +202,7 @@ public class Customer_showandadd extends JFrame {
 		contentPane.add(btn_Switch_show);
 
 		comboBox_namecusro_inTheshop = new JComboBox();
-		comboBox_namecusro_inTheshop.addItem("");
+		comboBox_namecusro_inTheshop.addItem("בחר לקוח");
 		for (Customer my : Main.myShop.getCustomer())
 			comboBox_namecusro_inTheshop.addItem(my.getFirstName());
 
@@ -471,7 +471,7 @@ public class Customer_showandadd extends JFrame {
 		contentPane.add(comboBox_show_cusromer);
 
 		JButton Button_show_add = new JButton(
-				"\u05D4\u05D5\u05E4\u05E1\u05EA \u05DC\u05E7\u05D5\u05D7 \u05D7\u05D3\u05E9");
+				"\u05DC\u05E7\u05D5\u05D7 \u05D7\u05D3\u05E9");
 		Button_show_add.setMinimumSize(new Dimension(26, 21));
 		Button_show_add.setMaximumSize(new Dimension(28, 21));
 		Button_show_add.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));

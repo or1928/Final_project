@@ -191,7 +191,7 @@ public class Provider_showandadd extends JFrame {
 		contentPane.add(lblpro_selection);
 
 		comboBox_namepro_inTheshop = new JComboBox();
-		comboBox_namepro_inTheshop.addItem("");
+		comboBox_namepro_inTheshop.addItem("בחר ספק");
 		for (Provider my : Main.myShop.getProviders())
 			comboBox_namepro_inTheshop.addItem(my.getFirstName());
 		comboBox_namepro_inTheshop.setVisible(false);
@@ -437,7 +437,7 @@ public class Provider_showandadd extends JFrame {
 		Button_add_new_cusromer.setVisible(false);
 		contentPane.add(Button_add_new_cusromer);
 
-		JButton Button_show_add = new JButton("\u05D4\u05D5\u05E4\u05E1\u05EA \u05E1\u05E4\u05E7 \u05D7\u05D3\u05E9");
+		JButton Button_show_add = new JButton("\u05E1\u05E4\u05E7 \u05D7\u05D3\u05E9");
 		Button_show_add.setBounds(0, 118, 103, 21);
 		Button_show_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

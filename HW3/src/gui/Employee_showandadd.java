@@ -32,6 +32,7 @@ import exceptions.InvalidNameException;
 import exceptions.InvalidPhoneNumberException;
 import exceptions.WrongInput;
 import main.Main;
+import java.awt.Dimension;
 
 public class Employee_showandadd extends JFrame {
 
@@ -192,7 +193,7 @@ public class Employee_showandadd extends JFrame {
 		contentPane.add(btn_Switch_show);
 
 		comboBox_showEmplo_inMYshop_Dell = new JComboBox();
-		comboBox_showEmplo_inMYshop_Dell.addItem("");
+		comboBox_showEmplo_inMYshop_Dell.addItem("בחר עובד");
 		for (Employee my : Main.myShop.getEmployess())
 			comboBox_showEmplo_inMYshop_Dell.addItem(my.getFirstName());
 		comboBox_showEmplo_inMYshop_Dell.setVisible(false);
@@ -440,7 +441,7 @@ public class Employee_showandadd extends JFrame {
 		contentPane.add(comboBox_show_cusromer);
 
 		JButton Button_show_add = new JButton(
-				"\u05D4\u05D5\u05E4\u05E1\u05EA \u05E2\u05D5\u05D1\u05D3 \u05D7\u05D3\u05E9");
+				"\u05E2\u05D5\u05D1\u05D3 \u05D7\u05D3\u05E9");
 		Button_show_add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				flag = false;

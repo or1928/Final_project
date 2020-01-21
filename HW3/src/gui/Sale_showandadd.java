@@ -264,7 +264,7 @@ public class Sale_showandadd extends JFrame {
 		contentPane.add(btndel);
 
 		JButton btnadd_new = new JButton(
-				"\u05D4\u05D5\u05E1\u05E4\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4 \u05D7\u05D3\u05E9\u05D4");
+				"\u05D4\u05D5\u05E1\u05E4\u05EA \u05D4\u05D6\u05DE\u05E0\u05D4");
 		btnadd_new.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -285,7 +285,7 @@ public class Sale_showandadd extends JFrame {
 
 			}
 		});
-		btnadd_new.setFont(new Font("SansSerif", Font.BOLD, 15));
+		btnadd_new.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		btnadd_new.setBounds(0, 56, 103, 21);
 		contentPane.add(btnadd_new);
 

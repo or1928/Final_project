@@ -79,7 +79,7 @@ public class Manager_window extends JFrame {
 		});
 
 		btnsale_win.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btnsale_win.setBounds(216, 169, 85, 21);
+		btnsale_win.setBounds(224, 137, 85, 21);
 		contentPane.add(btnsale_win);
 
 		JButton btncustomer_win = new JButton("\u05E1\u05E4\u05E7\u05D9\u05DD");
@@ -94,8 +94,19 @@ public class Manager_window extends JFrame {
 				provider_win.setVisible(true);
 			}
 		});
+		
+		JButton btn_pie = new JButton("\u05D4\u05EA\u05E4\u05DC\u05D2\u05D5\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8\u05D9\u05DD");
+		btn_pie.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				
+				PieChart_AWT.main(null);
+			}
+		});
+		btn_pie.setBounds(193, 283, 139, 21);
+		contentPane.add(btn_pie);
 		btncustomer_win.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btncustomer_win.setBounds(319, 233, 85, 21);
+		btncustomer_win.setBounds(319, 187, 85, 21);
 		contentPane.add(btncustomer_win);
 
 		JButton employees_btn = new JButton("\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD");
@@ -111,7 +122,7 @@ public class Manager_window extends JFrame {
 				Employee_win.setVisible(true);
 			}
 		});
-		employees_btn.setBounds(119, 93, 85, 21);
+		employees_btn.setBounds(134, 93, 85, 21);
 		contentPane.add(employees_btn);
 
 		JButton Button_Customer_window = new JButton("\u05DC\u05E7\u05D5\u05D7\u05D5\u05EA");
@@ -145,7 +156,7 @@ public class Manager_window extends JFrame {
 			}
 		});
 		btnusdephone.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btnusdephone.setBounds(131, 233, 85, 21);
+		btnusdephone.setBounds(134, 187, 85, 21);
 		contentPane.add(btnusdephone);
 
 		JButton Button_exit = new JButton("\u05D4\u05EA\u05E0\u05EA\u05E7");
@@ -159,7 +170,7 @@ public class Manager_window extends JFrame {
 
 			}
 		});
-		Button_exit.setBounds(228, 299, 85, 21);
+		Button_exit.setBounds(224, 326, 85, 21);
 		contentPane.add(Button_exit);
 
 		JLabel Label_logo_yvc = new JLabel("");
@@ -168,6 +179,17 @@ public class Manager_window extends JFrame {
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		Label_logo_yvc.setBounds(429, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
+		
+		JButton btn_bar = new JButton("\u05D4\u05EA\u05E4\u05DC\u05D2\u05D5\u05EA \u05DE\u05DB\u05D9\u05E8\u05D5\u05EA");
+		btn_bar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+                dispose();
+				BarChart_AWT.main(null);
+				
+			}
+		});
+		btn_bar.setBounds(193, 241, 139, 21);
+		contentPane.add(btn_bar);
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);

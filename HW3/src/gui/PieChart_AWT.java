@@ -1,5 +1,8 @@
 package gui;
 
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,6 +10,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.Vector;
 
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import org.jfree.chart.ChartFactory;
@@ -32,7 +36,7 @@ public class PieChart_AWT extends ApplicationFrame {
 	}
 
 	private static PieDataset createDataset( ) {
-		
+	
 		try {
 
 			Connection con = DriverManager
@@ -91,6 +95,18 @@ public class PieChart_AWT extends ApplicationFrame {
 		demo.setSize( 560 , 367 );    
 		RefineryUtilities.centerFrameOnScreen( demo );    
 		demo.setVisible( true ); 
+	
+		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
+		Button_return.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				demo.dispose();
+				Manager_window.main(null);
+			}
+		});
+		Button_return.setFont(new Font("SansSerif", Font.BOLD, 14));
+	    Button_return.setBounds(0, 336, 2, 21);
+		demo.add(Button_return);
+		
 	}
 }
 
