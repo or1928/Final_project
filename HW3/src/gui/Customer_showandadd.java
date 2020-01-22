@@ -377,7 +377,7 @@ public class Customer_showandadd extends JFrame {
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
 
-		comboBox_show_cusromer.addItem("");
+		comboBox_show_cusromer.addItem("בחר לקוח");
 		for (Customer cu : Main.allCustomers) {
 			comboBox_show_cusromer.addItem(cu.getFirstName());
 		}

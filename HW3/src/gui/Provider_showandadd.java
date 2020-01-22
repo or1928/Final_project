@@ -342,7 +342,7 @@ public class Provider_showandadd extends JFrame {
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
 		comboBox_show_cusromer.setBounds(199, 70, 89, 21);
-		comboBox_show_cusromer.addItem("");
+		comboBox_show_cusromer.addItem("בחר ספק");
 		for (Provider pro : Main.allProviders) {
 			comboBox_show_cusromer.addItem(pro.getFirstName());
 		}

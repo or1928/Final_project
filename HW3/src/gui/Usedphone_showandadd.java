@@ -195,7 +195,7 @@ public class Usedphone_showandadd extends JFrame {
 		contentPane.add(lbphonelection);
 
 		comboBox_phonelection = new JComboBox();
-		comboBox_phonelection.setFont(new Font("SansSerif", Font.BOLD | Font.ITALIC, 16));
+		comboBox_phonelection.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		comboBox_phonelection.addItem("בחר פלאפון");
 		for (UsedPhone my : Main.myShop.getPhones())
 			if (my.isInShop == 1) {
@@ -294,7 +294,7 @@ public class Usedphone_showandadd extends JFrame {
 		lblyear.setVisible(false);
 
 		JComboBox comboBox_show_phon = new JComboBox();
-		comboBox_show_phon.addItem("");
+		comboBox_show_phon.addItem("בחר פלאפון");
 		for (UsedPhone uphone : Main.allusedPhones)
 			comboBox_show_phon.addItem(uphone.getModelNo());
 

@@ -347,7 +347,7 @@ public class Employee_showandadd extends JFrame {
 		contentPane.add(Label_employee_photo);		
 
 		JComboBox comboBox_show_cusromer = new JComboBox();
-		comboBox_show_cusromer.addItem("");
+		comboBox_show_cusromer.addItem("בחר עובד");
 		for (Employee emp : Main.allEmployees)
 			comboBox_show_cusromer.addItem(emp.getFirstName());
 
