@@ -43,7 +43,6 @@ public class Main {
 
 	}
 
-	@SuppressWarnings("static-access")
 	public static void init() {
 
 		// Open GUI

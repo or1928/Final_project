@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Vector;
 
 import javax.swing.ImageIcon;
@@ -24,10 +25,13 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableColumn;
 
+import main.Main;
+
 public class usedphone_show extends JFrame {
 
 	private Vector<String> columnNames = new Vector<String>();
 	private Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+	public static ArrayList<Double> phonePrice;
 	private JPanel contentPane;
 	private JTextField textField_pr;
 	private JTable table1;
@@ -199,6 +203,15 @@ public class usedphone_show extends JFrame {
 		lblside.setBounds(0, 0, 103, 357);
 		lblside.setIcon(new ImageIcon(newImage3));
 		contentPane.add(lblside);
+
+		phonePrice = new ArrayList<>();
+		for (int i = 0; i < Main.myShop.getPhones().size(); i++) {
+			if (Main.myShop.getPhones().get(i).isInShop == 1) {
+				phonePrice.add(Main.myShop.getPhones().get(i).getPrice());
+			}
+		}
+
+		double sumPhones = Main.myShop.sum(phonePrice);
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);

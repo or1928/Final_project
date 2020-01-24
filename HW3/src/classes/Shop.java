@@ -235,4 +235,12 @@ public class Shop implements Serializable {
 		// TODO Auto-generated method stub
 		return this.getShopName();
 	}
+
+	public static double sum(ArrayList<? extends Number> list) {
+		double max = 0;
+		for (Number obj : list) {
+			max += obj.doubleValue();
+		}
+		return max;
+	}
 }
