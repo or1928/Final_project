@@ -33,10 +33,10 @@ public class Main {
 		myShop = new Shop("BestSell", "Hafia", "046793243");
 
 		// read shop data from DB
-
+		
 		DBconnect.openDB();
-
 		DBconnect.readShopFromDB();
+		
 
 		// initialize system with basic data from text file input
 		init();

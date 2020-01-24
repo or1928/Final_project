@@ -84,12 +84,12 @@ public class usedphone_show extends JFrame {
 			ResultSet resultSet = statement.executeQuery(sql);
 			ResultSetMetaData metaData = resultSet.getMetaData();
 			int columns = metaData.getColumnCount();
-			for (int i = 1; i <= columns; i++) {
+			for (int i = 1; i <= columns-1; i++) {
 				columnNames.addElement(metaData.getColumnName(i));
 			}
 			while (resultSet.next()) {
 				Vector<Object> row = new Vector<Object>(columns);
-				for (int i = 1; i <= columns; i++) {
+				for (int i = 1; i <= columns-1; i++) {
 					row.addElement(resultSet.getObject(i));
 				}
 				data.addElement(row);
@@ -109,8 +109,6 @@ public class usedphone_show extends JFrame {
 			column.setMaxWidth(250);
 		}
 		contentPane.setLayout(null);
-		contentPane.setLayout(null);
-		// contentPane.setLayout(null);
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.setBounds(0, 89, 530, 126);
 		contentPane.add(scrollPane);
@@ -124,7 +122,7 @@ public class usedphone_show extends JFrame {
 
 		JLabel lbl_show = new JLabel(
 				"\u05D4\u05E6\u05D2\u05EA \u05DE\u05DB\u05E9\u05D9\u05E8\u05D9\u05DD \u05DE\u05E2\u05DC:");
-		lbl_show.setFont(new Font("SansSerif", Font.PLAIN, 17));
+		lbl_show.setFont(new Font("SansSerif", Font.BOLD, 17));
 		lbl_show.setBounds(341, 242, 177, 50);
 		contentPane.add(lbl_show);
 
@@ -163,7 +161,7 @@ public class usedphone_show extends JFrame {
 
 					while (resultSet.next()) {
 						Vector<Object> row = new Vector<Object>(columns);
-						for (int i = 1; i <= columns; i++) {
+						for (int i = 1; i <= columns-1; i++) {
 							row.addElement(resultSet.getObject(i));
 						}
 						data.addElement(row);
@@ -183,8 +181,7 @@ public class usedphone_show extends JFrame {
 					column.setMaxWidth(250);
 				}
 				contentPane.setLayout(null);
-				contentPane.setLayout(null);
-				// contentPane.setLayout(null);
+				
 				JScrollPane scrollPane = new JScrollPane(table);
 				scrollPane.setBounds(0, 89, 530, 143);
 				contentPane.add(scrollPane);
@@ -211,7 +208,17 @@ public class usedphone_show extends JFrame {
 			}
 		}
 
-		double sumPhones = Main.myShop.sum(phonePrice);
+		
+		JLabel lblNewLabel = new JLabel("\u05E1\u05DB\u05D5\u05DD \u05DB\u05DC \u05D4\u05DE\u05DB\u05E9\u05D9\u05E8\u05D9\u05DD \u05D1\u05D7\u05E0\u05D5\u05EA:");
+		lblNewLabel.setFont(new Font("SansSerif", Font.BOLD, 17));
+		lblNewLabel.setBounds(304, 225, 177, 13);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setFont(new Font("SansSerif", Font.BOLD, 17));
+		lblNewLabel_1.setBounds(225, 225, 71, 13);
+		lblNewLabel_1.setText(""+Main.myShop.sum(phonePrice));
+		contentPane.add(lblNewLabel_1);
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
@@ -221,5 +228,4 @@ public class usedphone_show extends JFrame {
 		contentPane.add(Label_logo_background);
 
 	}
-
 }

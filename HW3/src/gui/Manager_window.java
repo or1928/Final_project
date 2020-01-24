@@ -180,17 +180,7 @@ public class Manager_window extends JFrame {
 		Label_logo_yvc.setBounds(429, 283, 91, 64);
 		contentPane.add(Label_logo_yvc);
 		
-		JButton btn_bar = new JButton("\u05D4\u05EA\u05E4\u05DC\u05D2\u05D5\u05EA \u05DE\u05DB\u05D9\u05E8\u05D5\u05EA");
-		btn_bar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-                dispose();
-				BarChart_AWT.main(null);
-				
-			}
-		});
-		btn_bar.setBounds(193, 241, 139, 21);
-		contentPane.add(btn_bar);
-
+	
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
