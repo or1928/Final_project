@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import db.DBconnect;
+import exceptions.WrongInput;
 import main.Main;
 
 public class Manager_window extends JFrame {
@@ -99,7 +101,12 @@ public class Manager_window extends JFrame {
 		btn_pie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				
+				try {
+					DBconnect.updtaeDB();
+				} catch (WrongInput e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				PieChart_AWT.main(null);
 			}
 		});
