@@ -218,6 +218,7 @@ public class Customer_showandadd extends JFrame {
 				for (Customer my : Main.myShop.getCustomer())
 					if (comboBox_namecusro_inTheshop.getSelectedItem().equals(my.getFirstName())) {
 						Main.myShop.removeCustomer(my);
+						JOptionPane.showMessageDialog(null, "לקוח נמחק");
 						break;
 					}
 
@@ -227,7 +228,7 @@ public class Customer_showandadd extends JFrame {
 		});
 
 		btn_del.setVisible(false);
-		btn_del.setBounds(234, 267, 85, 21);
+		btn_del.setBounds(235, 267, 85, 21);
 		contentPane.add(btn_del);
 
 		JButton btn_delcustomer = new JButton("\u05DE\u05D7\u05D9\u05E7\u05EA \u05DC\u05E7\u05D5\u05D7");
@@ -426,6 +427,7 @@ public class Customer_showandadd extends JFrame {
 
 						try {
 							Main.myShop.addCustomer(cus);
+							JOptionPane.showMessageDialog(null, "לקוח נוסף בהצלחה");
 						} catch (CustomerAlreadyExistsException c1) {
 							JOptionPane.showMessageDialog(null, "לקוח כבר קיים במערכת");
 							c1.printStackTrace();
@@ -464,7 +466,7 @@ public class Customer_showandadd extends JFrame {
 		});
 
 		Button_add_new_cusromer.setVisible(false);
-		Button_add_new_cusromer.setBounds(267, 236, 96, 21);
+		Button_add_new_cusromer.setBounds(235, 236, 96, 21);
 		contentPane.add(Button_add_new_cusromer);
 
 		comboBox_show_cusromer.setBounds(173, 63, 89, 21);

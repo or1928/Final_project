@@ -35,6 +35,7 @@ public class Main {
 		// read shop data from DB
 		
 		DBconnect.openDB();
+		
 		DBconnect.readShopFromDB();
 		
 

@@ -205,6 +205,7 @@ public class Provider_showandadd extends JFrame {
 				for (Provider my : Main.myShop.getProviders())
 					if (comboBox_namepro_inTheshop.getSelectedItem().equals(my.getFirstName())) {
 						Main.myShop.removeProvider(my);
+						JOptionPane.showMessageDialog(null, "ספק נמחק");
 						break;
 					}
 
@@ -394,6 +395,7 @@ public class Provider_showandadd extends JFrame {
 
 						try {
 							Main.myShop.addProvider(pro);
+							JOptionPane.showMessageDialog(null, "ספק נוסף בהצלחה");
 						} catch (ProvidersAlreadyExistsException p1) {
 							JOptionPane.showMessageDialog(null, "ספק קיים במערכת");
 							p1.printStackTrace();

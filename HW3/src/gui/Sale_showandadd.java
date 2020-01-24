@@ -108,6 +108,7 @@ public class Sale_showandadd extends JFrame {
 				for (Sale my : Main.myShop.getSales().values())
 					if (comboBox_namesale_inTheshop.getSelectedItem().equals(my.getSaleID())) {
 						Main.myShop.cencelSale(my.getSellingDate(), my);
+						JOptionPane.showMessageDialog(null, "מכירה בוטלה");
 						break;
 					}
 

@@ -212,6 +212,7 @@ public class Usedphone_showandadd extends JFrame {
 				for (UsedPhone my : Main.myShop.getPhones())
 					if (comboBox_phonelection.getSelectedItem().equals(my.getModelNo())) {
 						Main.myShop.removePhone(my);
+						JOptionPane.showMessageDialog(null, "פלאפון נמחק");
 						break;
 					}
 
@@ -220,7 +221,7 @@ public class Usedphone_showandadd extends JFrame {
 			}
 		});
 		btn_dell.setVisible(false);
-		btn_dell.setBounds(284, 228, 85, 21);
+		btn_dell.setBounds(272, 228, 85, 21);
 		contentPane.add(btn_dell);
 
 		JButton Button_return = new JButton("\u05D7\u05D6\u05D5\u05E8");
@@ -336,7 +337,7 @@ public class Usedphone_showandadd extends JFrame {
 
 						try {
 							Main.myShop.addPhone(uPhone);
-
+							JOptionPane.showMessageDialog(null, "פלאפון נוסף בהצלחה");
 						} catch (AlreadyBoundException p1) {
 							// TODO Auto-generated catch block
 							p1.printStackTrace();

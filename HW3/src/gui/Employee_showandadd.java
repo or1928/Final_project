@@ -207,6 +207,7 @@ public class Employee_showandadd extends JFrame {
 				for (Employee my : Main.myShop.getEmployess())
 					if (comboBox_showEmplo_inMYshop_Dell.getSelectedItem().equals(my.getFirstName())) {
 						Main.myShop.removeEmployee(my);
+						JOptionPane.showMessageDialog(null, "עובד נמחק");
 						break;
 					}
 
@@ -395,6 +396,7 @@ public class Employee_showandadd extends JFrame {
 
 						try {
 							Main.myShop.addEmployee(emp);
+							JOptionPane.showMessageDialog(null, "עובד נוסף בהצלחה");
 						} catch (EmployeeAlreadyExistsException e1) {
 							JOptionPane.showMessageDialog(null, "עובד כבר קיים במערכת");
 							e1.printStackTrace();
