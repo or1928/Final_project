@@ -153,6 +153,7 @@ public class Employee_showandadd extends JFrame {
 	 * Create the frame.
 	 */
 	public Employee_showandadd() {
+		setTitle("SecHandCell");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();

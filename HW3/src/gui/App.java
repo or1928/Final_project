@@ -26,7 +26,7 @@ import javax.swing.border.LineBorder;
 import classes.Username;
 
 public class App {
-	private JFrame frame;
+	private JFrame frmSechandcell;
 	private JTextField textField_Username;
 	private JPasswordField textField_password;
 	private ArrayList<Username> users = new ArrayList<>();
@@ -38,7 +38,8 @@ public class App {
 			public void run() {
 				try {
 					App window = new App();
-					window.frame.setVisible(true);
+					
+					window.frmSechandcell.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -80,10 +81,11 @@ public class App {
 	}
 	private void initialize() {
 		initUsers();
-		frame = new JFrame();
-		frame.setBounds(500, 250, 544, 394);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frmSechandcell = new JFrame();
+		frmSechandcell.setTitle("SecHandCell");
+		frmSechandcell.setBounds(500, 250, 544, 394);
+		frmSechandcell.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmSechandcell.getContentPane().setLayout(null);
 		Image img = new ImageIcon(this.getClass().getResource("/br.jpg")).getImage();
 		Image newImage = img.getScaledInstance( 530, 357, Image.SCALE_DEFAULT);
 
@@ -98,25 +100,25 @@ public class App {
 
 		textField_Username = new JTextField();
 		textField_Username.setBounds(196, 132, 96, 19);
-		frame.getContentPane().add(textField_Username);
+		frmSechandcell.getContentPane().add(textField_Username);
 		textField_Username.setColumns(10);
 
 		JLabel Label_password = new JLabel("\u05E1\u05D9\u05E1\u05DE\u05D4:");
 		Label_password.setFont(new Font("SansSerif", Font.BOLD, 14));
 		Label_password.setBounds(302, 159, 91, 19);
-		frame.getContentPane().add(Label_password);
+		frmSechandcell.getContentPane().add(Label_password);
 
 		JLabel label_username = new JLabel("\u05E9\u05DD \u05DE\u05E9\u05EA\u05DE\u05E9:");
 		label_username.setFont(new Font("SansSerif", Font.BOLD, 14));
 		label_username.setBounds(302, 135, 91, 19);
-		frame.getContentPane().add(label_username);
+		frmSechandcell.getContentPane().add(label_username);
 
 		JLabel Label_logo_yvc = new JLabel("");
 		Label_logo_yvc.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_yvc.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_yvc.setIcon(new ImageIcon(newImage1));
 		Label_logo_yvc.setBounds(429, 283, 91, 64);
-		frame.getContentPane().add(Label_logo_yvc);
+		frmSechandcell.getContentPane().add(Label_logo_yvc);
 
 		JButton Button_login = new JButton("\u05DB\u05E0\u05D9\u05E1\u05D4");
 		Button_login.setFont(new Font("SansSerif", Font.BOLD, 16));
@@ -129,15 +131,15 @@ public class App {
 				if (usersPasswords.containsKey(uname)) {
 					if(usersPasswords.get(uname).equals(paname)) {
 						Main.users = users.stream().filter(u -> u.getUserName().equals(paname)).findFirst().get().getRank();
-						JOptionPane.showMessageDialog(frame, "ברוך הבא " + uname);
-						frame.dispose();
+						JOptionPane.showMessageDialog(frmSechandcell, "ברוך הבא " + uname);
+						frmSechandcell.dispose();
 						Manager_window manager_win = new Manager_window();
 						manager_win.setVisible(true);
 					}
 
 
 					else {
-						JOptionPane.showMessageDialog(frame, "שם המשתמש או  הסיסמא לא נמצאו במערכת");
+						JOptionPane.showMessageDialog(frmSechandcell, "שם המשתמש או  הסיסמא לא נמצאו במערכת");
 						textField_Username.setText("");
 						textField_password.setText("");
 					}
@@ -149,10 +151,10 @@ public class App {
 		logo_secHandCell.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		logo_secHandCell.setIcon(new ImageIcon(newImage2));
 		logo_secHandCell.setBounds(139, 31, 247, 61);
-		frame.getContentPane().add(logo_secHandCell);
+		frmSechandcell.getContentPane().add(logo_secHandCell);
 
 		Button_login.setBounds(196, 192, 96, 21);
-		frame.getContentPane().add(Button_login);
+		frmSechandcell.getContentPane().add(Button_login);
 
 		JButton Button_exit = new JButton("\u05D9\u05E6\u05D9\u05D0\u05D4");
 		Button_exit.setFont(new Font("SansSerif", Font.BOLD, 16));
@@ -173,11 +175,11 @@ public class App {
 		});
 
 		Button_exit.setBounds(196, 235, 96, 21);
-		frame.getContentPane().add(Button_exit);
+		frmSechandcell.getContentPane().add(Button_exit);
 
 		textField_password = new JPasswordField();
 		textField_password.setBounds(196, 161, 96, 19);
-		frame.getContentPane().add(textField_password);
+		frmSechandcell.getContentPane().add(textField_password);
 
 		JLabel lblNewpage = new JLabel("\u05DB\u05E0\u05D9\u05E1\u05D4");
 		lblNewpage.setHorizontalAlignment(SwingConstants.CENTER);
@@ -186,19 +188,19 @@ public class App {
 		lblNewpage.setForeground(Color.WHITE);
 		lblNewpage.setBackground(Color.WHITE);
 		lblNewpage.setBounds(1, 155, 99, 33);
-		frame.getContentPane().add(lblNewpage);
+		frmSechandcell.getContentPane().add(lblNewpage);
 
 		JLabel side_logo = new JLabel("");
 		side_logo.setHorizontalAlignment(SwingConstants.CENTER);
 		side_logo.setBounds(0, 0, 103, 357);
 		side_logo.setIcon(new ImageIcon(newImage3));
-		frame.getContentPane().add(side_logo);
+		frmSechandcell.getContentPane().add(side_logo);
 
 		JLabel Label_logo_background = new JLabel("");
 		Label_logo_background.setHorizontalAlignment(SwingConstants.CENTER);
 		Label_logo_background.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		Label_logo_background.setIcon(new ImageIcon(newImage));
 		Label_logo_background.setBounds(0, 0, 530, 357);
-		frame.getContentPane().add(Label_logo_background);
+		frmSechandcell.getContentPane().add(Label_logo_background);
 	}
 }

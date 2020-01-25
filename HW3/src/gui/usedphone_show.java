@@ -58,6 +58,7 @@ public class usedphone_show extends JFrame {
 	 */
 
 	public usedphone_show() {
+		setTitle("SecHandCell");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(500, 250, 544, 394);
 		contentPane = new JPanel();
