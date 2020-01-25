@@ -8,7 +8,7 @@ import exceptions.InvalidNameException;
 import exceptions.InvalidPhoneNumberException;
 import exceptions.WrongInput;
 
-public class Person implements Serializable {
+public abstract class  Person implements Serializable {
 	private String ID;
 	private String firstName;
 	private String lastName;
